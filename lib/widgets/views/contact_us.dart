@@ -1,5 +1,4 @@
 import "dart:io";
-
 import "package:bmd_flutter_tools/utilities/utilities__theme.dart";
 import "package:bmd_flutter_tools/widgets/navigation/primary_navigation_bar.dart";
 import "package:flutter/material.dart";
@@ -135,13 +134,11 @@ class ContactUs extends StatelessWidget {
                   onPressed: () => onLaunch(),
                   icon: SFIcon(
                     openIcon ?? SFIcons.sf_square_and_arrow_up,
-                    color: BeColorSwatch.blue,
                     fontSize: 20,
                   ),
                   label: Text(
                     openLabel,
                     style: const TextStyle(
-                      color: BeColorSwatch.blue,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -157,13 +154,11 @@ class ContactUs extends StatelessWidget {
                       _copyToClipboard(context, value, copyMessage),
                   icon: const SFIcon(
                     SFIcons.sf_rectangle_portrait_on_rectangle_portrait,
-                    color: BeColorSwatch.blue,
                     fontSize: 20,
                   ),
                   label: Text(
                     copyLabel,
                     style: const TextStyle(
-                      color: BeColorSwatch.blue,
                       fontWeight: FontWeight.bold,
                     ),
                   ),

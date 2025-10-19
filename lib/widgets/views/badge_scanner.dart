@@ -668,11 +668,9 @@ class _BadgeScannerState extends ConsumerState<BadgeScanner> {
                                         children: [
                                             Text(
                                                 "Go to leads list",
-                                                style: TextStyle(color: BeColorSwatch.white)
                                             ),
                                             SFIcon(
                                                 SFIcons.sf_chevron_right,
-                                                color:    BeColorSwatch.white,
                                                 fontSize: 14,
                                             )
                                         ]

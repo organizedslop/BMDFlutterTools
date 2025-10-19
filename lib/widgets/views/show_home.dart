@@ -214,9 +214,7 @@ class _ShowHomeState extends ConsumerState<ShowHome> with WidgetsBindingObserver
           if (mounted) {
             scaffoldMessengerKey.currentState?.showSnackBar(
               const SnackBar(
-                  backgroundColor: BeColorSwatch.green,
-                  content: Text("Lead retrieval is activated!",
-                      style: TextStyle(color: BeColorSwatch.white))),
+                  content: Text("Lead retrieval is activated!",)),
             );
           }
         }
@@ -275,7 +273,6 @@ class _ShowHomeState extends ConsumerState<ShowHome> with WidgetsBindingObserver
         child: Stack(fit: StackFit.expand, children: [
           if (bannerUrl.isEmpty)
             Container(
-                color: BeColorSwatch.navy,
                 child: Transform.scale(
                     scale: 1.25,
                     alignment: Alignment.bottomLeft,
@@ -287,14 +284,12 @@ class _ShowHomeState extends ConsumerState<ShowHome> with WidgetsBindingObserver
             Image.network(
               bannerUrl,
               fit: BoxFit.cover,
-              color: BeColorSwatch.darkBlue.withAlpha(60),
               colorBlendMode: BlendMode.multiply,
               loadingBuilder: (context, child, progress) =>
                   (progress == null) ? child : const SizedBox.shrink(),
               errorBuilder: (context, error, stackTrace) =>
                   const SizedBox.shrink(),
             ),
-          Container(color: BeColorSwatch.navy.withOpacity(0.25)),
           Container(
               decoration: BoxDecoration(
                   gradient: LinearGradient(
@@ -316,11 +311,9 @@ class _ShowHomeState extends ConsumerState<ShowHome> with WidgetsBindingObserver
                     overflow: TextOverflow.fade,
                     softWrap: false,
                     style: theme.textTheme.headlineLarge?.copyWith(
-                          color: BeColorSwatch.white,
                           fontSize: 28,
                         ) ??
                         const TextStyle(
-                          color:      BeColorSwatch.white,
                           fontSize:   28,
                           fontWeight: FontWeight.bold,
                         ),
@@ -402,13 +395,11 @@ class _ShowHomeState extends ConsumerState<ShowHome> with WidgetsBindingObserver
                 return Center(
                     child: Column(mainAxisSize: MainAxisSize.min, children: [
                   const CircularProgressIndicator(
-                      color: BeColorSwatch.navy,
                       padding: EdgeInsets.only(bottom: 8)),
                   Text("Loading show info...",
                       style: Theme.of(context)
                           .textTheme
-                          .bodyMedium!
-                          .copyWith(color: BeColorSwatch.darkGray)),
+                          .bodyMedium!),
                   const SizedBox(height: 16),
                 ]));
               }
@@ -487,7 +478,7 @@ class _ShowHomeState extends ConsumerState<ShowHome> with WidgetsBindingObserver
                                                       TextSpan(
                                                           text:
                                                               "Exhibit hours: ",
-                                                          style: TextStyle(color: BeColorSwatch.darkGray, fontWeight:FontWeight.bold)),
+                                                          style: TextStyle(fontWeight:FontWeight.bold)),
                                                       TextSpan(
                                                           text:
                                                               "10:00 AM - 3:00 PM"), // show.dates.dates[0].toString(includeDates: false)),
@@ -503,7 +494,7 @@ class _ShowHomeState extends ConsumerState<ShowHome> with WidgetsBindingObserver
                                                       TextSpan(
                                                           text:
                                                               "Classes start: ",
-                                                          style: TextStyle(color: BeColorSwatch.darkGray, fontWeight:FontWeight.bold)),
+                                                          style: TextStyle(fontWeight:FontWeight.bold)),
                                                       TextSpan(
                                                           text:
                                                               "9:30 AM"), // DateFormat("hh:mm aaa").format(DateTime.fromMillisecondsSinceEpoch(show.dates.dates[0].start * 1000).toUtc())),
@@ -529,11 +520,9 @@ class _ShowHomeState extends ConsumerState<ShowHome> with WidgetsBindingObserver
                                         Column(spacing: 6, children: [
                                           TextButton.icon(
                                             icon: SFIcon(SFIcons.sf_map,
-                                                color: BeColorSwatch.blue,
                                                 fontSize: 20),
                                             label: Text("Get directions",
                                                 style: TextStyle(
-                                                    color: BeColorSwatch.blue,
                                                     fontWeight:
                                                         FontWeight.bold)),
                                             onPressed: () async {
@@ -577,11 +566,9 @@ class _ShowHomeState extends ConsumerState<ShowHome> with WidgetsBindingObserver
                                             icon: SFIcon(
                                                 SFIcons
                                                     .sf_rectangle_portrait_on_rectangle_portrait,
-                                                color: BeColorSwatch.blue,
                                                 fontSize: 20),
                                             label: Text("Copy address",
                                                 style: TextStyle(
-                                                    color: BeColorSwatch.blue,
                                                     fontWeight:
                                                         FontWeight.bold)),
                                             onPressed: () async {
@@ -600,11 +587,9 @@ class _ShowHomeState extends ConsumerState<ShowHome> with WidgetsBindingObserver
                                         TextButton.icon(
                                             icon: SFIcon(
                                                 SFIcons.sf_square_grid_2x2,
-                                                color: BeColorSwatch.blue,
                                                 fontSize: 20),
                                             label: Text((textScaleFactor > 1.35) ? "Floorplan" : "View floorplan",
                                                 style: TextStyle(
-                                                    color: BeColorSwatch.blue,
                                                     fontWeight:
                                                         FontWeight.bold)),
                                             onPressed: () async {
@@ -634,7 +619,6 @@ class _ShowHomeState extends ConsumerState<ShowHome> with WidgetsBindingObserver
 
                                   const SizedBox(height: dividerSpacingTop),
                                   Divider(
-                                      color: BeColorSwatch.gray,
                                       height: dividerHeight),
                                   const SizedBox(height: dividerSpacingBottom),
 
@@ -645,7 +629,6 @@ class _ShowHomeState extends ConsumerState<ShowHome> with WidgetsBindingObserver
                                         label: "Updating your badge…"),
                                     const SizedBox(height: 8),
                                     Divider(
-                                        color: BeColorSwatch.gray,
                                         height: dividerHeight),
                                     const SizedBox(
                                         height: dividerSpacingBottom),
@@ -660,11 +643,7 @@ class _ShowHomeState extends ConsumerState<ShowHome> with WidgetsBindingObserver
                                                  */
                                       ? <Widget>[
                                           Center(
-                                              child: Text(
-                                                  "Error: No user found.",
-                                                  style: TextStyle(
-                                                      color:
-                                                          BeColorSwatch.red))),
+                                              child: Text("Error: No user found.")),
                                         ]
 
                                       /*
@@ -684,16 +663,12 @@ class _ShowHomeState extends ConsumerState<ShowHome> with WidgetsBindingObserver
                                                   icon: SFIcon(
                                                     SFIcons
                                                         .sf_checkmark_circle_fill,
-                                                    color: BeColorSwatch.green,
                                                     fontWeight: FontWeight.w100,
                                                   ),
                                                   label: Text(((textScaleFactor > 1.35) ? "R" : "You are r") + "egistered to ${(currentBadge.isExhibitor == true) ? "exhibit" : (currentBadge.isPresenter == true) ? "present" : "attend"}",
                                                     style: Theme.of(context)
                                                         .textTheme
-                                                        .headlineMedium!
-                                                        .copyWith(
-                                                            color: BeColorSwatch
-                                                                .green),
+                                                        .headlineMedium!,
                                                     textAlign: TextAlign.center,
                                                   ),
                                                   onPressed: null,
@@ -745,7 +720,7 @@ class _ShowHomeState extends ConsumerState<ShowHome> with WidgetsBindingObserver
                                                                     const TextSpan(
                                                                         text:
                                                                             "Move-in: ",
-                                                                        style: TextStyle(color: BeColorSwatch.darkGray, fontWeight:FontWeight.bold)),
+                                                                        style: TextStyle(fontWeight:FontWeight.bold)),
 
                                                                     if (currentBadge.moveInStart !=
                                                                             null &&
@@ -772,7 +747,7 @@ class _ShowHomeState extends ConsumerState<ShowHome> with WidgetsBindingObserver
                                                                     const TextSpan(
                                                                         text:
                                                                             "Move-out: ",
-                                                                        style: TextStyle(color: BeColorSwatch.darkGray, fontWeight:FontWeight.bold)),
+                                                                        style: TextStyle(fontWeight:FontWeight.bold)),
 
                                                                     if (show.moveOutStart !=
                                                                             null &&
@@ -799,16 +774,15 @@ class _ShowHomeState extends ConsumerState<ShowHome> with WidgetsBindingObserver
                                                                       .icon(
                                                                           icon: SFIcon(
                                                                               SFIcons.sf_phone,
-                                                                              color: BeColorSwatch.blue,
                                                                               fontSize: 20),
-                                                                          label: Text((textScaleFactor > 1.35) ? "Call to schedule" : "Call to schedule move-in/out", style: TextStyle(color: BeColorSwatch.blue, fontWeight: FontWeight.bold)),
+                                                                          label: Text((textScaleFactor > 1.35) ? "Call to schedule" : "Call to schedule move-in/out", style: TextStyle(fontWeight: FontWeight.bold)),
                                                                           onPressed: () async {
                                                                             final uri =
                                                                                 Uri(scheme: "tel", path: "+15122495303");
                                                                             if (await canLaunchUrl(uri)) {
                                                                               await launchUrl(uri);
                                                                             } else {
-                                                                              showSnackBar(context: context, content: Text("Could not place call to (512) 249-5303", style: TextStyle(color: BeColorSwatch.red)));
+                                                                              showSnackBar(context: context, content: Text("Could not place call to (512) 249-5303",));
                                                                             }
                                                                           })),
                                                               const SizedBox(
@@ -827,11 +801,7 @@ class _ShowHomeState extends ConsumerState<ShowHome> with WidgetsBindingObserver
                                                       "You are not registered",
                                                       style: Theme.of(context)
                                                           .textTheme
-                                                          .headlineMedium!
-                                                          .copyWith(
-                                                              color:
-                                                                  BeColorSwatch
-                                                                      .gray),
+                                                          .headlineMedium!,
                                                       textAlign:
                                                           TextAlign.center)),
                                               const SizedBox(height: 20),
@@ -906,8 +876,7 @@ class _ShowHomeState extends ConsumerState<ShowHome> with WidgetsBindingObserver
                                                                         ScaffoldMessenger.of(context)
                                                                             .showSnackBar(
                                                                           SnackBar(
-                                                                              backgroundColor: BeColorSwatch.green,
-                                                                              content: Text("You are registered!", style: TextStyle(color: BeColorSwatch.white))),
+                                                                              content: Text("You are registered!")),
                                                                         );
                                                                       }
                                                                       // Turn off refreshing if badge is now present
@@ -985,12 +954,7 @@ class _ShowHomeState extends ConsumerState<ShowHome> with WidgetsBindingObserver
                                                             style: Theme.of(
                                                                     context)
                                                                 .textTheme
-                                                                .bodySmall
-                                                                ?.copyWith(
-                                                                  color:
-                                                                      BeColorSwatch
-                                                                          .red,
-                                                                ),
+                                                                .bodySmall,
                                                           )),
                                                   ],
                                                 );
@@ -1101,8 +1065,6 @@ class _ShowHomeState extends ConsumerState<ShowHome> with WidgetsBindingObserver
                                                         .textTheme
                                                         .bodyMedium!
                                                         .copyWith(
-                                                            color: BeColorSwatch
-                                                                .white,
                                                             fontWeight:
                                                                 FontWeight.bold,
                                                             height: 0.975))
@@ -1113,7 +1075,6 @@ class _ShowHomeState extends ConsumerState<ShowHome> with WidgetsBindingObserver
 
                                   const SizedBox(height: dividerSpacingTop),
                                   Divider(
-                                      color: BeColorSwatch.gray,
                                       height: dividerHeight),
                                   const SizedBox(height: dividerSpacingBottom),
 
@@ -1228,10 +1189,6 @@ class _ShowHomeState extends ConsumerState<ShowHome> with WidgetsBindingObserver
                                               },
                                               style: elevatedButtonStyleAlt
                                                   .copyWith(
-                                                      backgroundColor:
-                                                          WidgetStateProperty
-                                                              .all(BeColorSwatch
-                                                                  .red),
                                                       padding:
                                                           WidgetStateProperty
                                                               .all(EdgeInsets
@@ -1338,10 +1295,6 @@ class _ShowHomeState extends ConsumerState<ShowHome> with WidgetsBindingObserver
                                               },
                                               style: elevatedButtonStyleAlt
                                                   .copyWith(
-                                                      backgroundColor:
-                                                          WidgetStateProperty
-                                                              .all(BeColorSwatch
-                                                                  .red),
                                                       padding:
                                                           WidgetStateProperty
                                                               .all(EdgeInsets
@@ -1369,10 +1322,7 @@ class _ShowHomeState extends ConsumerState<ShowHome> with WidgetsBindingObserver
                                                           style: Theme.of(
                                                                   context)
                                                               .textTheme
-                                                              .labelSmall!
-                                                              .copyWith(
-                                                                  color: BeColorSwatch
-                                                                      .white)),
+                                                              .labelSmall!),
                                                       Text("Email campaign",
                                                           style: TextStyle(
                                                               height: 0.875))
@@ -1456,10 +1406,6 @@ class _ShowHomeState extends ConsumerState<ShowHome> with WidgetsBindingObserver
                                               },
                                               style: elevatedButtonStyleAlt
                                                   .copyWith(
-                                                      backgroundColor:
-                                                          WidgetStateProperty
-                                                              .all(BeColorSwatch
-                                                                  .red),
                                                       padding:
                                                           WidgetStateProperty
                                                               .all(EdgeInsets
@@ -1512,10 +1458,6 @@ class _ShowHomeState extends ConsumerState<ShowHome> with WidgetsBindingObserver
                                               },
                                               style: elevatedButtonStyleAlt
                                                   .copyWith(
-                                                      backgroundColor:
-                                                          WidgetStateProperty
-                                                              .all(BeColorSwatch
-                                                                  .red),
                                                       padding:
                                                           WidgetStateProperty
                                                               .all(EdgeInsets
@@ -1543,10 +1485,7 @@ class _ShowHomeState extends ConsumerState<ShowHome> with WidgetsBindingObserver
                                                           style: Theme.of(
                                                                   context)
                                                               .textTheme
-                                                              .labelSmall!
-                                                              .copyWith(
-                                                                  color: BeColorSwatch
-                                                                      .white)),
+                                                              .labelSmall!),
                                                       Text("Booth photos",
                                                           style: TextStyle(
                                                               height: 0.875))
@@ -1594,10 +1533,6 @@ class _ShowHomeState extends ConsumerState<ShowHome> with WidgetsBindingObserver
                                               },
                                               style: elevatedButtonStyleAlt
                                                   .copyWith(
-                                                      backgroundColor:
-                                                          WidgetStateProperty
-                                                              .all(BeColorSwatch
-                                                                  .red),
                                                       padding:
                                                           WidgetStateProperty
                                                               .all(EdgeInsets
@@ -1625,10 +1560,7 @@ class _ShowHomeState extends ConsumerState<ShowHome> with WidgetsBindingObserver
                                                           style: Theme.of(
                                                                   context)
                                                               .textTheme
-                                                              .labelSmall!
-                                                              .copyWith(
-                                                                  color: BeColorSwatch
-                                                                      .white)),
+                                                              .labelSmall!),
                                                       Text("Exhibitor planner",
                                                           style: TextStyle(
                                                               height: 0.875))
@@ -1673,10 +1605,6 @@ class _ShowHomeState extends ConsumerState<ShowHome> with WidgetsBindingObserver
                                               },
                                               style: elevatedButtonStyleAlt
                                                   .copyWith(
-                                                      backgroundColor:
-                                                          WidgetStateProperty
-                                                              .all(BeColorSwatch
-                                                                  .red),
                                                       padding:
                                                           WidgetStateProperty
                                                               .all(EdgeInsets
@@ -1704,10 +1632,7 @@ class _ShowHomeState extends ConsumerState<ShowHome> with WidgetsBindingObserver
                                                           style: Theme.of(
                                                                   context)
                                                               .textTheme
-                                                              .labelSmall!
-                                                              .copyWith(
-                                                                  color: BeColorSwatch
-                                                                      .white)),
+                                                              .labelSmall!),
                                                       Text("Show flyer",
                                                           style: TextStyle(
                                                               height: 0.875))
@@ -1755,10 +1680,6 @@ class _ShowHomeState extends ConsumerState<ShowHome> with WidgetsBindingObserver
                                               },
                                               style: elevatedButtonStyleAlt
                                                   .copyWith(
-                                                      backgroundColor:
-                                                          WidgetStateProperty
-                                                              .all(BeColorSwatch
-                                                                  .red),
                                                       padding:
                                                           WidgetStateProperty
                                                               .all(EdgeInsets
@@ -1786,10 +1707,7 @@ class _ShowHomeState extends ConsumerState<ShowHome> with WidgetsBindingObserver
                                                           style: Theme.of(
                                                                   context)
                                                               .textTheme
-                                                              .labelSmall!
-                                                              .copyWith(
-                                                                  color: BeColorSwatch
-                                                                      .white)),
+                                                              .labelSmall!),
                                                         Text((textScaleFactor > 1.1) ? "Service manual" : "Exhibitor service manual",
                                                             style:    TextStyle(height: 0.875)
                                                         )
@@ -1834,10 +1752,6 @@ class _ShowHomeState extends ConsumerState<ShowHome> with WidgetsBindingObserver
                                               },
                                               style: elevatedButtonStyleAlt
                                                   .copyWith(
-                                                      backgroundColor:
-                                                          WidgetStateProperty
-                                                              .all(BeColorSwatch
-                                                                  .red),
                                                       padding:
                                                           WidgetStateProperty
                                                               .all(EdgeInsets
@@ -1865,10 +1779,7 @@ class _ShowHomeState extends ConsumerState<ShowHome> with WidgetsBindingObserver
                                                           style: Theme.of(
                                                                   context)
                                                               .textTheme
-                                                              .labelSmall!
-                                                              .copyWith(
-                                                                  color: BeColorSwatch
-                                                                      .white)),
+                                                              .labelSmall!),
                                                       Text(
                                                           (textScaleFactor > 1.35) ? "Media kit" : "Advertising media kit",
                                                           style: TextStyle(
@@ -1897,10 +1808,6 @@ class _ShowHomeState extends ConsumerState<ShowHome> with WidgetsBindingObserver
                                               },
                                               style: elevatedButtonStyleAlt
                                                   .copyWith(
-                                                      backgroundColor:
-                                                          WidgetStateProperty
-                                                              .all(BeColorSwatch
-                                                                  .red),
                                                       padding:
                                                           WidgetStateProperty
                                                               .all(EdgeInsets
@@ -1928,10 +1835,7 @@ class _ShowHomeState extends ConsumerState<ShowHome> with WidgetsBindingObserver
                                                           style: Theme.of(
                                                                   context)
                                                               .textTheme
-                                                              .labelSmall!
-                                                              .copyWith(
-                                                                  color: BeColorSwatch
-                                                                      .white)),
+                                                              .labelSmall!),
                                                       Text("Exhibitor badges",
                                                           style: TextStyle(
                                                               height: 0.875))
@@ -1958,7 +1862,6 @@ class _ShowHomeState extends ConsumerState<ShowHome> with WidgetsBindingObserver
 
                                   const SizedBox(height: dividerSpacingTop),
                                   Divider(
-                                      color: BeColorSwatch.gray,
                                       height: dividerHeight),
                                   const SizedBox(height: dividerSpacingBottom),
 
@@ -1997,7 +1900,6 @@ class _ShowHomeState extends ConsumerState<ShowHome> with WidgetsBindingObserver
 
                                   const SizedBox(height: dividerSpacingTop),
                                   Divider(
-                                      color: BeColorSwatch.gray,
                                       height: dividerHeight),
                                   const SizedBox(height: dividerSpacingBottom),
 
@@ -2008,7 +1910,6 @@ class _ShowHomeState extends ConsumerState<ShowHome> with WidgetsBindingObserver
 
                                   const SizedBox(height: dividerSpacingTop),
                                   Divider(
-                                      color: BeColorSwatch.gray,
                                       height: dividerHeight),
                                   const SizedBox(height: dividerSpacingBottom),
 
@@ -2047,7 +1948,6 @@ class _ShowHomeState extends ConsumerState<ShowHome> with WidgetsBindingObserver
 
                                   const SizedBox(height: dividerSpacingTop),
                                   Divider(
-                                      color: BeColorSwatch.gray,
                                       height: dividerHeight),
                                   const SizedBox(height: dividerSpacingBottom),
 

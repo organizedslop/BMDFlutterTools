@@ -12,7 +12,6 @@ import "package:bmd_flutter_tools/controllers/global_state.dart";
 import "package:bmd_flutter_tools/data/model/data__badge.dart";
 import "package:bmd_flutter_tools/data/model/data__seminar.dart";
 import "package:bmd_flutter_tools/data/model/data__seminar_session.dart";
-import "package:bmd_flutter_tools/main.dart";
 import "package:bmd_flutter_tools/theme/app_styles.dart";
 import "package:bmd_flutter_tools/utilities/utilities__theme.dart";
 import "package:bmd_flutter_tools/widgets/components/foating_scanner_button.dart";

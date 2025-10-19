@@ -375,7 +375,6 @@ class _SignInFormState extends ConsumerState<SignInForm> {
 
         scaffoldMessengerKey.currentState?.showSnackBar(SnackBar(
             content: Text(message,
-                style: TextStyle(color: BeColorSwatch.red),
                 textAlign: TextAlign.center)));
       }
     }
@@ -415,7 +414,6 @@ class _SignInFormState extends ConsumerState<SignInForm> {
           context.pop();
           ScaffoldMessenger.of(context).showSnackBar(SnackBar(
             content: Text("Failed to contact server. Please try again."),
-            backgroundColor: BeColorSwatch.red,
           ));
           return;
         }
@@ -437,9 +435,7 @@ class _SignInFormState extends ConsumerState<SignInForm> {
 
         // Display the error message
         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-          content: Text("Error: $error",
-              style: TextStyle(color: BeColorSwatch.white)),
-          backgroundColor: BeColorSwatch.red,
+          content: Text("Error: $error"),
         ));
       }
     }
@@ -541,15 +537,13 @@ class _SignInFormState extends ConsumerState<SignInForm> {
       child: Text(text["forgot_password_button_label"]!,
           style: Theme.of(context)
               .textTheme
-              .labelSmall!
-              .copyWith(color: BeColorSwatch.blue)),
+              .labelSmall!),
     );
 
     return PopScope(
         canPop: false,
         child: Scaffold(
             key: SignInForm.rootKey,
-            backgroundColor: BeColorSwatch.offWhite,
             resizeToAvoidBottomInset: false,
             body: LayoutBuilder(builder: (context, constraints) {
               final media = MediaQuery.of(context);
@@ -725,9 +719,6 @@ class _SignInFormState extends ConsumerState<SignInForm> {
                                                           : SFIcons
                                                               .sf_eye,
                                                       fontSize: 16,
-                                                      color: BeColorSwatch
-                                                          .darkGray
-                                                          .withAlpha(175),
                                                     ),
                                                     onPressed: () {
                                                       setState(() {
@@ -777,12 +768,7 @@ class _SignInFormState extends ConsumerState<SignInForm> {
                                                   Text('Remember me',
                                                       style: Theme.of(context)
                                                           .textTheme
-                                                          .labelSmall!
-                                                          .copyWith(
-                                                              color: BeColorSwatch
-                                                                  .darkGray
-                                                                  .withAlpha(
-                                                                      200))),
+                                                          .labelSmall!),
                                                   const Spacer(),
 
                                                 ]),
@@ -797,8 +783,6 @@ class _SignInFormState extends ConsumerState<SignInForm> {
                                                       .textTheme
                                                       .bodyMedium!
                                                       .copyWith(
-                                                          color:
-                                                              BeColorSwatch.red,
                                                           fontWeight:
                                                               FontWeight.bold)),
 
@@ -847,11 +831,7 @@ class _SignInFormState extends ConsumerState<SignInForm> {
                                       key: const Key(
                                           "sign_in_form__sign_in_button"),
                                       onPressed: loginUsers,
-                                      style: roundElevatedButtonStyle.merge(
-                                          ButtonStyle(
-                                              backgroundColor:
-                                                  WidgetStateProperty.all(
-                                                      BeColorSwatch.navy))),
+                                      style: roundElevatedButtonStyle,
                                       child: Text("Sign in"),
                                     ))),
 
@@ -875,14 +855,7 @@ class _SignInFormState extends ConsumerState<SignInForm> {
                                                           _loginController.text,
                                                     });
                                               },
-                                              style: roundElevatedButtonStyle
-                                                  .merge(
-                                                  ButtonStyle(
-                                                      backgroundColor:
-                                                          WidgetStateProperty
-                                                              .all(BeColorSwatch
-                                                                  .red))
-                                                                  ),
+                                              style: roundElevatedButtonStyle,
                                               child: Text(
                                                   "Register"),
         ))),
@@ -903,7 +876,7 @@ class _SignInFormState extends ConsumerState<SignInForm> {
                                           });
                                         },
                                         child: Container(
-                                            decoration: BoxDecoration(borderRadius: BorderRadius.circular(fullRadius), color: BeColorSwatch.offWhite.withAlpha(200)),
+                                            decoration: BoxDecoration(borderRadius: BorderRadius.circular(fullRadius)),
                                             child: Row(
                                             crossAxisAlignment:
                                                 CrossAxisAlignment.center,
@@ -917,13 +890,12 @@ class _SignInFormState extends ConsumerState<SignInForm> {
                                                           top: 4),
                                                       child: SFIcon(
                                                           SFIcons.sf_arrow_left,
-                                                          color:      BeColorSwatch.blue,
                                                           fontWeight: FontWeight.bold,
                                                           fontSize:   14
                                                     )
                                                 )
                                                   : null,
-                                              Text(showAccessCodeField ? "Enter email and password" : "Enter access code", style: TextStyle(color: BeColorSwatch.blue, fontWeight: FontWeight.bold))
+                                              Text(showAccessCodeField ? "Enter email and password" : "Enter access code", style: TextStyle(fontWeight: FontWeight.bold))
                                             ].nonNulls.toList()))),
 
                                     const SizedBox(height: 48),

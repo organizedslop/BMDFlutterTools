@@ -134,7 +134,6 @@ class _UserProfileState extends ConsumerState<UserProfile> {
 
       // BODY
       body: Container(
-        color: beColorScheme.background.tertiary,
         child: (() {
           UserData? user;
 
@@ -186,7 +185,6 @@ class _UserProfileState extends ConsumerState<UserProfile> {
                               SFIcons.sf_person_crop_circle_fill,
                               fontSize: 72,
                               fontWeight: FontWeight.w500,
-                              color: beColorScheme.text.tertiary,
                             ),
                             frameBuilder:
                                 (context, child, frame, wasSynchronouslyLoaded) =>
@@ -269,7 +267,6 @@ class _UserProfileState extends ConsumerState<UserProfile> {
                     Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 36),
                         child:   QrImageView(
-                            backgroundColor:      BeColorSwatch.white,
                             data:                 user.id,
                             errorCorrectionLevel: QrErrorCorrectLevel.M,
                             padding:              EdgeInsets.zero,

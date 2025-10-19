@@ -11,7 +11,6 @@ import "package:bmd_flutter_tools/controllers/environment.dart";
 import "package:bmd_flutter_tools/controllers/global_state.dart";
 import "package:bmd_flutter_tools/main.dart";
 import "package:bmd_flutter_tools/utilities/utilities__print.dart";
-import "package:bmd_flutter_tools/utilities/utilities__theme.dart";
 import "package:bmd_flutter_tools/widgets/components/foating_scanner_button.dart";
 import "package:bmd_flutter_tools/widgets/navigation/primary_navigation_bar.dart";
 import "package:bmd_flutter_tools/widgets/navigation/bottom_navigation_bar.dart";
@@ -207,7 +206,6 @@ class _DocumentReaderState extends ConsumerState<DocumentReader> with WidgetsBin
                 SnackBar(
                     content: Text(
                         message,
-                        style:     TextStyle(color: BeColorSwatch.red),
                         textAlign: TextAlign.center,
                     ),
                     padding: EdgeInsets.all(16),
@@ -252,7 +250,6 @@ class _DocumentReaderState extends ConsumerState<DocumentReader> with WidgetsBin
             scaffoldMessengerKey.currentState?.showSnackBar(
                 SnackBar(
                     content: Text("Error displaying document",
-                        style:     TextStyle(color: BeColorSwatch.red),
                         textAlign: TextAlign.center),
                     padding: EdgeInsets.all(16),
                 )
@@ -294,7 +291,6 @@ class _DocumentReaderState extends ConsumerState<DocumentReader> with WidgetsBin
                             child:   Text(
                                 errorMessage,
                                 textAlign: TextAlign.center,
-                                style:     const TextStyle(color: BeColorSwatch.darkGray),
                             )
                         )
                     )
@@ -313,7 +309,6 @@ class _DocumentReaderState extends ConsumerState<DocumentReader> with WidgetsBin
                                     defaultPage:           currentPage!,
                                     fitPolicy:             FitPolicy.HEIGHT,
                                     preventLinkNavigation: false,
-                                    backgroundColor:       BeColorSwatch.navy,
                                     onRender: (_pages) {
                                         setState(() {
                                             pages   = _pages;

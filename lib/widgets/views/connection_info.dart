@@ -21,7 +21,6 @@ import "package:bmd_flutter_tools/main.dart";
 import "package:bmd_flutter_tools/theme/app_styles.dart";
 import "package:bmd_flutter_tools/utilities/utilities__print.dart";
 import "package:bmd_flutter_tools/utilities/utilities__theme.dart";
-import "package:bmd_flutter_tools/widgets/components/button_plain.dart";
 import "package:bmd_flutter_tools/widgets/components/foating_scanner_button.dart";
 import "package:bmd_flutter_tools/widgets/panels/user_note.dart";
 import "package:bmd_flutter_tools/widgets/navigation/primary_navigation_bar.dart";
@@ -450,7 +449,6 @@ class _ConnectionInfoState extends ConsumerState<ConnectionInfo> {
             children: [
               SFIcon(
                 SFIcons.sf_icloud_slash,
-                color: BeColorSwatch.orange,
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
               ),
@@ -458,7 +456,6 @@ class _ConnectionInfoState extends ConsumerState<ConnectionInfo> {
               Text(
                 'Waiting for network…',
                 style: theme.textTheme.labelMedium?.copyWith(
-                  color: BeColorSwatch.orange,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -919,7 +916,7 @@ class _ConnectionInfoState extends ConsumerState<ConnectionInfo> {
                                                                     output.addAll([
                                                                         SelectableText(
                                                                             profileData["companyCategories"],
-                                                                            style:     beTextTheme.bodyPrimary.copyWith(color: BeColorSwatch.darkGray),
+                                                                            style:     beTextTheme.bodyPrimary,
                                                                             textAlign: TextAlign.left,
                                                                         ),
                                                                     ]);
@@ -978,7 +975,6 @@ class _ConnectionInfoState extends ConsumerState<ConnectionInfo> {
                                                                             },
                                                                             child: SFIcon(
                                                                                 rating >= 1 ? SFIcons.sf_star_fill : SFIcons.sf_star,
-                                                                                color: BeColorSwatch.blue,
                                                                                 fontSize: 20,
                                                                             ),
                                                                         ),
@@ -995,7 +991,6 @@ class _ConnectionInfoState extends ConsumerState<ConnectionInfo> {
                                                                             },
                                                                             child: SFIcon(
                                                                                 rating >= 2 ? SFIcons.sf_star_fill : SFIcons.sf_star,
-                                                                                color: BeColorSwatch.blue,
                                                                                 fontSize: 20,
                                                                             ),
                                                                         ),
@@ -1012,7 +1007,6 @@ class _ConnectionInfoState extends ConsumerState<ConnectionInfo> {
                                                                             },
                                                                             child: SFIcon(
                                                                                 rating >= 3 ? SFIcons.sf_star_fill : SFIcons.sf_star,
-                                                                                color: BeColorSwatch.blue,
                                                                                 fontSize: 20,
                                                                             ),
                                                                         ),
@@ -1029,7 +1023,6 @@ class _ConnectionInfoState extends ConsumerState<ConnectionInfo> {
                                                                             },
                                                                             child: SFIcon(
                                                                                 rating >= 4 ? SFIcons.sf_star_fill : SFIcons.sf_star,
-                                                                                color: BeColorSwatch.blue,
                                                                                 fontSize: 20,
                                                                             ),
                                                                         ),
@@ -1046,7 +1039,6 @@ class _ConnectionInfoState extends ConsumerState<ConnectionInfo> {
                                                                             },
                                                                             child: SFIcon(
                                                                                 rating >= 5 ? SFIcons.sf_star_fill : SFIcons.sf_star,
-                                                                                color: BeColorSwatch.blue,
                                                                                 fontSize: 20,
                                                                             ),
                                                                         ),
@@ -1069,7 +1061,7 @@ class _ConnectionInfoState extends ConsumerState<ConnectionInfo> {
                                          * -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -    */
                                         const SizedBox(height: 18),
 
-                                        Divider(color: BeColorSwatch.gray, height: 20),
+                                        Divider(height: 20),
 
                                         Row(
                                             mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -1084,10 +1076,9 @@ class _ConnectionInfoState extends ConsumerState<ConnectionInfo> {
                                                     },
                                                     icon: SFIcon(
                                                         SFIcons.sf_questionmark_circle,
-                                                        color:    BeColorSwatch.blue,
                                                         fontSize: 20
                                                     ),
-                                                    label: Text("Questions", style: TextStyle(color: BeColorSwatch.blue, fontWeight: FontWeight.bold))
+                                                    label: Text("Questions", style: TextStyle(fontWeight: FontWeight.bold))
                                                 ),
                                                 TextButton.icon(
                                                     onPressed: () {
@@ -1102,7 +1093,7 @@ class _ConnectionInfoState extends ConsumerState<ConnectionInfo> {
                                                         color:    BeColorSwatch.blue,
                                                         fontSize: 20
                                                     ),
-                                                label: Text("Notes", style: TextStyle(color: BeColorSwatch.blue, fontWeight: FontWeight.bold))
+                                                label: Text("Notes", style: TextStyle(fontWeight: FontWeight.bold))
                                                 ),
                                             ]
                                         ),
@@ -1205,7 +1196,6 @@ class _ConnectionInfoState extends ConsumerState<ConnectionInfo> {
                                                         padding: EdgeInsets.only(left: 8.0),
                                                         child: SFIcon(
                                                         SFIcons.sf_rectangle_portrait_on_rectangle_portrait,
-                                                        color: BeColorSwatch.blue,
                                                         fontSize: 20,
                                                         ),
                                                     ),
@@ -1278,7 +1268,6 @@ class _ConnectionInfoState extends ConsumerState<ConnectionInfo> {
                                                 TextButton.icon(
                                                     icon: SFIcon(
                                                         SFIcons.sf_map,
-                                                        color:    BeColorSwatch.blue,
                                                         fontSize: 20
                                                     ),
                                                     label:     Text("Get directions", style: TextStyle(color: BeColorSwatch.blue, fontWeight: FontWeight.bold)),
@@ -1312,7 +1301,6 @@ class _ConnectionInfoState extends ConsumerState<ConnectionInfo> {
                                                 TextButton.icon(
                                                     icon: SFIcon(
                                                         SFIcons.sf_rectangle_portrait_on_rectangle_portrait,
-                                                        color:    BeColorSwatch.blue,
                                                         fontSize: 20
                                                     ),
                                                     label:     Text((textScaleFactor > 1.35) ? "Copy" : "Copy address", style: TextStyle(color: BeColorSwatch.blue, fontWeight: FontWeight.bold)),
@@ -1328,7 +1316,7 @@ class _ConnectionInfoState extends ConsumerState<ConnectionInfo> {
 
                                         const SizedBox(height: 28),
 
-                                        Divider(color: BeColorSwatch.gray, height: 28),
+                                        Divider(height: 28),
 
 
 
@@ -1376,7 +1364,7 @@ class _ConnectionInfoState extends ConsumerState<ConnectionInfo> {
 
                                         const SizedBox(height: 12),
 
-                                        Divider(color: BeColorSwatch.gray, height: 28),
+                                        Divider(height: 28),
 
                                         const SizedBox(height: 8),
 
@@ -1388,11 +1376,10 @@ class _ConnectionInfoState extends ConsumerState<ConnectionInfo> {
                                             mainAxisAlignment:  MainAxisAlignment.spaceBetween,
                                             children: [
                                                 Text("Qualifying Questions", style: beTextTheme.headingSecondary),
-                                                PlainButton(
-                                                    backgroundColor: BeColorSwatch.blue,
-                                                    key:    const Key("connection_info__submit_note_button"),
-                                                    label:  (textScaleFactor > 1.2) ? "Edit" : "Edit Questions",
-                                                    onTap:  () async {
+                                                ElevatedButton(
+                                                    key:       const Key("connection_info__submit_note_button"),
+                                                    child:     Text((textScaleFactor > 1.2) ? "Edit" : "Edit Questions"),
+                                                    onPressed: () async {
                                                         if (ref.read(companyProvider) != null && ref.read(companyProvider)?.exhibitorId != null) {
                                                             final host = ref.read(isDevelopmentProvider)
                                                                 ? ref.read(developmentSiteBaseUrlProvider)
@@ -1435,7 +1422,6 @@ class _ConnectionInfoState extends ConsumerState<ConnectionInfo> {
                                                 padding: const EdgeInsets.symmetric(vertical: 16),
                                                 child: Center(
                                                   child: CircularProgressIndicator(
-                                                    color: BeColorSwatch.navy,
                                                   ),
                                                 ),
                                               ),
@@ -1463,7 +1449,6 @@ class _ConnectionInfoState extends ConsumerState<ConnectionInfo> {
                                                     focusNode: _qualifyingFocusNodes[idx],
                                                     decoration: gfieldInputDecoration.copyWith(
                                                       hintText: "Type your answer here.",
-                                                      hintStyle: TextStyle(color: BeColorSwatch.gray),
                                                     ),
                                                     textInputAction: TextInputAction.done,
                                                   ),
@@ -1475,7 +1460,7 @@ class _ConnectionInfoState extends ConsumerState<ConnectionInfo> {
 
                                         const SizedBox(height: 28),
 
-                                        Divider(color: BeColorSwatch.gray, height: 28),
+                                        Divider(height: 28),
 
                                         const SizedBox(height: 8),
 
@@ -1496,11 +1481,10 @@ class _ConnectionInfoState extends ConsumerState<ConnectionInfo> {
                                                             final noteText = value.text.trim();
                                                             final hasText = noteText.isNotEmpty;
 
-                                                            return PlainButton(
-                                                                backgroundColor: hasText ? BeColorSwatch.blue : BeColorSwatch.gray,
+                                                            return ElevatedButton(
                                                                 key:    const Key("connection_info__submit_note_button"),
-                                                                label:  "Save Note",
-                                                                onTap:  hasText ? () async {
+                                                                child:  Text("Save Note"),
+                                                                onPressed:  hasText ? () async {
                                                                     if (!mounted) { return; }
                                                                     setState(() {
                                                                         isSubmittingNewUserNote = true;
@@ -1549,7 +1533,6 @@ class _ConnectionInfoState extends ConsumerState<ConnectionInfo> {
                                                 decoration: gfieldInputDecoration.copyWith(
                                                     contentPadding: EdgeInsets.symmetric(vertical: 12, horizontal: 10),
                                                     hintText:       "Type your note here.",
-                                                    hintStyle:      TextStyle(color: BeColorSwatch.gray)
                                                 ),
                                                 focusNode:  _focusNode,
                                                 key:        const Key("connection_info__notes_field"),
@@ -1567,15 +1550,15 @@ class _ConnectionInfoState extends ConsumerState<ConnectionInfo> {
                                         * -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -    */
                                         ...(() {
                                             if (_comments.isEmpty && !_loadingApi && !isFetchingFromDatabase) {
-                                                return [Center(child: Text("No notes", style: TextStyle(color: BeColorSwatch.darkGray)))];
+                                                return [Center(child: Text("No notes"))];
                                             } else if (isFetchingFromDatabase || (_comments.isEmpty && _loadingApi)) {
                                                 return [
                                                     Center(
                                                         child: Column(
                                                             mainAxisSize: MainAxisSize.min,
                                                             children: [
-                                                                const CircularProgressIndicator(color: BeColorSwatch.navy, padding: EdgeInsets.only(bottom: 8)),
-                                                                Text("Loading notes...", style: Theme.of(context).textTheme.bodyMedium!.copyWith(color: BeColorSwatch.darkGray)),
+                                                                const CircularProgressIndicator(padding: EdgeInsets.only(bottom: 8)),
+                                                                Text("Loading notes...", style: Theme.of(context).textTheme.bodyMedium),
                                                                 const SizedBox(height: 16),
                                                             ]
                                                         )

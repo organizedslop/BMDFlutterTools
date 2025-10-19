@@ -264,7 +264,6 @@ class ApiClient {
         _showMessagesFromResponse(
           iceCrmResponseData,
           ignoreUnauthorized: !usingAccessCode,
-          textStyle: TextStyle(color: BeColorSwatch.red),
           textAlign: TextAlign.center,
         );
 
@@ -872,7 +871,6 @@ class ApiClient {
           );
           _showMessagesFromResponse(
             crmResponse,
-            textStyle: TextStyle(color: BeColorSwatch.red),
             textAlign: TextAlign.center,
           );
         } catch (_) {
@@ -971,7 +969,6 @@ class ApiClient {
         );
         _showMessagesFromResponse(
           ice,
-          textStyle: TextStyle(color: BeColorSwatch.red),
           textAlign: TextAlign.center,
         );
         return ice.data ?? <ExhibitorData>[];
@@ -1185,7 +1182,6 @@ class ApiClient {
           );
           _showMessagesFromResponse(
             ice,
-            textStyle: TextStyle(color: BeColorSwatch.red),
             textAlign: TextAlign.center,
           );
           return ice.data ?? <NotificationData>[];

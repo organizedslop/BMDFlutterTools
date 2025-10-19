@@ -19,7 +19,6 @@ import "package:bmd_flutter_tools/data/model/data__badge.dart";
 import "package:bmd_flutter_tools/data/model/data__connection.dart";
 import "package:bmd_flutter_tools/data/model/data__user.dart";
 import "package:bmd_flutter_tools/data/model/enum__location_encoding.dart";
-import "package:bmd_flutter_tools/main.dart";
 import "package:bmd_flutter_tools/services/connection_retry_service.dart";
 import "package:bmd_flutter_tools/theme/app_styles.dart";
 import "package:bmd_flutter_tools/utilities/utilities__theme.dart";
@@ -540,7 +539,6 @@ class _LeadsListState extends ConsumerState<LeadsList> with RouteAware {
                                 Text(
                                   statusText,
                                   style: theme.textTheme.bodyMedium?.copyWith(
-                                    color: BeColorSwatch.darkGray,
                                     fontWeight: FontWeight.w600,
                                   ),
                                   overflow: TextOverflow.ellipsis,
@@ -548,9 +546,7 @@ class _LeadsListState extends ConsumerState<LeadsList> with RouteAware {
                                 if (detailText != null)
                                   Text(
                                     detailText,
-                                    style: theme.textTheme.bodySmall?.copyWith(
-                                      color: BeColorSwatch.darkGray,
-                                    ),
+                                    style: theme.textTheme.bodySmall,
                                     overflow: TextOverflow.ellipsis,
                                   ),
                               ],
@@ -734,11 +730,11 @@ class _LeadsListState extends ConsumerState<LeadsList> with RouteAware {
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    const CircularProgressIndicator(color: BeColorSwatch.navy),
+                    const CircularProgressIndicator(),
                     const SizedBox(height: 12),
                     Text(
                       "Loading leads...",
-                      style: Theme.of(context).textTheme.bodyMedium!.copyWith(color: BeColorSwatch.darkGray),
+                      style: Theme.of(context).textTheme.bodyMedium,
                     ),
                   ],
                 ),

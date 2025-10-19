@@ -152,8 +152,7 @@ class _UserHomeListState extends ConsumerState<UserHome> with WidgetsBindingObse
           if (mounted) {
             scaffoldMessengerKey.currentState?.showSnackBar(
               const SnackBar(
-                backgroundColor: BeColorSwatch.green,
-                content: Text("Lead retrieval is activated!", style: TextStyle(color: BeColorSwatch.white))
+                content: Text("Lead retrieval is activated!")
                 ),            );
           }
         }
@@ -355,7 +354,7 @@ class _UserHomeListState extends ConsumerState<UserHome> with WidgetsBindingObse
                     child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: const [
-                        CircularProgressIndicator(color: BeColorSwatch.navy, padding: EdgeInsets.only(bottom: 8)),
+                        CircularProgressIndicator(padding: EdgeInsets.only(bottom: 8)),
                         SizedBox(height: 8),
                         Text("Loading home page..."),
                         SizedBox(height: 16),
@@ -507,9 +506,7 @@ class _UserHomeListState extends ConsumerState<UserHome> with WidgetsBindingObse
                                                           context.goNamed("show");
                                                           context.pushNamed("connections");
                                                         },
-                                                        style: elevatedButtonStyleAlt.copyWith(
-                                                          backgroundColor: WidgetStateProperty.all(BeColorSwatch.red),
-                                                        ),
+                                                        style: elevatedButtonStyleAlt,
                                                         child: const Padding(
                                                           padding: EdgeInsets.symmetric(vertical: 8),
                                                           child: Text("View your leads list"),
@@ -537,9 +534,7 @@ class _UserHomeListState extends ConsumerState<UserHome> with WidgetsBindingObse
                                                       context.goNamed("show");
                                                       context.pushNamed("seminars list");
                                                     },
-                                                    style: elevatedButtonStyleAlt.copyWith(
-                                                      backgroundColor: WidgetStateProperty.all(BeColorSwatch.red),
-                                                    ),
+                                                    style: elevatedButtonStyleAlt,
                                                     child: const Padding(
                                                       padding: EdgeInsets.symmetric(vertical: 8),
                                                       child: Text("View complementary classes"),
@@ -556,9 +551,7 @@ class _UserHomeListState extends ConsumerState<UserHome> with WidgetsBindingObse
                                               context.goNamed("show");
                                               context.pushNamed("user profile");
                                             },
-                                            style: elevatedButtonStyleAlt.copyWith(
-                                              backgroundColor: WidgetStateProperty.all(BeColorSwatch.red),
-                                            ),
+                                            style: elevatedButtonStyleAlt,
                                             child: const Padding(
                                               padding: EdgeInsets.symmetric(vertical: 8),
                                               child: Text("View your badge"),
@@ -633,7 +626,6 @@ class _UserHomeListState extends ConsumerState<UserHome> with WidgetsBindingObse
                                         "© 2009-${DateTime.now().year}\n International Conference Management, Inc.",
                                         style: beTextTheme.bodyTertiary.merge(
                                             TextStyle(
-                                            color: BeColorSwatch.darkGray.withAlpha(250),
                                             fontWeight: FontWeight.w600,
                                             ),
                                         ),

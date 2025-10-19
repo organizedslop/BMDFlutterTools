@@ -646,7 +646,6 @@ Future<String?> _resolveAnyPresenterBoothNumber(SeminarSessionData session) asyn
                                                     padding: const EdgeInsets.symmetric(horizontal: 36),
                                                     child: const Text(
                                                         "No seminar sessions have been added for this show. Check back soon!",
-                                                        style: TextStyle(color: BeColorSwatch.darkGray),
                                                         textAlign: TextAlign.center,
                                                     ),
                                                 )
@@ -659,8 +658,7 @@ Future<String?> _resolveAnyPresenterBoothNumber(SeminarSessionData session) asyn
                                                     onTap: () => setState(() => showFeatured = !showFeatured),
                                                     child: Container(
                                                         decoration: const BoxDecoration(
-                                                            border: Border(top: BorderSide(color: BeColorSwatch.lightGray), bottom: BorderSide(color: BeColorSwatch.lightGray)),
-                                                            color: BeColorSwatch.navy
+                                                            border: Border(top: BorderSide(), bottom: BorderSide()),
                                                         ),
                                                         padding: const EdgeInsets.only(top: 10, right: 16, bottom: 10, left: 4),
                                                         child: Row(
@@ -669,17 +667,17 @@ Future<String?> _resolveAnyPresenterBoothNumber(SeminarSessionData session) asyn
                                                             children: [
                                                                 Text(
                                                                     'Featured Keynotes',
-                                                                    style: Theme.of(context).textTheme.headlineMedium!.copyWith(color: BeColorSwatch.white),
+                                                                    style: Theme.of(context).textTheme.headlineMedium!,
                                                                 ),
                                                                 Text(
                                                                     '  (${uniqueFeatured.length})',
-                                                                    style: Theme.of(context).textTheme.bodySmall!.copyWith(color: BeColorSwatch.blue),
+                                                                    style: Theme.of(context).textTheme.bodySmall!,
                                                                 ),
                                                                 const Spacer(),
                                                                 if (textScaleFactor < 1.35)
                                                                     Text(
                                                                         showFeatured ? 'Hide' : 'Show',
-                                                                        style: Theme.of(context).textTheme.labelSmall!.copyWith(color: BeColorSwatch.blue),
+                                                                        style: Theme.of(context).textTheme.labelSmall!,
                                                                     ),
                                                             ],
                                                         ),
@@ -702,7 +700,7 @@ Future<String?> _resolveAnyPresenterBoothNumber(SeminarSessionData session) asyn
                                                           for (int i = 0; i < uniqueFeatured.length; i++) ...[
                                                             _getSeminarSessionCard(context, uniqueFeatured[i], uniqueFeatured[i].seminar, i),
                                                             if (i != uniqueFeatured.length - 1)
-                                                              const Divider(color: BeColorSwatch.gray, height: 0, indent: 6),
+                                                              const Divider(height: 0, indent: 6),
                                                           ],
                                                         ],
                                                       );
@@ -729,8 +727,7 @@ Future<String?> _resolveAnyPresenterBoothNumber(SeminarSessionData session) asyn
                                                     },
                                                     child: Container(
                                                         decoration: const BoxDecoration(
-                                                            border: Border(bottom: BorderSide(color: BeColorSwatch.lightGray)),
-                                                            color: BeColorSwatch.navy
+                                                            border: Border(bottom: BorderSide()),
                                                         ),
                                                         padding: const EdgeInsets.only(top: 10, right: 16, bottom: 10, left: 4),
                                                         child: Row(
@@ -739,17 +736,17 @@ Future<String?> _resolveAnyPresenterBoothNumber(SeminarSessionData session) asyn
                                                             children: [
                                                                 Text(
                                                                     DateFormat('EEEE,  MMMM d').format(date),
-                                                                    style: Theme.of(context).textTheme.headlineMedium!.copyWith(color: BeColorSwatch.white),
+                                                                    style: Theme.of(context).textTheme.headlineMedium!,
                                                                 ),
                                                                 Text(
                                                                     "  (${sessionsByDate[date]?.length ?? 0})",
-                                                                    style: Theme.of(context).textTheme.bodySmall!.copyWith(color: BeColorSwatch.blue),
+                                                                    style: Theme.of(context).textTheme.bodySmall!,
                                                                 ),
                                                                 const Spacer(),
                                                                 if (textScaleFactor < 1.35)
                                                                     Text(
                                                                         isHidden ? "Show" : "Hide",
-                                                                        style: Theme.of(context).textTheme.labelSmall!.copyWith(color: BeColorSwatch.blue),
+                                                                        style: Theme.of(context).textTheme.labelSmall!,
                                                                     ),
                                                             ],
                                                         ),
@@ -773,7 +770,7 @@ Future<String?> _resolveAnyPresenterBoothNumber(SeminarSessionData session) asyn
                                                             for (int i = 0; i < sessions.length; i++) ...[
                                                               _getSeminarSessionCard(context, sessions[i], sessions[i].seminar, i),
                                                               if (i != sessions.length - 1)
-                                                                const Divider(color: BeColorSwatch.gray, height: 0, indent: 6, endIndent: 6),
+                                                                const Divider(height: 0, indent: 6, endIndent: 6),
                                                             ],
                                                           ],
                                                         );

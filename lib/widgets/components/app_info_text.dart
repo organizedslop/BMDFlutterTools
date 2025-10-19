@@ -32,9 +32,7 @@ class AppInfoText extends StatelessWidget {
                         label,
                         textAlign: TextAlign.center,
                         style:
-                            Theme.of(context).textTheme.labelSmall?.copyWith(
-                                color: BeColorSwatch.gray,
-                            ),
+                            Theme.of(context).textTheme.labelSmall
                     );
                 },
             ),
