@@ -1,5 +1,5 @@
 import 'package:bmd_flutter_tools/data/model/data__exhibitor.dart';
-import 'package:bmd_flutter_tools/utilities/utilities__theme.dart';
+import 'package:bmd_flutter_tools/utilities/theme_utilities.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_sficon/flutter_sficon.dart';
 

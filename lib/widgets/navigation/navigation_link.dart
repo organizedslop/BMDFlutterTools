@@ -6,7 +6,7 @@
  * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
 
 import "package:bmd_flutter_tools/controllers/app_router.dart";
-import "package:bmd_flutter_tools/utilities/utilities__theme.dart";
+import "package:bmd_flutter_tools/utilities/theme_utilities.dart";
 import "package:flutter/material.dart";
 import "package:go_router/go_router.dart";
 

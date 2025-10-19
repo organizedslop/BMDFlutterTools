@@ -10,7 +10,7 @@ import 'package:bmd_flutter_tools/data/model/data__seminar.dart';
 import 'package:bmd_flutter_tools/data/model/data__seminar_session.dart';
 import 'package:bmd_flutter_tools/data/model/enum__location_encoding.dart';
 import 'package:bmd_flutter_tools/main.dart';
-import 'package:bmd_flutter_tools/utilities/utilities__theme.dart';
+import 'package:bmd_flutter_tools/utilities/theme_utilities.dart';
 import 'package:bmd_flutter_tools/controllers/global_state.dart';
 import "package:flutter/material.dart";
 import 'package:flutter_html/flutter_html.dart';

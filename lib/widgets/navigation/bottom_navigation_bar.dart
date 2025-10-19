@@ -7,7 +7,7 @@
 
 import "package:bmd_flutter_tools/controllers/app_router.dart";
 import "package:bmd_flutter_tools/controllers/global_state.dart";
-import "package:bmd_flutter_tools/utilities/utilities__theme.dart";
+import "package:bmd_flutter_tools/utilities/theme_utilities.dart";
 import "package:bmd_flutter_tools/widgets/debug/debug_text.dart";
 import "package:bmd_flutter_tools/widgets/utilities/no_scale_wrapper.dart";
 import "package:flutter/material.dart";

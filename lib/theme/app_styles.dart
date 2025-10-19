@@ -4,7 +4,7 @@
  * Shared styling constants and helpers used throughout the app.
  */
 
-import "package:bmd_flutter_tools/utilities/utilities__theme.dart";
+import "package:bmd_flutter_tools/utilities/theme_utilities.dart";
 import "package:bmd_flutter_tools/widgets/shapes/gradient_shape_border.dart";
 import "package:bmd_flutter_tools/theme/slide_transitions.dart";
 import "package:flutter/material.dart";

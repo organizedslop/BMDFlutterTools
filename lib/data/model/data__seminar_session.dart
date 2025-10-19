@@ -10,8 +10,8 @@ import "dart:typed_data";
 import "package:bmd_flutter_tools/data/model/data__seminar.dart";
 import "package:bmd_flutter_tools/data/model/data__seminar_speaker.dart";
 import "package:bmd_flutter_tools/data/model/enum__location_encoding.dart";
-import "package:bmd_flutter_tools/utilities/utilities__print.dart";
-import "package:bmd_flutter_tools/utilities/utilities__type_extensions.dart";
+import "package:bmd_flutter_tools/utilities/print_utilities.dart";
+import "package:bmd_flutter_tools/utilities/type_extensions.dart";
 import "package:collection/collection.dart";
 
 

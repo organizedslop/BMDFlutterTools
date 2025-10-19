@@ -6,7 +6,7 @@ import 'package:bmd_flutter_tools/main.dart';
 import 'package:bmd_flutter_tools/data/model/data__show.dart';
 import 'package:bmd_flutter_tools/data/model/data__company.dart';
 import 'package:bmd_flutter_tools/data/model/data__badge.dart';
-import 'package:bmd_flutter_tools/utilities/utilities__print.dart';
+import 'package:bmd_flutter_tools/utilities/print_utilities.dart';
 import 'package:flutter/widgets.dart';
 import 'package:bmd_flutter_tools/controllers/app_router.dart' show appRouter, navigatorObserver;
 

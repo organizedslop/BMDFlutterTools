@@ -7,7 +7,7 @@
 
 import "dart:async";
 import "package:bmd_flutter_tools/theme/snackbar_styles.dart";
-import "package:bmd_flutter_tools/utilities/utilities__print.dart";
+import "package:bmd_flutter_tools/utilities/print_utilities.dart";
 import "package:flutter/foundation.dart";
 import "firebase_options.dart";
 import "package:bmd_flutter_tools/services/analytics_service.dart";
@@ -18,7 +18,7 @@ import "package:bmd_flutter_tools/controllers/app_router.dart";
 import "package:bmd_flutter_tools/controllers/global_state.dart";
 import "package:bmd_flutter_tools/services/connection_retry_service.dart";
 import "package:bmd_flutter_tools/theme/app_styles.dart";
-import "package:bmd_flutter_tools/utilities/utilities__theme.dart";
+import "package:bmd_flutter_tools/utilities/theme_utilities.dart";
 import "package:firebase_core/firebase_core.dart";
 import "package:firebase_messaging/firebase_messaging.dart";
 import "package:flutter/material.dart";

@@ -5,7 +5,7 @@
  * Description: A widget for displaying text enclosed in a stadium
  * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
 
-import "package:bmd_flutter_tools/utilities/utilities__theme.dart";
+import "package:bmd_flutter_tools/utilities/theme_utilities.dart";
 
 import "package:flutter/material.dart";
 

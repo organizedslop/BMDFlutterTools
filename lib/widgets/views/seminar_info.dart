@@ -13,7 +13,7 @@ import "package:bmd_flutter_tools/data/model/data__badge.dart";
 import "package:bmd_flutter_tools/data/model/data__seminar.dart";
 import "package:bmd_flutter_tools/data/model/data__seminar_session.dart";
 import "package:bmd_flutter_tools/theme/app_styles.dart";
-import "package:bmd_flutter_tools/utilities/utilities__theme.dart";
+import "package:bmd_flutter_tools/utilities/theme_utilities.dart";
 import "package:bmd_flutter_tools/widgets/components/foating_scanner_button.dart";
 import "package:bmd_flutter_tools/widgets/navigation/primary_navigation_bar.dart";
 import "package:bmd_flutter_tools/widgets/navigation/bottom_navigation_bar.dart";

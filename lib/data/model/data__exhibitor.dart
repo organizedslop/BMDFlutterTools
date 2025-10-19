@@ -9,7 +9,7 @@ import 'dart:convert';
 import 'dart:typed_data';
 import 'package:bmd_flutter_tools/data/model/data__booth.dart';
 import 'package:bmd_flutter_tools/data/model/enum__location_encoding.dart';
-import 'package:bmd_flutter_tools/utilities/utilities__print.dart';
+import 'package:bmd_flutter_tools/utilities/print_utilities.dart';
 
 /// Model representing a single exhibitor.
 class ExhibitorData {

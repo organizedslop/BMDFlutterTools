@@ -15,8 +15,8 @@ import "package:bmd_flutter_tools/data/model/data__name.dart";
 import "package:bmd_flutter_tools/data/model/data__phone.dart";
 import "package:bmd_flutter_tools/data/model/data__qr_code.dart";
 import "package:bmd_flutter_tools/data/model/data__software_license.dart";
-import "package:bmd_flutter_tools/utilities/utilities__print.dart";
-import "package:bmd_flutter_tools/utilities/utilities__type_extensions.dart";
+import "package:bmd_flutter_tools/utilities/print_utilities.dart";
+import "package:bmd_flutter_tools/utilities/type_extensions.dart";
 import "package:collection/collection.dart";
 
 

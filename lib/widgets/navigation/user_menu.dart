@@ -10,7 +10,7 @@ import "package:bmd_flutter_tools/controllers/app_router.dart";
 import "package:bmd_flutter_tools/controllers/global_state.dart";
 import "package:bmd_flutter_tools/main.dart";
 import "package:bmd_flutter_tools/theme/app_styles.dart";
-import "package:bmd_flutter_tools/utilities/utilities__theme.dart";
+import "package:bmd_flutter_tools/utilities/theme_utilities.dart";
 import "package:flutter/material.dart";
 import "package:flutter_riverpod/flutter_riverpod.dart";
 import "package:flutter_secure_storage/flutter_secure_storage.dart";

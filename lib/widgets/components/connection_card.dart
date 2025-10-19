@@ -5,7 +5,7 @@ import "package:bmd_flutter_tools/data/model/data__badge.dart";
 import "package:bmd_flutter_tools/data/model/data__connection.dart";
 import "package:bmd_flutter_tools/data/model/data__user.dart";
 import "package:bmd_flutter_tools/data/model/enum__location_encoding.dart";
-import "package:bmd_flutter_tools/utilities/utilities__theme.dart";
+import "package:bmd_flutter_tools/utilities/theme_utilities.dart";
 import "package:flutter/material.dart";
 import "package:flutter_riverpod/flutter_riverpod.dart";
 import "package:flutter_sficon/flutter_sficon.dart";

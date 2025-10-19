@@ -15,9 +15,9 @@ import "package:bmd_flutter_tools/data/model/data__name.dart";
 import "package:bmd_flutter_tools/data/model/enum__location_encoding.dart";
 import "package:bmd_flutter_tools/main.dart";
 import "package:bmd_flutter_tools/theme/app_styles.dart";
-import "package:bmd_flutter_tools/utilities/utilities__print.dart";
-import "package:bmd_flutter_tools/utilities/utilities__theme.dart";
-import "package:bmd_flutter_tools/utilities/utilities__type_extensions.dart";
+import "package:bmd_flutter_tools/utilities/print_utilities.dart";
+import "package:bmd_flutter_tools/utilities/theme_utilities.dart";
+import "package:bmd_flutter_tools/utilities/type_extensions.dart";
 import "package:bmd_flutter_tools/widgets/components/enclosed_text.dart";
 
 import "package:flutter/foundation.dart";

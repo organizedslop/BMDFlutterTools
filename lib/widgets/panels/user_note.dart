@@ -9,8 +9,8 @@ import "package:bmd_flutter_tools/controllers/api_client.dart";
 import "package:bmd_flutter_tools/controllers/app_database.dart";
 import "package:bmd_flutter_tools/controllers/global_state.dart";
 import "package:bmd_flutter_tools/data/model/data__user_note.dart";
-import "package:bmd_flutter_tools/utilities/utilities__print.dart";
-import "package:bmd_flutter_tools/utilities/utilities__theme.dart";
+import "package:bmd_flutter_tools/utilities/print_utilities.dart";
+import "package:bmd_flutter_tools/utilities/theme_utilities.dart";
 import "package:bmd_flutter_tools/widgets/components/gform_field.dart";
 import "package:bmd_flutter_tools/services/connection_retry_service.dart";
 

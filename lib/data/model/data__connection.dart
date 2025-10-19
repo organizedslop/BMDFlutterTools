@@ -7,8 +7,8 @@ import "dart:convert";
 import "package:bmd_flutter_tools/data/model/data__address.dart";
 import "package:bmd_flutter_tools/data/model/data__survey_answer.dart";
 import "package:bmd_flutter_tools/data/model/enum__location_encoding.dart";
-import "package:bmd_flutter_tools/utilities/utilities__print.dart";
-import "package:bmd_flutter_tools/utilities/utilities__type_extensions.dart";
+import "package:bmd_flutter_tools/utilities/print_utilities.dart";
+import "package:bmd_flutter_tools/utilities/type_extensions.dart";
 import "package:collection/collection.dart";
 
 
