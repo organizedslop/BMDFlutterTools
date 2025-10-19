@@ -361,7 +361,7 @@ class _MyRegistrationsListState extends ConsumerState<MyRegistrationsList> {
 
                 Padding(
                     padding: const EdgeInsets.only(bottom: 16, left: 6, right: 6),
-                    child:   const Text("Tap a show to view and edit your registration", style: TextStyle(color: BeColorSwatch.darkGray)),
+                    child:   const Text("Tap a show to view and edit your registration"),
                 ),
 
                 const SizedBox(height: 12),
@@ -376,8 +376,8 @@ class _MyRegistrationsListState extends ConsumerState<MyRegistrationsList> {
                         child: Center(child: Column(
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
-                                    const CircularProgressIndicator(color: BeColorSwatch.navy, padding: EdgeInsets.only(bottom: 8)),
-                                    Text("Loading your registrations...", style: Theme.of(context).textTheme.bodyMedium!.copyWith(color: BeColorSwatch.darkGray)),
+                                    const CircularProgressIndicator(padding: EdgeInsets.only(bottom: 8)),
+                                    Text("Loading your registrations...", style: Theme.of(context).textTheme.bodyMedium),
                                     const SizedBox(height: 16),
                                 ]
                             )
@@ -430,7 +430,7 @@ class _MyRegistrationsListState extends ConsumerState<MyRegistrationsList> {
                                         padding: EdgeInsets.only(bottom: 8),
                                         child: Text(
                                             "Past registrations",
-                                            style: Theme.of(context).textTheme.headlineLarge!.copyWith(color: BeColorSwatch.black),
+                                            style: Theme.of(context).textTheme.headlineLarge,
                                         )
                                     ),
                                     Spacer(),
@@ -438,8 +438,7 @@ class _MyRegistrationsListState extends ConsumerState<MyRegistrationsList> {
                                         "View",
                                         style: Theme.of(context)
                                             .textTheme
-                                            .labelSmall!
-                                            .copyWith(color: BeColorSwatch.darkGray),
+                                            .labelSmall!,
                                     ),
                                     Switch.adaptive(
                                         value: _includePastRegistrations,

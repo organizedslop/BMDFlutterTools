@@ -241,8 +241,8 @@ Widget _buildNotificationDialog(NotificationData n) {
             child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                    const CircularProgressIndicator(color: BeColorSwatch.navy, padding: EdgeInsets.only(bottom: 8)),
-                    Text("Loading notifications...", style: Theme.of(context).textTheme.bodyMedium!.copyWith(color: BeColorSwatch.darkGray)),
+                    const CircularProgressIndicator(padding: EdgeInsets.only(bottom: 8)),
+                    Text("Loading notifications...", style: Theme.of(context).textTheme.bodyMedium),
                     const SizedBox(height: 16),
                 ]
             )
@@ -267,7 +267,7 @@ Widget _buildNotificationDialog(NotificationData n) {
                     )
                   : ListView.separated(
                       itemCount:        _items.length,
-                      separatorBuilder: (_, __) => const Divider(color: BeColorSwatch.gray, endIndent: 8, height: 1, indent: 8),
+                      separatorBuilder: (_, __) => const Divider(endIndent: 8, height: 1, indent: 8),
                       itemBuilder:      (context, index) {
                         final n = _items[index];
 
@@ -276,7 +276,6 @@ Widget _buildNotificationDialog(NotificationData n) {
                         final body = n.body;
 
                         return Container(
-                            color:     BeColorSwatch.offWhite,
                             foregroundDecoration: BoxDecoration(
                                 color: (isUnread ? BeColorSwatch.blue.withAlpha(20) : null)
                             ),
@@ -303,12 +302,12 @@ Widget _buildNotificationDialog(NotificationData n) {
                                             children: [
                                                 isUnread
                                                     ? Container(
-                                                        decoration: BoxDecoration(color: BeColorSwatch.blue, borderRadius: BorderRadius.circular(fullRadius)),
+                                                        decoration: BoxDecoration(borderRadius: BorderRadius.circular(fullRadius)),
                                                         padding:    EdgeInsets.symmetric(horizontal: 5),
-                                                        child:      Text("NEW", style: beTextTheme.captionPrimary.copyWith(color: BeColorSwatch.white))
+                                                        child:      Text("NEW", style: beTextTheme.captionPrimary)
                                                     )
                                                     : Container(
-                                                        child:      Text("Read ${_formatWhen(n.readAt!)}", style: beTextTheme.captionPrimary.copyWith(color: BeColorSwatch.gray))
+                                                        child:      Text("Read ${_formatWhen(n.readAt!)}", style: beTextTheme.captionPrimary)
                                                     ),
                                                 const Spacer(),
                                                 Text(

@@ -234,14 +234,12 @@ Widget _logoPlaceholder(BuildContext context, String name, double size) {
     height: size,
     alignment: Alignment.center,
     decoration: BoxDecoration(
-      color: BeColorSwatch.navy.withOpacity(0.08),
       borderRadius: BorderRadius.circular(6),
-      border: Border.all(color: BeColorSwatch.navy.withOpacity(0.15)),
+      border: Border.all(),
     ),
     child: Text(
       initial,
       style: Theme.of(context).textTheme.titleMedium?.copyWith(
-            color: BeColorSwatch.navy,
             fontWeight: FontWeight.w600,
           ),
     ),
@@ -500,10 +498,10 @@ Future<void> _launchEmail(String? email) async {
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const CircularProgressIndicator(color: BeColorSwatch.navy, padding: EdgeInsets.only(bottom: 8)),
+                      const CircularProgressIndicator(padding: EdgeInsets.only(bottom: 8)),
                       Text(
                         "Loading exhibitors...",
-                        style: Theme.of(context).textTheme.bodyMedium!.copyWith(color: BeColorSwatch.darkGray),
+                        style: Theme.of(context).textTheme.bodyMedium,
                       ),
                       const SizedBox(height: 16),
                     ],
@@ -545,7 +543,7 @@ Future<void> _launchEmail(String? email) async {
                     padding: const EdgeInsets.only(top: 8, right: 24, left: 24),
                     child: Text(
                         "sort by",
-                        style: Theme.of(context).textTheme.labelSmall!.copyWith(color: BeColorSwatch.gray),
+                        style: Theme.of(context).textTheme.labelSmall!,
                     )
                 ),
               Container(
@@ -616,7 +614,7 @@ Future<void> _launchEmail(String? email) async {
                     },
                     child: Container(
                       decoration: const BoxDecoration(
-                        border: Border(bottom: BorderSide(color: BeColorSwatch.lightGray)),
+                        border: Border(bottom: BorderSide()),
                         color: BeColorSwatch.navy
                         ),
                       padding: const EdgeInsets.only(top: 10, right: 16, bottom: 10, left: 4),
@@ -626,8 +624,7 @@ Future<void> _launchEmail(String? email) async {
                         overflow: TextOverflow.ellipsis,
                         style: Theme.of(context)
                             .textTheme
-                            .headlineMedium!
-                            .copyWith(color: BeColorSwatch.white),
+                            .headlineMedium,
                       ),
                     ),
                   ),
@@ -698,7 +695,7 @@ Future<void> _launchEmail(String? email) async {
                         ),
                       ),
                       if (byCategory[category]!.length > 1 && i < byCategory[category]!.length - 1)
-                        const Divider(height: 1, color: BeColorSwatch.gray, indent: 6, endIndent: 6),
+                        const Divider(height: 1, indent: 6, endIndent: 6),
                               ],
                             ],
                           ),
@@ -756,8 +753,7 @@ Future<void> _launchEmail(String? email) async {
                                                     : 'Uncategorized'),
                                                 style: Theme.of(context)
                                                     .textTheme
-                                                    .labelSmall
-                                                    ?.copyWith(color: BeColorSwatch.darkGray),
+                                                    .labelSmall,
                                                 maxLines: 1,
                                                 overflow: TextOverflow.ellipsis,
                                               ),
@@ -789,7 +785,7 @@ Future<void> _launchEmail(String? email) async {
                           ),
                         ),
                       ),
-                      if (i < sorted.length - 1) const Divider(height: 1, color: BeColorSwatch.gray, indent: 6, endIndent: 6),
+                      if (i < sorted.length - 1) const Divider(height: 1, indent: 6, endIndent: 6),
                     ],
                     const SizedBox(height: 32),
                   ];

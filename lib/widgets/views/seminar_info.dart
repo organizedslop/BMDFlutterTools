@@ -184,7 +184,6 @@ class _SeminarInfoState extends ConsumerState<SeminarInfo> {
                                     child: Container(
                                         decoration: BoxDecoration(
                                             borderRadius: BorderRadius.circular(12),
-                                            color:   BeColorSwatch.white,
                                         ),
                                         padding: EdgeInsets.all(12),
                                     child: () {
@@ -323,10 +322,8 @@ class _SeminarInfoState extends ConsumerState<SeminarInfo> {
                                                                 ScaffoldMessenger.of(context).hideCurrentSnackBar();
                                                                 ScaffoldMessenger.of(context).showSnackBar(
                                                                 const SnackBar(
-                                                                    backgroundColor: BeColorSwatch.green,
                                                                     content: Text(
                                                                     "You are registered for this seminar!",
-                                                                    style: TextStyle(color: BeColorSwatch.white),
                                                                     ),
                                                                 ),
                                                                 );
@@ -337,7 +334,6 @@ class _SeminarInfoState extends ConsumerState<SeminarInfo> {
                                                       padding: EdgeInsets.symmetric(vertical: 6, horizontal: 12),
                                                       child: Text(
                                                         "Register for this seminar",
-                                                        style: TextStyle(color: BeColorSwatch.white),
                                                       ),
                                                     ),
                                                   )
@@ -351,14 +347,12 @@ class _SeminarInfoState extends ConsumerState<SeminarInfo> {
                                                         children: [
                                                           const SFIcon(
                                                             SFIcons.sf_checkmark_circle_fill,
-                                                            color: BeColorSwatch.green,
                                                             fontSize: 20,
                                                           ),
                                                           const SizedBox(width: 6),
                                                           Text(
                                                             "You are registered",
                                                             style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                                                                  color: BeColorSwatch.green,
                                                                   fontWeight: FontWeight.bold,
                                                                 ),
                                                           ),
@@ -367,7 +361,7 @@ class _SeminarInfoState extends ConsumerState<SeminarInfo> {
                                                       const SizedBox(height: 8),
                                                       Container(
                                                         decoration: BoxDecoration(
-                                                          border: Border.all(color: BeColorSwatch.red, width: 1.5),
+                                                          border: Border.all(width: 1.5),
                                                           borderRadius: BorderRadius.circular(8),
                                                         ),
                                                         child: InkWell(
@@ -395,7 +389,6 @@ class _SeminarInfoState extends ConsumerState<SeminarInfo> {
                                                             child: Text(
                                                               "Cancel registration",
                                                               style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                                                                    color: BeColorSwatch.red,
                                                                     fontWeight: FontWeight.bold,
                                                                   ),
                                                             ),
@@ -408,7 +401,7 @@ class _SeminarInfoState extends ConsumerState<SeminarInfo> {
                                                 if (ref.read(badgeProvider) == null)
                                                     Padding(
                                                         padding: EdgeInsets.only(top: 4, right: 8, bottom: 0, left: 8),
-                                                        child:   Text("Register for the show to enable registering for seminars!", style: Theme.of(context).textTheme.bodySmall!.copyWith(color: BeColorSwatch.red))
+                                                        child:   Text("Register for the show to enable registering for seminars!", style: Theme.of(context).textTheme.bodySmall)
                                                     )
                                             ]
                                         );
@@ -422,7 +415,7 @@ class _SeminarInfoState extends ConsumerState<SeminarInfo> {
                                   children: [
                                     // Main card content container
                                     Container(
-                                      decoration: BoxDecoration(borderRadius: BorderRadius.circular(12), color: BeColorSwatch.white),
+                                      decoration: BoxDecoration(borderRadius: BorderRadius.circular(12)),
                                       margin: EdgeInsets.only(bottom: 12),
                                       padding: EdgeInsets.only(top: 16, right: 12, bottom: 48, left: 12),
                                       child: Column(
@@ -625,7 +618,6 @@ class _SeminarInfoState extends ConsumerState<SeminarInfo> {
                                               padding: EdgeInsets.only(left: 7, top: 6, right: 4),
                                               child: SFIcon(
                                                 SFIcons.sf_star_fill,
-                                                color: BeColorSwatch.orange,
                                                 fontSize: 22,
                                               ),
                                             ),
@@ -642,7 +634,6 @@ class _SeminarInfoState extends ConsumerState<SeminarInfo> {
                     ),
                     decoration: const BoxDecoration(
                         borderRadius: BorderRadius.only(bottomLeft: Radius.circular(12), topRight: Radius.circular(12)),
-                        color: BeColorSwatch.darkBlue,
                     ),
                     height: 22,
                     padding: const EdgeInsets.only(top: 2, right: 12, bottom: 0, left: 12),
@@ -656,7 +647,6 @@ class _SeminarInfoState extends ConsumerState<SeminarInfo> {
                         overflow: TextOverflow.ellipsis,
                         softWrap: false,
                         style: const TextStyle(
-                        color: BeColorSwatch.white,
                         fontSize: 12,
                         fontWeight: FontWeight.bold,
                         ),
