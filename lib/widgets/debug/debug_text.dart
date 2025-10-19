@@ -7,7 +7,6 @@
 
 import "package:bmd_flutter_tools/utilities/theme_utilities.dart";
 import "package:bmd_flutter_tools/widgets/components/enclosed_text.dart";
-
 import "package:flutter/material.dart";
 
 

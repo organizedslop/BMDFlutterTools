@@ -8,7 +8,6 @@
 import "package:bmd_flutter_tools/theme/app_styles.dart";
 import "package:bmd_flutter_tools/controllers/api_client.dart";
 import "package:bmd_flutter_tools/controllers/global_state.dart";
-import "package:bmd_flutter_tools/main.dart";
 import "package:bmd_flutter_tools/utilities/print_utilities.dart";
 import "package:bmd_flutter_tools/utilities/theme_utilities.dart";
 import "package:bmd_flutter_tools/widgets/modals/invite_guests.dart";

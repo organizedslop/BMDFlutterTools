@@ -7,31 +7,22 @@
 
 import "dart:convert";
 import "dart:ui";
-
 import "package:bmd_flutter_tools/controllers/global_state.dart";
 import "package:bmd_flutter_tools/data/model/data__address.dart";
 import "package:bmd_flutter_tools/data/model/data__gfield.dart";
 import "package:bmd_flutter_tools/data/model/data__name.dart";
 import "package:bmd_flutter_tools/data/model/enum__location_encoding.dart";
-import "package:bmd_flutter_tools/main.dart";
 import "package:bmd_flutter_tools/theme/app_styles.dart";
 import "package:bmd_flutter_tools/utilities/print_utilities.dart";
 import "package:bmd_flutter_tools/utilities/theme_utilities.dart";
 import "package:bmd_flutter_tools/utilities/type_extensions.dart";
 import "package:bmd_flutter_tools/widgets/components/enclosed_text.dart";
-
 import "package:flutter/foundation.dart";
-
 import "package:flutter/material.dart";
-
 import "package:flutter_riverpod/flutter_riverpod.dart";
-
 import "package:flutter_sficon/flutter_sficon.dart";
-
 import "package:html/parser.dart";
-
 import "package:string_validator/string_validator.dart";
-
 import "package:syncfusion_flutter_signaturepad/signaturepad.dart";
 
 

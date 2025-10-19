@@ -14,7 +14,6 @@ import "package:bmd_flutter_tools/controllers/app_router.dart";
 import "package:bmd_flutter_tools/controllers/global_state.dart";
 import "package:bmd_flutter_tools/data/data/data__us_states.dart";
 import "package:bmd_flutter_tools/data/model/data__user.dart";
-import "package:bmd_flutter_tools/main.dart";
 import "package:bmd_flutter_tools/utilities/clip_utilities.dart";
 import "package:bmd_flutter_tools/utilities/print_utilities.dart";
 import "package:bmd_flutter_tools/utilities/theme_utilities.dart";
