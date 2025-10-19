@@ -1,0 +1,2 @@
+/Users/crystalshaw/Developer/BuildApp/android/app/.cxx/Debug/2m3j1o25/x86_64/CMakeFiles/edit_cache.dir
+/Users/crystalshaw/Developer/BuildApp/android/app/.cxx/Debug/2m3j1o25/x86_64/CMakeFiles/rebuild_cache.dir
