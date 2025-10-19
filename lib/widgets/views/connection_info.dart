@@ -19,6 +19,7 @@ import "package:bmd_flutter_tools/data/model/data__user.dart";
 import "package:bmd_flutter_tools/data/model/data__user_note.dart";
 import "package:bmd_flutter_tools/main.dart";
 import "package:bmd_flutter_tools/theme/app_styles.dart";
+import "package:bmd_flutter_tools/theme/snackbar_styles.dart";
 import "package:bmd_flutter_tools/utilities/utilities__print.dart";
 import "package:bmd_flutter_tools/utilities/utilities__theme.dart";
 import "package:bmd_flutter_tools/widgets/components/foating_scanner_button.dart";

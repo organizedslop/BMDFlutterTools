@@ -10,6 +10,7 @@ import "dart:io";
 import "package:bmd_flutter_tools/controllers/environment.dart";
 import "package:bmd_flutter_tools/controllers/global_state.dart";
 import "package:bmd_flutter_tools/main.dart";
+import "package:bmd_flutter_tools/theme/snackbar_styles.dart";
 import "package:bmd_flutter_tools/utilities/utilities__print.dart";
 import "package:bmd_flutter_tools/widgets/components/foating_scanner_button.dart";
 import "package:bmd_flutter_tools/widgets/navigation/primary_navigation_bar.dart";

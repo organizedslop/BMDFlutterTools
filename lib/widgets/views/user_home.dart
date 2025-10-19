@@ -16,6 +16,7 @@ import "package:bmd_flutter_tools/data/model/data__show.dart";
 import "package:bmd_flutter_tools/data/model/data__company.dart";
 import "package:bmd_flutter_tools/main.dart";
 import "package:bmd_flutter_tools/theme/app_styles.dart" hide elevatedButtonStyleAlt, beveledDecoration;
+import "package:bmd_flutter_tools/theme/snackbar_styles.dart";
 import "package:bmd_flutter_tools/utilities/utilities__print.dart";
 import "package:bmd_flutter_tools/utilities/utilities__theme.dart";
 import "package:bmd_flutter_tools/widgets/components/app_info_text.dart";
@@ -23,7 +24,6 @@ import "package:bmd_flutter_tools/widgets/components/foating_scanner_button.dart
 import "package:bmd_flutter_tools/widgets/components/updating_indicator.dart";
 import "package:bmd_flutter_tools/widgets/navigation/primary_navigation_bar.dart";
 import "package:bmd_flutter_tools/widgets/navigation/navigation_menu.dart";
-import "package:bmd_flutter_tools/widgets/panels/lead_retrieval_ad.dart";
 import "package:bmd_flutter_tools/widgets/components/show_card.dart";
 import "package:bmd_flutter_tools/widgets/utilities/no_scale_wrapper.dart";
 import "package:collection/collection.dart";
@@ -513,16 +513,7 @@ class _UserHomeListState extends ConsumerState<UserHome> with WidgetsBindingObse
                                                         ),
                                                       )))
                                                     ]
-                                              : [
-                                                    LeadRetrievalAd(
-                                                        onPurchaseFlowStarted: () {
-                                                            _awaitingLeadPurchaseReturn = true;
-                                                            setState(() { _loadingApi = true; });
-                                                        },
-                                                        onRefreshStart: () => setState(() { _loadingApi = true; }),
-                                                        onRefreshEnd:   () => setState(() { _loadingApi = false; }),
-                                                        )
-                                                        ])
+                                              : [ ])
                                               : [
                                                   Container(
         decoration: hardEdgeDecoration,

@@ -6,6 +6,7 @@
 
 import "package:bmd_flutter_tools/utilities/utilities__theme.dart";
 import "package:bmd_flutter_tools/widgets/shapes/gradient_shape_border.dart";
+import "package:bmd_flutter_tools/theme/slide_transitions.dart";
 import "package:flutter/material.dart";
 import "package:flutter_sficon/flutter_sficon.dart";
 
@@ -364,3 +365,117 @@ final ButtonStyle elevatedButtonStyleAlt = ButtonStyle(
     ),
     textStyle: WidgetStateProperty.all(beTextTheme.headingPrimary),
 );
+
+final CheckboxThemeData appCheckboxTheme = CheckboxThemeData(
+    fillColor: WidgetStateProperty.fromMap({WidgetState.selected: appAccentColor}),
+    materialTapTargetSize: MaterialTapTargetSize.padded,
+    shape: RoundedRectangleBorder(
+        side: BorderSide(
+            color: gfieldBoxDecoration.border!.top.color,
+            width: (gfieldBoxDecoration.border!.top.width / 1.4),
+        ),
+        borderRadius: BorderRadius.circular(smallRadius),
+    ),
+    side: BorderSide(
+        color: gfieldBoxDecoration.border!.top.color,
+        width: (gfieldBoxDecoration.border!.top.width / 1.4),
+    ),
+    splashRadius: 0,
+);
+
+final InputDecorationTheme appInputDecorationTheme = InputDecorationTheme(
+    border: gfieldRoundedBorder,
+    contentPadding: gfieldHorizontalPadding,
+    enabledBorder: gfieldRoundedBorder,
+    fillColor: appColorSchemeLight.surfaceContainer,
+    filled: true,
+    focusedBorder: gfieldRoundedBorder.copyWith(
+        borderSide: gfieldRoundedBorder.borderSide.copyWith(
+            width: gfieldRoundedBorderWidth + 0.5,
+            color: BeColorSwatch.blue,
+        ),
+    ),
+);
+
+final RadioThemeData appRadioTheme = RadioThemeData(
+    fillColor: MaterialStateProperty.resolveWith((states) {
+        if (states.contains(MaterialState.selected)) {
+            return appAccentColor;
+        }
+        return gfieldRoundedBorder.borderSide.color;
+    }),
+    splashRadius: 0,
+);
+
+final SwitchThemeData appSwitchTheme = SwitchThemeData(
+    thumbColor: WidgetStateProperty.all(BeColorSwatch.offWhite),
+    thumbIcon: WidgetStateProperty.all(
+        Icon(Icons.circle, color: BeColorSwatch.offWhite),
+    ),
+    trackColor: WidgetStateProperty.resolveWith(
+        (states) => states.contains(WidgetState.selected)
+            ? appAccentColor
+            : BeColorSwatch.lightGray,
+    ),
+    trackOutlineColor: WidgetStateProperty.all(Colors.transparent),
+    trackOutlineWidth: WidgetStateProperty.all(0.0),
+);
+
+final TextButtonThemeData appTextButtonTheme = TextButtonThemeData(
+    style: ButtonStyle(
+        animationDuration: buttonOverlayFadeDuration,
+        overlayColor: WidgetStateProperty.all(BeColorSwatch.white.withAlpha(60)),
+        splashFactory: NoSplash.splashFactory,
+        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+        textStyle: WidgetStateProperty.resolveWith(
+            (states) => TextStyle(
+                color: states.contains(WidgetState.pressed)
+                    ? appAccentColor
+                    : BeColorSwatch.gray,
+                height: 0,
+            ),
+        ),
+        visualDensity: VisualDensity.compact,
+    ),
+);
+
+final ElevatedButtonThemeData appElevatedButtonTheme = ElevatedButtonThemeData(
+    style: ButtonStyle(
+        animationDuration: buttonOverlayFadeDuration,
+        backgroundColor: WidgetStateProperty.all(appAccentColor),
+        foregroundColor: WidgetStateProperty.all(BeColorSwatch.white),
+        overlayColor: WidgetStateProperty.all(BeColorSwatch.white.withAlpha(60)),
+        padding: WidgetStateProperty.all(
+            EdgeInsets.symmetric(
+                horizontal: (((beTextTheme.bodyPrimary.fontSize! / 2) + 2) * 2),
+                vertical: ((beTextTheme.bodyPrimary.fontSize! / 2) + 2),
+            ),
+        ),
+        splashFactory: NoSplash.splashFactory,
+        textStyle: WidgetStateProperty.all(
+            beTextTheme.bodyPrimary.merge(
+                TextStyle(color: BeColorSwatch.white, fontWeight: FontWeight.bold),
+            ),
+        ),
+    ),
+);
+
+final TextTheme appTextTheme = TextTheme(
+    bodyLarge: beTextTheme.bodyPrimary,
+    bodyMedium: beTextTheme.bodyPrimary,
+    bodySmall: beTextTheme.bodySecondary,
+    displayLarge: beTextTheme.titlePrimary,
+    displayMedium: beTextTheme.titleSecondary,
+    displaySmall: beTextTheme.titleSecondary,
+    headlineLarge: beTextTheme.headingPrimary,
+    headlineMedium: beTextTheme.headingSecondary,
+    headlineSmall: beTextTheme.headingTertiary,
+    labelLarge: beTextTheme.bodyPrimary.merge(TextStyle(fontWeight: FontWeight.bold)),
+    labelMedium: beTextTheme.bodyPrimary.merge(TextStyle(fontWeight: FontWeight.bold)),
+    labelSmall: beTextTheme.bodySecondary.merge(TextStyle(fontWeight: FontWeight.bold)),
+    titleLarge: beTextTheme.headingPrimary,
+    titleMedium: beTextTheme.headingSecondary,
+    titleSmall: beTextTheme.headingTertiary,
+);
+
+const SlideTransitionsBuilder appSlideTransitionsBuilder = SlideTransitionsBuilder();

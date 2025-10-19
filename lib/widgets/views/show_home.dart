@@ -17,6 +17,7 @@ import "package:bmd_flutter_tools/data/model/data__user.dart";
 import 'package:bmd_flutter_tools/data/model/data__company.dart';
 import "package:bmd_flutter_tools/main.dart";
 import "package:bmd_flutter_tools/theme/app_styles.dart";
+import "package:bmd_flutter_tools/theme/snackbar_styles.dart";
 import "package:bmd_flutter_tools/utilities/utilities__print.dart";
 import "package:bmd_flutter_tools/utilities/utilities__theme.dart";
 import "package:bmd_flutter_tools/widgets/forms/invite_team_member.dart";
@@ -25,8 +26,6 @@ import "package:bmd_flutter_tools/widgets/components/updating_indicator.dart";
 import "package:bmd_flutter_tools/widgets/navigation/primary_navigation_bar.dart";
 import "package:bmd_flutter_tools/widgets/navigation/bottom_navigation_bar.dart";
 import "package:bmd_flutter_tools/widgets/navigation/navigation_menu.dart";
-import "package:bmd_flutter_tools/widgets/panels/lead_retrieval_ad.dart";
-import "package:bmd_flutter_tools/widgets/panels/magazine_ad.dart";
 import "package:collection/collection.dart";
 import "package:flutter/material.dart";
 import "package:flutter/services.dart";
@@ -962,52 +961,6 @@ class _ShowHomeState extends ConsumerState<ShowHome> with WidgetsBindingObserver
                                               const SizedBox(height: 12),
                                             ]),
 
-                                  /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-                                             * MARK: Registration Info / Show Details Button
-                                             * -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -  */
-                                  // if (currentBadge?.isExhibitor ?? false) ...[
-                                  //     ElevatedButton(
-                                  //         key:        const Key("show_home__show_info_button"),
-                                  //         onPressed:  () { context.pushNamed("show info", pathParameters: { "showId": show!.id }); },
-                                  //         style:      elevatedButtonStyleAlt,
-                                  //         child:      Padding(
-                                  //             padding:  EdgeInsets.symmetric(vertical: 8),
-                                  //             child:    Text("View your registration info")
-                                  //         )
-                                  //     ),
-                                  //     const SizedBox(height: 12),
-                                  // ],
-
-                                  /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-                                             * MARK: Lead Retrieval Ad
-                                             * -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -  */
-                                  ...(() {
-                                    final isExhibitor =
-                                        currentBadge?.isExhibitor ?? false;
-                                    final hasLead =
-                                        currentBadge?.hasLeadScannerLicense ??
-                                            false;
-
-                                    if (currentBadge == null ||
-                                        !isExhibitor ||
-                                        hasLead) return <Widget>[];
-
-                                    return <Widget>[
-                                      LeadRetrievalAd(
-                                        onPurchaseFlowStarted: () {
-                                          _awaitingLeadPurchaseReturn = true;
-                                          setState(
-                                              () => _isBadgeRefreshing = true);
-                                        },
-                                        onRefreshStart: () => setState(
-                                            () => _isBadgeRefreshing = true),
-                                        onRefreshEnd: () => setState(
-                                            () => _isBadgeRefreshing = false),
-                                      ),
-                                      const SizedBox(height: 12),
-                                    ];
-                                  }()),
-
                                   /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
                                              * MARK: Upload Marketing Materials Button
                                              * -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -    */
@@ -1903,15 +1856,6 @@ class _ShowHomeState extends ConsumerState<ShowHome> with WidgetsBindingObserver
                                       height: dividerHeight),
                                   const SizedBox(height: dividerSpacingBottom),
 
-                                  /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-                                             * MARK: Section: Magazine Ad
-                                             * -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -    */
-                                  MagazineAd(show: show),
-
-                                  const SizedBox(height: dividerSpacingTop),
-                                  Divider(
-                                      height: dividerHeight),
-                                  const SizedBox(height: dividerSpacingBottom),
 
                                   /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
                                              * MARK: Section: Exhibiting Companies Button

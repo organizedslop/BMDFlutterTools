@@ -18,7 +18,7 @@ import "package:bmd_flutter_tools/theme/app_styles.dart";
 import "package:bmd_flutter_tools/utilities/utilities__print.dart";
 import "package:bmd_flutter_tools/utilities/utilities__theme.dart";
 import "package:bmd_flutter_tools/utilities/utilities__type_extensions.dart";
-import "package:bmd_flutter_tools/widgets/components/enclosed__text.dart";
+import "package:bmd_flutter_tools/widgets/components/enclosed_text.dart";
 
 import "package:flutter/foundation.dart";
 

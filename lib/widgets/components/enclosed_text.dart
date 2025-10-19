@@ -1,12 +1,11 @@
 /*
- * Debug Text
+ * Enclosed Text
  *
  * Created by:  Blake Davis
- * Description: A widget for displaying debug text
+ * Description: A widget for displaying text enclosed in a stadium
  * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
 
 import "package:bmd_flutter_tools/utilities/utilities__theme.dart";
-import "package:bmd_flutter_tools/widgets/components/enclosed__text.dart";
 
 import "package:flutter/material.dart";
 
@@ -14,9 +13,11 @@ import "package:flutter/material.dart";
 
 
 /* ======================================================================================================================
- * MARK: Debug Text
+ * MARK: Enclosed Text
  * ------------------------------------------------------------------------------------------------------------------ */
-class DebugText extends StatelessWidget {
+class EnclosedText extends StatelessWidget {
+
+    final Color?     backgroundColor;
 
     final String     text;
 
@@ -25,8 +26,10 @@ class DebugText extends StatelessWidget {
     final TextStyle? style;
 
 
-    DebugText(this.text, { super.key,
-                            this.style  });
+    EnclosedText(this.text, { super.key,
+                               this.backgroundColor,
+                               this.style
+    });
 
 
 
@@ -37,10 +40,16 @@ class DebugText extends StatelessWidget {
     @override
     Widget build(BuildContext context) {
 
-        return EnclosedText(
-            text,
-            backgroundColor: beColorScheme.text.debug,
-            style:           defaultStyle.merge(style)
+        return Container(
+            decoration: BoxDecoration(borderRadius: BorderRadius.circular(8), color: backgroundColor),
+            child:      Padding(
+                padding: EdgeInsets.only(right: 3, bottom: 1.5, left: 3),
+                child:   Text(
+                    text,
+                    overflow: TextOverflow.ellipsis,
+                    style:    defaultStyle.merge(style)
+                )
+            )
         );
     }
 }

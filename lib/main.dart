@@ -6,6 +6,7 @@
  * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
 
 import "dart:async";
+import "package:bmd_flutter_tools/theme/snackbar_styles.dart";
 import "package:bmd_flutter_tools/utilities/utilities__print.dart";
 import "package:flutter/foundation.dart";
 import "firebase_options.dart";
@@ -17,7 +18,6 @@ import "package:bmd_flutter_tools/controllers/app_router.dart";
 import "package:bmd_flutter_tools/controllers/global_state.dart";
 import "package:bmd_flutter_tools/services/connection_retry_service.dart";
 import "package:bmd_flutter_tools/theme/app_styles.dart";
-import "package:bmd_flutter_tools/theme/slide_transitions.dart";
 import "package:bmd_flutter_tools/utilities/utilities__theme.dart";
 import "package:firebase_core/firebase_core.dart";
 import "package:firebase_messaging/firebase_messaging.dart";
@@ -31,40 +31,9 @@ import "package:sentry_flutter/sentry_flutter.dart";
 
 final providerContainer = ProviderContainer();
 
-/*
- * MARK: Show SnackBar
- */
-void showSnackBar({
-    Color backgroundColor = BeColorSwatch.white,
-    required BuildContext context,
-    required Widget content,
-}) {
-    if (context.mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-                padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                content: Container(
-                    alignment: Alignment.center,
-                    decoration: BoxDecoration(
-                        border: Border.all(color: BeColorSwatch.gray, width: 0.5),
-                        borderRadius: BorderRadius.circular(mediumRadius),
-                        color: BeColorSwatch.white,
-                    ),
-                    padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-                    width: double.infinity,
-                    child: content,
-                ),
-            ),
-        );
-    }
-}
-
 /* =====================================================================================================================
  * MARK: Main
  * ------------------------------------------------------------------------------------------------------------------ */ // Create a global ProviderContainer to make Providers accessible outside Widgets
-final GlobalKey<ScaffoldMessengerState> scaffoldMessengerKey =
-                GlobalKey<ScaffoldMessengerState>();
-
 Future<void> main() async {
 
     await SentryFlutter.init(
@@ -234,6 +203,8 @@ class App extends ConsumerStatefulWidget {
 }
 
 
+
+
 /* ======================================================================================================================
  * MARK: Widget State
  * ------------------------------------------------------------------------------------------------------------------ */
@@ -261,119 +232,6 @@ class _AppState extends ConsumerState<App> {
     Widget build(BuildContext context) {
         final themeMode = ref.watch(appThemeModeProvider);
 
-        final checkboxTheme = CheckboxThemeData(
-            fillColor: WidgetStateProperty.fromMap({
-                WidgetState.selected: appAccentColor
-            }),
-            materialTapTargetSize: MaterialTapTargetSize.padded,
-            shape: RoundedRectangleBorder(
-                side: BorderSide(
-                    color: gfieldBoxDecoration.border!.top.color,
-                    width: (gfieldBoxDecoration.border!.top.width / 1.4)
-                ),
-                borderRadius: BorderRadius.circular(smallRadius)
-            ),
-            side: BorderSide(
-                color: gfieldBoxDecoration.border!.top.color,
-                width: (gfieldBoxDecoration.border!.top.width / 1.4)
-            ),
-            splashRadius: 0,
-        );
-
-        final inputDecorationTheme = InputDecorationTheme(
-            border: gfieldRoundedBorder,
-            contentPadding: gfieldHorizontalPadding,
-            enabledBorder: gfieldRoundedBorder,
-            fillColor: appColorSchemeLight.surfaceContainer,
-            filled: true,
-            focusedBorder: gfieldRoundedBorder.copyWith(
-                borderSide: gfieldRoundedBorder.borderSide.copyWith(
-                    width: gfieldRoundedBorderWidth + 0.5,
-                    color: BeColorSwatch.blue
-                )
-            ),
-        );
-
-        final radioTheme = RadioThemeData(
-            fillColor: MaterialStateProperty.resolveWith((states) {
-                if (states.contains(MaterialState.selected)) {
-                    return appAccentColor;
-                }
-                return gfieldRoundedBorder.borderSide.color;
-            }),
-            splashRadius: 0,
-        );
-
-        final switchTheme = SwitchThemeData(
-            thumbColor: WidgetStateProperty.all(BeColorSwatch.offWhite),
-            thumbIcon: WidgetStateProperty.all(
-                Icon(Icons.circle, color: BeColorSwatch.offWhite)
-            ),
-            trackColor: WidgetStateProperty.resolveWith(
-                (states) => states.contains(WidgetState.selected)
-                    ? appAccentColor
-                    : BeColorSwatch.lightGray,
-            ),
-            trackOutlineColor: WidgetStateProperty.all(Colors.transparent),
-            trackOutlineWidth: WidgetStateProperty.all(0.0)
-        );
-
-        final textButtonTheme = TextButtonThemeData(
-            style: ButtonStyle(
-                animationDuration: buttonOverlayFadeDuration,
-                overlayColor:      WidgetStateProperty.all(BeColorSwatch.white.withAlpha(60)),
-                splashFactory:     NoSplash.splashFactory,
-                tapTargetSize:     MaterialTapTargetSize.shrinkWrap,
-                textStyle: WidgetStateProperty.resolveWith((states) => TextStyle(
-                                color: (states.contains(WidgetState.pressed)
-                                                ? appAccentColor
-                                                : BeColorSwatch.gray),
-                                height: 0)),
-                visualDensity: VisualDensity.compact
-            )
-        );
-
-        final elevatedButtonTheme = ElevatedButtonThemeData(
-            style: ButtonStyle(
-                animationDuration: buttonOverlayFadeDuration,
-                backgroundColor:   WidgetStateProperty.all(appAccentColor),
-                foregroundColor:   WidgetStateProperty.all(BeColorSwatch.white),
-                overlayColor:      WidgetStateProperty.all(BeColorSwatch.white.withAlpha(60)),
-                padding: WidgetStateProperty.all(EdgeInsets.symmetric(
-                                horizontal: (((beTextTheme.bodyPrimary.fontSize! / 2) + 2) * 2),
-                                vertical: ((beTextTheme.bodyPrimary.fontSize! / 2) + 2))),
-                splashFactory: NoSplash.splashFactory,
-                textStyle: WidgetStateProperty.all(
-                    beTextTheme.bodyPrimary.merge(
-                        TextStyle(color: BeColorSwatch.white, fontWeight: FontWeight.bold)
-                    )
-                ),
-            )
-        );
-
-        final textTheme = TextTheme(
-                bodyLarge: beTextTheme.bodyPrimary,
-                bodyMedium: beTextTheme.bodyPrimary,
-                bodySmall: beTextTheme.bodySecondary,
-                displayLarge: beTextTheme.titlePrimary,
-                displayMedium: beTextTheme.titleSecondary,
-                displaySmall: beTextTheme.titleSecondary,
-                headlineLarge: beTextTheme.headingPrimary,
-                headlineMedium: beTextTheme.headingSecondary,
-                headlineSmall: beTextTheme.headingTertiary,
-                labelLarge:
-                                beTextTheme.bodyPrimary.merge(TextStyle(fontWeight: FontWeight.bold)),
-                labelMedium:
-                                beTextTheme.bodyPrimary.merge(TextStyle(fontWeight: FontWeight.bold)),
-                labelSmall: beTextTheme.bodySecondary
-                                .merge(TextStyle(fontWeight: FontWeight.bold)),
-                titleLarge: beTextTheme.headingPrimary,
-                titleMedium: beTextTheme.headingSecondary,
-                titleSmall: beTextTheme.headingTertiary,
-        );
-
-        const slideBuilder = SlideTransitionsBuilder();
-
         return MaterialApp.router(
             debugShowCheckedModeBanner: false,
             routerConfig: _router,
@@ -385,27 +243,27 @@ class _AppState extends ConsumerState<App> {
              * MARK: Light Theme
              */
             theme: ThemeData(
-                checkboxTheme: checkboxTheme,
+                checkboxTheme: appCheckboxTheme,
                 colorScheme: appColorSchemeLight,
                 dividerTheme: const DividerThemeData(color: Colors.transparent), // Disable the divider below the navigation menu drawer header
-                inputDecorationTheme: inputDecorationTheme,
-                elevatedButtonTheme: elevatedButtonTheme,
-                radioTheme: radioTheme,
+                inputDecorationTheme: appInputDecorationTheme,
+                elevatedButtonTheme: appElevatedButtonTheme,
+                radioTheme: appRadioTheme,
                 scaffoldBackgroundColor: BeColorSwatch.lighterGray,
                 splashColor: Colors.transparent,
                 pageTransitionsTheme: PageTransitionsTheme(
                     builders: {
                         TargetPlatform.iOS: CupertinoPageTransitionsBuilder(),
                         TargetPlatform.macOS: CupertinoPageTransitionsBuilder(),
-                        TargetPlatform.android: slideBuilder,
-                        TargetPlatform.windows: slideBuilder,
-                        TargetPlatform.linux: slideBuilder,
-                        TargetPlatform.fuchsia: slideBuilder,
+                        TargetPlatform.android: appSlideTransitionsBuilder,
+                        TargetPlatform.windows: appSlideTransitionsBuilder,
+                        TargetPlatform.linux: appSlideTransitionsBuilder,
+                        TargetPlatform.fuchsia: appSlideTransitionsBuilder,
                     },
                 ),
-                switchTheme: switchTheme,
-                textButtonTheme: textButtonTheme,
-                textTheme: textTheme,
+                switchTheme: appSwitchTheme,
+                textButtonTheme: appTextButtonTheme,
+                textTheme: appTextTheme,
                 snackBarTheme: snackBarTheme,
                 unselectedWidgetColor: appColorSchemeLight.surfaceContainer
             ),
@@ -417,9 +275,9 @@ class _AppState extends ConsumerState<App> {
                 colorScheme: appColorSchemeDark,
                 dividerTheme: const DividerThemeData(color: Colors.transparent), // Disable the divider below the navigation menu drawer header
                 scaffoldBackgroundColor: BeColorSwatch.black,
-                switchTheme: switchTheme,
-                textButtonTheme: textButtonTheme,
-                textTheme: textTheme,
+                switchTheme: appSwitchTheme,
+                textButtonTheme: appTextButtonTheme,
+                textTheme: appTextTheme,
                 snackBarTheme: snackBarTheme,
             )
         );
