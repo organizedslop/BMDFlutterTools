@@ -19,28 +19,27 @@ import "package:bmd_flutter_tools/theme/app_styles.dart";
 import "package:bmd_flutter_tools/utilities/utilities__print.dart";
 import "package:bmd_flutter_tools/utilities/utilities__theme.dart";
 import "package:bmd_flutter_tools/utilities/utilities__type_extensions.dart";
-import "package:bmd_flutter_tools/views/form__registration.dart";
-import "package:bmd_flutter_tools/views/view__account_created_confirmation.dart";
-import "package:bmd_flutter_tools/views/view__account_settings.dart";
-import "package:bmd_flutter_tools/views/view__badge_scanner.dart";
-import "package:bmd_flutter_tools/views/view__connection_info.dart";
-import "package:bmd_flutter_tools/views/view__contact_us.dart";
-import "package:bmd_flutter_tools/views/view__document_reader.dart";
-import "package:bmd_flutter_tools/views/view__exhibitors_list.dart";
+import "package:bmd_flutter_tools/widgets/views/form__registration.dart";
+import "package:bmd_flutter_tools/widgets/views/view__account_created_confirmation.dart";
+import "package:bmd_flutter_tools/widgets/views/view__account_settings.dart";
+import "package:bmd_flutter_tools/widgets/views/view__badge_scanner.dart";
+import "package:bmd_flutter_tools/widgets/views/view__connection_info.dart";
+import "package:bmd_flutter_tools/widgets/views/view__contact_us.dart";
+import "package:bmd_flutter_tools/widgets/views/view__document_reader.dart";
+import "package:bmd_flutter_tools/widgets/views/view__exhibitors_list.dart";
 
-import "package:bmd_flutter_tools/views/view__connections_list.dart";
-import "package:bmd_flutter_tools/views/view__my_registrations_list.dart";
-import "package:bmd_flutter_tools/views/view__notifications_list.dart";
-import "package:bmd_flutter_tools/views/view__seminar_info.dart";
-import "package:bmd_flutter_tools/views/view__seminars_list.dart";
-import "package:bmd_flutter_tools/views/view__show_home.dart";
-import "package:bmd_flutter_tools/views/view__show_info.dart";
-import "package:bmd_flutter_tools/views/view__sign_in_form.dart";
-import "package:bmd_flutter_tools/views/view__all_shows_list.dart";
-import "package:bmd_flutter_tools/views/view__user_home.dart";
-import "package:bmd_flutter_tools/views/view__user_profile.dart";
-import "package:bmd_flutter_tools/views/view__web_view.dart";
-import "package:bmd_flutter_tools/widgets/navigation_bar__primary.dart";
+import "package:bmd_flutter_tools/widgets/views/view__connections_list.dart";
+import "package:bmd_flutter_tools/widgets/views/view__my_registrations_list.dart";
+import "package:bmd_flutter_tools/widgets/views/view__notifications_list.dart";
+import "package:bmd_flutter_tools/widgets/views/view__seminar_info.dart";
+import "package:bmd_flutter_tools/widgets/views/view__seminars_list.dart";
+import "package:bmd_flutter_tools/widgets/views/view__show_home.dart";
+import "package:bmd_flutter_tools/widgets/views/view__sign_in_form.dart";
+import "package:bmd_flutter_tools/widgets/views/view__all_shows_list.dart";
+import "package:bmd_flutter_tools/widgets/views/view__user_home.dart";
+import "package:bmd_flutter_tools/widgets/views/view__user_profile.dart";
+import "package:bmd_flutter_tools/widgets/views/view__web_view.dart";
+import "package:bmd_flutter_tools/widgets/navigation/navigation_bar__primary.dart";
 import "package:flutter/material.dart";
 import "package:flutter_riverpod/flutter_riverpod.dart";
 import "package:flutter_sficon/flutter_sficon.dart";
@@ -493,21 +492,6 @@ GoRouter appRouter = GoRouter(
         builder: (context, state) {
           return NotificationsList();
         }),
-
-    /* -------------------------------------------------------------------------------------------------------------
-         * MARK: Show Info
-         * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
-    GoRoute(
-        name: "show info",
-        path: "/show_info/:showId",
-        builder: (context, state) =>
-            ShowInfo(showId: state.pathParameters["showId"] ?? "")),
-    GoRoute(
-        name: "show info with title",
-        path: "/show_info/:showId/:title",
-        builder: (context, state) => ShowInfo(
-            title: state.pathParameters["title"] ?? "",
-            showId: state.pathParameters["showId"] ?? "")),
 
     /* -------------------------------------------------------------------------------------------------------------
          * MARK: Sign In Form

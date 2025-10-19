@@ -20,7 +20,7 @@ import "package:bmd_flutter_tools/controllers/global_state.dart";
 import "package:bmd_flutter_tools/services/connection_retry_service.dart";
 import "package:bmd_flutter_tools/theme/slide_transitions.dart";
 import "package:bmd_flutter_tools/utilities/utilities__theme.dart";
-import "package:bmd_flutter_tools/widgets/modal__invite_guests.dart";
+import "package:bmd_flutter_tools/widgets/modals/modal__invite_guests.dart";
 import "package:firebase_core/firebase_core.dart";
 import "package:firebase_messaging/firebase_messaging.dart";
 import "package:flutter/material.dart";
