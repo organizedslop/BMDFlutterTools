@@ -39,7 +39,7 @@ class BoothTag extends StatelessWidget {
 
         return Container(
             decoration: BoxDecoration(
-                color:        (booths.isNotEmpty ? BeColorSwatch.red : BeColorSwatch.gray),
+                color:        (booths.isNotEmpty ? BeColorSwatch.red.color : BeColorSwatch.gray.color),
                 borderRadius: BorderRadius.circular(8),
             ),
             child: TextButton(
@@ -56,7 +56,7 @@ class BoothTag extends StatelessWidget {
                             padding: EdgeInsets.only(bottom: (small ? 1 : 0)),
                             child:   SFIcon(
                                 SFIcons.sf_storefront_fill,
-                                color:    BeColorSwatch.lighterGray,
+                                color:    BeColorSwatch.lighterGray.color,
                                 fontSize: small ? 10 : 12,
                             ),
                         ),
@@ -66,7 +66,7 @@ class BoothTag extends StatelessWidget {
                             child:   Text(
                                 (booths.isNotEmpty ? booths.join(", ") : "TBD"),
                                 style: TextStyle(
-                                    color:      BeColorSwatch.lighterGray,
+                                    color:      BeColorSwatch.lighterGray.color,
                                     fontWeight: FontWeight.bold,
                                     fontSize:   small ? 14 : 16,
                                 )

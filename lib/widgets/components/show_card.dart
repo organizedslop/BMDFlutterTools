@@ -87,8 +87,8 @@ class _ShowCardState extends ConsumerState<ShowCard> {
                     : "";
 
                 final List<Shadow> titleShadows = [
-                    Shadow(color: BeColorSwatch.navy, offset: const Offset(0, 1), blurRadius: 50),
-                    Shadow(color: BeColorSwatch.navy.withAlpha(100), offset: const Offset(0, 1), blurRadius: 20),
+                    Shadow(color: BeColorSwatch.navy.color, offset: const Offset(0, 1), blurRadius: 50),
+                    Shadow(color: BeColorSwatch.navy.color.withAlpha(100), offset: const Offset(0, 1), blurRadius: 20),
                 ];
 
                 final String formattedDates =
@@ -100,7 +100,7 @@ class _ShowCardState extends ConsumerState<ShowCard> {
                         overflow: TextOverflow.ellipsis,
                         style: Theme.of(context).textTheme.bodyMedium!.merge(
                             TextStyle(
-                                color:      BeColorSwatch.white,
+                                color:      BeColorSwatch.white.color,
                                 fontWeight: FontWeight.w900,
                                 height:     0,
                                 overflow:   TextOverflow.ellipsis,
@@ -123,7 +123,7 @@ class _ShowCardState extends ConsumerState<ShowCard> {
                     thirdRow.add(
                         Container(
                             decoration: BoxDecoration(
-                                border: Border.all(color: BeColorSwatch.white),
+                                border: Border.all(color: BeColorSwatch.white.color),
                                 borderRadius: BorderRadius.circular(4),
                             ),
                             margin: const EdgeInsets.only(right: 8, top: 1.5),
@@ -132,7 +132,7 @@ class _ShowCardState extends ConsumerState<ShowCard> {
                                 labels.join(", "),
                                 style: Theme.of(context).textTheme.labelSmall!.merge(
                                     TextStyle(
-                                        color:      BeColorSwatch.white,
+                                        color:      BeColorSwatch.white.color,
                                         fontWeight: FontWeight.w400,
                                         height:     0,
                                         overflow:   TextOverflow.ellipsis,
@@ -153,7 +153,7 @@ class _ShowCardState extends ConsumerState<ShowCard> {
                             softWrap: false,
                             style: Theme.of(context).textTheme.bodySmall!.merge(
                                 TextStyle(
-                                    color:      BeColorSwatch.white,
+                                    color:      BeColorSwatch.white.color,
                                     fontWeight: FontWeight.w400,
                                     height:     0,
                                     shadows:    titleShadows,
@@ -169,7 +169,7 @@ class _ShowCardState extends ConsumerState<ShowCard> {
                         Text(
                             "More info",
                             style: Theme.of(context).textTheme.labelSmall!.copyWith(
-                                color:         BeColorSwatch.lighterGray,
+                                color:         BeColorSwatch.lighterGray.color,
                                 fontWeight:    FontWeight.bold,
                                 letterSpacing: 0.2,
                                 overflow:      TextOverflow.ellipsis,
@@ -217,7 +217,7 @@ class _ShowCardState extends ConsumerState<ShowCard> {
                                                 fit: StackFit.expand,
                                                 children: [
                                                     Container(
-                                                        color: BeColorSwatch.navy,
+                                                        color: BeColorSwatch.navy.color,
                                                         child: Transform.scale(
                                                             scale: 1.25,
                                                             alignment: Alignment.bottomLeft,
@@ -232,7 +232,7 @@ class _ShowCardState extends ConsumerState<ShowCard> {
                                                         Image.network(
                                                             headerImageUrl,
                                                             fit: BoxFit.cover,
-                                                            color: BeColorSwatch.darkBlue.withAlpha(50),
+                                                            color: BeColorSwatch.darkBlue.color.withAlpha(50),
                                                             colorBlendMode: BlendMode.multiply,
                                                             loadingBuilder: (ctx, child, progress) =>
                                                                     progress == null ? child : const SizedBox.shrink(),
@@ -244,7 +244,7 @@ class _ShowCardState extends ConsumerState<ShowCard> {
                                                             gradient: LinearGradient(
                                                                 begin: Alignment.bottomLeft,
                                                                 end: Alignment.topRight,
-                                                                colors: [BeColorSwatch.navy, Colors.transparent],
+                                                                colors: [BeColorSwatch.navy.color, Colors.transparent],
                                                             ),
                                                         ),
                                                     ),
@@ -270,7 +270,7 @@ class _ShowCardState extends ConsumerState<ShowCard> {
                                                         show.title.replaceAll("Build Expo", "").replaceAll("  ", " ").toUpperCase(),
                                                         style: beTextTheme.headingPrimary.merge(
                                                             TextStyle(
-                                                                color:    BeColorSwatch.white,
+                                                                color:    BeColorSwatch.white.color,
                                                                 fontSize: 28,
                                                                 height:   0,
                                                                 overflow: TextOverflow.ellipsis,

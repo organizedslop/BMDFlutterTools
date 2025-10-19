@@ -23,11 +23,11 @@ class UpdatingIndicator extends StatelessWidget {
   /// The spinner stroke width.
   final double strokeWidth;
 
-  /// Optional override for the spinner color; defaults to BeColorSwatch.darkGray.
+  /// Optional override for the spinner color; defaults to BeColorSwatch.darkGray.color.
   final Color? color;
 
   /// Optional override for the text style; if null, uses Theme.of(context).textTheme.bodyMedium
-  /// with BeColorSwatch.darkGray applied.
+  /// with BeColorSwatch.darkGray.color applied.
   final TextStyle? textStyle;
 
   /// How to align the row horizontally.
@@ -35,9 +35,9 @@ class UpdatingIndicator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final spinnerColor = color ?? BeColorSwatch.darkGray;
+    final spinnerColor = color ?? BeColorSwatch.darkGray.color;
     final style = (textStyle ?? Theme.of(context).textTheme.bodySmall)?.copyWith(
-      color: BeColorSwatch.darkGray,
+      color: BeColorSwatch.darkGray.color,
       fontWeight: FontWeight.bold,
     );
 

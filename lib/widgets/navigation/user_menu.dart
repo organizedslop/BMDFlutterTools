@@ -100,7 +100,7 @@ class UserMenu extends StatelessWidget {
                         },
                         icon: SFIcon(
                             SFIcons.sf_person_crop_circle,
-                          //  color:    BeColorSwatch.white,
+                          //  color:    BeColorSwatch.white.color,
                             fontSize: beTextTheme.headingPrimary.fontSize
                         )
                     )

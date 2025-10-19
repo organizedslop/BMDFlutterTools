@@ -232,7 +232,7 @@ class _SeminarInfoState extends ConsumerState<SeminarInfo> {
                                                   ElevatedButton(
                                                     key:   const Key("seminar_info__registration_button"),
                                                     style: elevatedButtonStyleAlt.copyWith(
-                                                      backgroundColor: WidgetStateProperty.all((ref.read(badgeProvider) != null) ? BeColorSwatch.red : BeColorSwatch.gray),
+                                                      backgroundColor: WidgetStateProperty.all((ref.read(badgeProvider) != null) ? BeColorSwatch.red.color : BeColorSwatch.gray.color),
                                                     ),
                                                     onPressed: () async {
                                                         if (ref.read(badgeProvider) != null) {

@@ -9,7 +9,7 @@ final GlobalKey<ScaffoldMessengerState> scaffoldMessengerKey = GlobalKey<Scaffol
  * MARK: Show SnackBar
  */
 void showSnackBar({
-    Color backgroundColor = BeColorSwatch.white,
+    Color backgroundColor = Colors.white,
     required BuildContext context,
     required Widget content,
 }) {
@@ -20,9 +20,9 @@ void showSnackBar({
                 content: Container(
                     alignment: Alignment.center,
                     decoration: BoxDecoration(
-                        border: Border.all(color: BeColorSwatch.gray, width: 0.5),
+                        border: Border.all(color: BeColorSwatch.gray.color, width: 0.5),
                         borderRadius: BorderRadius.circular(mediumRadius),
-                        color: BeColorSwatch.white,
+                        color: BeColorSwatch.white.color,
                     ),
                     padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
                     width: double.infinity,

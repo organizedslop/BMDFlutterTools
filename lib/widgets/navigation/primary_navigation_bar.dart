@@ -70,9 +70,9 @@ class PrimaryNavigationBar extends ConsumerWidget
     var currentPath = GoRouter.of(context).routeInformationProvider.value.uri;
 
     final List<Shadow> titleShadows = [
-      Shadow(color: BeColorSwatch.navy, offset: Offset(0, 1), blurRadius: 50),
+      Shadow(color: BeColorSwatch.navy.color, offset: Offset(0, 1), blurRadius: 50),
       Shadow(
-          color: BeColorSwatch.navy.withAlpha(100),
+          color: BeColorSwatch.navy.color.withAlpha(100),
           offset: Offset(0, 1),
           blurRadius: 20)
     ];
@@ -80,7 +80,7 @@ class PrimaryNavigationBar extends ConsumerWidget
     final countAsync = ref.watch(notificationsCountProvider);
 
     Color resolvedIconColor() =>
-        iconColor ?? (isHome ? BeColorSwatch.black : BeColorSwatch.white);
+        iconColor ?? (isHome ? BeColorSwatch.black.color : BeColorSwatch.white.color);
 
     void handleBackNavigation() {
       if (context.canPop()) {
@@ -102,8 +102,8 @@ class PrimaryNavigationBar extends ConsumerWidget
                       begin: Alignment.center,
                       end: Alignment.bottomCenter,
                       colors: [
-                        BeColorSwatch.lighterGray,
-                        BeColorSwatch.lighterGray.withAlpha(0),
+                        BeColorSwatch.lighterGray.color,
+                        BeColorSwatch.lighterGray.color.withAlpha(0),
                       ],
                     ),
                   ),
@@ -125,8 +125,8 @@ class PrimaryNavigationBar extends ConsumerWidget
                               icon: Icon(Icons.menu,
                                   color: iconColor ??
                                       (isHome
-                                          ? BeColorSwatch.black
-                                          : BeColorSwatch.white)),
+                                          ? BeColorSwatch.black.color
+                                          : BeColorSwatch.white.color)),
                               onPressed: () =>
                                   Scaffold.of(context).openDrawer(),
                             )
@@ -147,7 +147,7 @@ class PrimaryNavigationBar extends ConsumerWidget
                                     softWrap: false,
                                     overflow: TextOverflow.visible,
                                     style:
-                                        Theme.of(context).textTheme.labelSmall!.copyWith(color: BeColorSwatch.red),
+                                        Theme.of(context).textTheme.labelSmall!.copyWith(color: BeColorSwatch.red.color),
                                   ),
                                 )
                               : IconButton(
@@ -169,7 +169,7 @@ class PrimaryNavigationBar extends ConsumerWidget
                           statusBarColor: Colors.transparent),
                       flexibleSpace: Container(
                           decoration: BoxDecoration(
-                                border: (isHome || backgroundColor != null) ? null : Border(bottom: BorderSide(color: BeColorSwatch.lightGray)),
+                                border: (isHome || backgroundColor != null) ? null : Border(bottom: BorderSide(color: BeColorSwatch.lightGray.color)),
                               color: (backgroundColor == null)
                                   ? null
                                   : backgroundColor,
@@ -177,7 +177,7 @@ class PrimaryNavigationBar extends ConsumerWidget
                                   ? null
                                   : DecorationImage(
                                       image: Image(
-                                        color: BeColorSwatch.darkBlue
+                                        color: BeColorSwatch.darkBlue.color
                                             .withAlpha(50),
                                         colorBlendMode: BlendMode.multiply,
                                         image: backgroundImage!.image,
@@ -185,13 +185,13 @@ class PrimaryNavigationBar extends ConsumerWidget
                                       fit: BoxFit.cover))),
                       iconTheme: IconThemeData(
                           color: isHome
-                              ? BeColorSwatch.black
-                              : BeColorSwatch.white),
+                              ? BeColorSwatch.black.color
+                              : BeColorSwatch.white.color),
                       backgroundColor: isHome
                           ? Colors.transparent
-                          : backgroundColor ?? BeColorSwatch.navy,
+                          : backgroundColor ?? BeColorSwatch.navy.color,
                       foregroundColor:
-                          isHome ? BeColorSwatch.black : BeColorSwatch.white,
+                          isHome ? BeColorSwatch.black.color : BeColorSwatch.white.color,
 
                       // Use the current path to determine which items to display
                       actions: (() {
@@ -258,7 +258,7 @@ class PrimaryNavigationBar extends ConsumerWidget
                                                     .headlineLarge!
                                                     .copyWith(
                                                       color:
-                                                          BeColorSwatch.white,
+                                                          BeColorSwatch.white.color,
                                                       height: 0.95,
                                                       overflow:
                                                           TextOverflow.ellipsis,
@@ -275,7 +275,7 @@ class PrimaryNavigationBar extends ConsumerWidget
                                                 .textTheme
                                                 .headlineLarge!
                                                 .copyWith(
-                                                  color: BeColorSwatch.white,
+                                                  color: BeColorSwatch.white.color,
                                                   height: 0.95,
                                                   overflow:
                                                       TextOverflow.ellipsis,
@@ -322,7 +322,7 @@ class _NotificationBell extends StatelessWidget {
             child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 1),
               decoration: BoxDecoration(
-                color: BeColorSwatch.red,
+                color: BeColorSwatch.red.color,
                 borderRadius: BorderRadius.circular(10),
               ),
               constraints: const BoxConstraints(minWidth: 16, minHeight: 16),

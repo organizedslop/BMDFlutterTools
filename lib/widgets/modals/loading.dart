@@ -69,8 +69,8 @@ class LoadingModal extends StatelessWidget {
                                     mainAxisSize:      MainAxisSize.min,
                                     spacing:  3,
                                     children: [
-                                        SFIcon(SFIcons.sf_xmark, fontSize: 12, fontWeight: FontWeight.bold, color: BeColorSwatch.gray),
-                                        Text("Cancel", style: TextStyle(fontSize: Theme.of(context).textTheme.bodySmall!.fontSize, fontWeight: FontWeight.bold, color: BeColorSwatch.gray))
+                                        SFIcon(SFIcons.sf_xmark, fontSize: 12, fontWeight: FontWeight.bold, color: BeColorSwatch.gray.color),
+                                        Text("Cancel", style: TextStyle(fontSize: Theme.of(context).textTheme.bodySmall!.fontSize, fontWeight: FontWeight.bold, color: BeColorSwatch.gray.color))
                                     ]
                                 )
                             )

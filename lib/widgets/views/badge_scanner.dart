@@ -624,7 +624,7 @@ class _BadgeScannerState extends ConsumerState<BadgeScanner> {
                                 Expanded(
                                   child: TextField(
                                     controller: simulatedScanStringController,
-                                    style:      const TextStyle(color: BeColorSwatch.magenta),
+                                    style:      TextStyle(color: BeColorSwatch.magenta.color),
                                     decoration: InputDecoration(
                                       isDense:   true,
                                       contentPadding: EdgeInsets.symmetric(horizontal: 10, vertical: 3),

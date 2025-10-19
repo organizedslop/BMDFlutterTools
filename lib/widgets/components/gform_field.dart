@@ -31,7 +31,7 @@ import "package:syncfusion_flutter_signaturepad/signaturepad.dart";
 /* ======================================================================================================================
  * Field formatting
  * ------------------------------------------------------------------------------------------------------------------ */
-final gfieldDropDownIcon      = const Padding(padding: EdgeInsets.only(top: 2), child: SFIcon(SFIcons.sf_chevron_down, color: BeColorSwatch.blue, fontSize: 16, fontWeight: FontWeight.bold));
+final gfieldDropDownIcon      = Padding(padding: EdgeInsets.only(top: 2), child: SFIcon(SFIcons.sf_chevron_down, color: BeColorSwatch.blue.color, fontSize: 16, fontWeight: FontWeight.bold));
 final gfieldHintStyle         = TextStyle(color: beColorScheme.text.tertiary, fontWeight: FontWeight.normal);
 final gfieldHorizontalPadding = const EdgeInsets.symmetric(horizontal: 10);
 final gfieldRoundedBorder     = OutlineInputBorder(borderRadius: const BorderRadius.all(Radius.circular(10)), borderSide: BorderSide(color: beColorScheme.text.quaternary, width: 2.5));
@@ -50,7 +50,7 @@ final BoxDecoration gfieldBoxDecoration = BoxDecoration(
 
 final InputDecoration gfieldInputDecoration = InputDecoration(
     enabledBorder:  gfieldRoundedBorder,
-    fillColor:      BeColorSwatch.offWhite,
+    fillColor:      BeColorSwatch.offWhite.color,
     filled:         true,
     focusedBorder:  gfieldRoundedBorder,
     border:         gfieldRoundedBorder,
@@ -75,11 +75,11 @@ Widget formFieldLabel({ required String labelText,
             child:   Row(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                    Text(labelText, style: beTextTheme.bodyPrimary.merge(TextStyle(color: isValid ? null : BeColorSwatch.red, fontWeight: FontWeight.bold))),
+                    Text(labelText, style: beTextTheme.bodyPrimary.merge(TextStyle(color: isValid ? null : BeColorSwatch.red.color, fontWeight: FontWeight.bold))),
 
-                    isRequired ? Text("* ", style: beTextTheme.headingSecondary.merge(TextStyle(color: BeColorSwatch.red, height: 0.75))) : null,
+                    isRequired ? Text("* ", style: beTextTheme.headingSecondary.merge(TextStyle(color: BeColorSwatch.red.color, height: 0.75))) : null,
 
-                    // Text(" ${fieldId.toString()}", style: beTextTheme.captionSecondary.merge(TextStyle(color: BeColorSwatch.magenta)))
+                    // Text(" ${fieldId.toString()}", style: beTextTheme.captionSecondary.merge(TextStyle(color: BeColorSwatch.magenta.color)))
                 ].nonNulls.toList()
             )
         );
@@ -151,7 +151,7 @@ class GFormFieldState extends ConsumerState<GFormField> {
     final Map<String, dynamic> emailDefaultValue    = { "email":    "",  "email_confirmation":    "" };
     final Map<String, dynamic> passwordDefaultValue = { "password": "",  "password_confirmation": "" };
 
-    TextStyle validationMessageStyle = TextStyle(color: BeColorSwatch.red, fontWeight: FontWeight.bold);
+    TextStyle validationMessageStyle = TextStyle(color: BeColorSwatch.red.color, fontWeight: FontWeight.bold);
 
     bool refresh = false;
 
@@ -250,7 +250,7 @@ class GFormFieldState extends ConsumerState<GFormField> {
 
                                     isRequired ? TextSpan(text: " *", style: beTextTheme.headingPrimary.merge(TextStyle(color: beColorScheme.text.accent2, height: 0.75))) : null,
 
-                                    ref.read(isDebuggingProvider) ? TextSpan(text: " ${fieldId.toString()}", style: beTextTheme.captionSecondary.merge(TextStyle(color: BeColorSwatch.magenta))) : null
+                                    ref.read(isDebuggingProvider) ? TextSpan(text: " ${fieldId.toString()}", style: beTextTheme.captionSecondary.merge(TextStyle(color: BeColorSwatch.magenta.color))) : null
 
                                 ].nonNulls.toList()
                             )
@@ -354,7 +354,7 @@ class GFormFieldState extends ConsumerState<GFormField> {
                                 TextFormField(
                                     controller: widget.textEditingControllers["street"],
                                     decoration: InputDecoration(
-                                        enabledBorder: isValid ? null : gfieldRoundedBorder.copyWith(borderSide: gfieldRoundedBorder.borderSide.copyWith(color: BeColorSwatch.red)),
+                                        enabledBorder: isValid ? null : gfieldRoundedBorder.copyWith(borderSide: gfieldRoundedBorder.borderSide.copyWith(color: BeColorSwatch.red.color)),
                                         hintText:      "123 Main St",
                                         hintStyle:     gfieldHintStyle
                                     ),
@@ -384,7 +384,7 @@ class GFormFieldState extends ConsumerState<GFormField> {
                                 TextFormField(
                                     controller: widget.textEditingControllers["street_2"],
                                     decoration: InputDecoration(
-                                        enabledBorder: isValid ? null : gfieldRoundedBorder.copyWith(borderSide: gfieldRoundedBorder.borderSide.copyWith(color: BeColorSwatch.red)),
+                                        enabledBorder: isValid ? null : gfieldRoundedBorder.copyWith(borderSide: gfieldRoundedBorder.borderSide.copyWith(color: BeColorSwatch.red.color)),
                                         hintText:      "Building A, Unit 1",
                                         hintStyle:     gfieldHintStyle
                                     ),
@@ -419,7 +419,7 @@ class GFormFieldState extends ConsumerState<GFormField> {
                                                 TextFormField(
                                                     controller: widget.textEditingControllers["city"],
                                                     decoration: InputDecoration(
-                                                        enabledBorder: isValid ? null : gfieldRoundedBorder.copyWith(borderSide: gfieldRoundedBorder.borderSide.copyWith(color: BeColorSwatch.red)),
+                                                        enabledBorder: isValid ? null : gfieldRoundedBorder.copyWith(borderSide: gfieldRoundedBorder.borderSide.copyWith(color: BeColorSwatch.red.color)),
                                                         hintText:      "Austin",
                                                         hintStyle:     gfieldHintStyle
                                                     ),
@@ -454,7 +454,7 @@ class GFormFieldState extends ConsumerState<GFormField> {
                                                 TextFormField(
                                                     controller: widget.textEditingControllers["state"],
                                                     decoration: InputDecoration(
-                                                        enabledBorder: isValid ? null : gfieldRoundedBorder.copyWith(borderSide: gfieldRoundedBorder.borderSide.copyWith(color: BeColorSwatch.red)),
+                                                        enabledBorder: isValid ? null : gfieldRoundedBorder.copyWith(borderSide: gfieldRoundedBorder.borderSide.copyWith(color: BeColorSwatch.red.color)),
                                                         hintText:      "TX",
                                                         hintStyle:     gfieldHintStyle
                                                     ),
@@ -489,7 +489,7 @@ class GFormFieldState extends ConsumerState<GFormField> {
                                                 TextFormField(
                                                     controller: widget.textEditingControllers["zip"],
                                                     decoration: InputDecoration(
-                                                        enabledBorder: isValid ? null : gfieldRoundedBorder.copyWith(borderSide: gfieldRoundedBorder.borderSide.copyWith(color: BeColorSwatch.red)),
+                                                        enabledBorder: isValid ? null : gfieldRoundedBorder.copyWith(borderSide: gfieldRoundedBorder.borderSide.copyWith(color: BeColorSwatch.red.color)),
                                                         hintText:      "12345",
                                                         hintStyle:     gfieldHintStyle
                                                     ),
@@ -553,7 +553,7 @@ class GFormFieldState extends ConsumerState<GFormField> {
                                 // Checkbox field list
                                 Container(
                                     decoration: BoxDecoration(
-                                        border:       isValid ? null : Border.fromBorderSide(gfieldRoundedBorder.borderSide.copyWith(color: BeColorSwatch.red)),
+                                        border:       isValid ? null : Border.fromBorderSide(gfieldRoundedBorder.borderSide.copyWith(color: BeColorSwatch.red.color)),
                                         borderRadius: gfieldRoundedBorder.borderRadius,
                                     ),
                                     child:      ListView.builder(
@@ -623,7 +623,7 @@ class GFormFieldState extends ConsumerState<GFormField> {
                                             width: 36,
                                             child: CheckboxListTile(
                                                 checkboxScaleFactor: 1.4,
-                                                side:                isValid ? null : gfieldRoundedBorder.borderSide.copyWith(color: BeColorSwatch.red),
+                                                side:                isValid ? null : gfieldRoundedBorder.borderSide.copyWith(color: BeColorSwatch.red.color),
                                                 onChanged:           (value) {
                                                     setState(() {
                                                         widget.gfield.choices![0]["isSelected"] = value;
@@ -697,7 +697,7 @@ class GFormFieldState extends ConsumerState<GFormField> {
                                 TextFormField(
                                     controller: widget.textEditingControllers["email"],
                                     decoration: InputDecoration(
-                                        enabledBorder: isValid ? null : gfieldRoundedBorder.copyWith(borderSide: gfieldRoundedBorder.borderSide.copyWith(color: BeColorSwatch.red)),
+                                        enabledBorder: isValid ? null : gfieldRoundedBorder.copyWith(borderSide: gfieldRoundedBorder.borderSide.copyWith(color: BeColorSwatch.red.color)),
                                         hintText:      "name@example.com",
                                         hintStyle:     gfieldHintStyle
                                     ),
@@ -729,7 +729,7 @@ class GFormFieldState extends ConsumerState<GFormField> {
                                 TextFormField(
                                     controller: widget.textEditingControllers["email_confirmation"],
                                     decoration: InputDecoration(
-                                        enabledBorder: isValid ? null : gfieldRoundedBorder.copyWith(borderSide: gfieldRoundedBorder.borderSide.copyWith(color: BeColorSwatch.red)),
+                                        enabledBorder: isValid ? null : gfieldRoundedBorder.copyWith(borderSide: gfieldRoundedBorder.borderSide.copyWith(color: BeColorSwatch.red.color)),
                                         hintText:      "name@example.com",
                                         hintStyle:     gfieldHintStyle
                                     ),
@@ -793,7 +793,7 @@ class GFormFieldState extends ConsumerState<GFormField> {
                                     decoration: gfieldBoxDecoration.merge(
                                         BoxDecoration(
                                             border: isValid ? null : Border.all(
-                                                color: BeColorSwatch.red,
+                                                color: BeColorSwatch.red.color,
                                                 width: gfieldBoxDecoration.border!.top.width
                                             ),
                                             color:  Theme.of(context).colorScheme.surfaceContainer
@@ -802,7 +802,7 @@ class GFormFieldState extends ConsumerState<GFormField> {
                                     height:     250,
                                     child:      RawScrollbar(
                                         thickness:  8,
-                                        thumbColor: BeColorSwatch.lightGray,
+                                        thumbColor: BeColorSwatch.lightGray.color,
                                         radius:     Radius.circular(fullRadius),
                                         child:      SingleChildScrollView(
                                             padding: gfieldVerticalPadding,
@@ -818,7 +818,7 @@ class GFormFieldState extends ConsumerState<GFormField> {
                                                                 color: Colors.transparent,
                                                                 child: InkWell(
                                                                     splashFactory: NoSplash.splashFactory,
-                                                                    splashColor:   BeColorSwatch.gray,
+                                                                    splashColor:   BeColorSwatch.gray.color,
                                                                     onTap:         () {
                                                                         setState(() {
                                                                             var   choices    = widget.gfield.choices;
@@ -838,14 +838,14 @@ class GFormFieldState extends ConsumerState<GFormField> {
                                                                     },
                                                                     child: Container(
                                                                         alignment: Alignment.centerLeft,
-                                                                        color:     choiceAsMap["isSelected"] ? BeColorSwatch.blue : Colors.transparent,
+                                                                        color:     choiceAsMap["isSelected"] ? BeColorSwatch.blue.color : Colors.transparent,
                                                                         padding:   EdgeInsets.only(top: 6, right: gfieldHorizontalPadding.horizontal/2, bottom: 8, left: gfieldHorizontalPadding.horizontal/2),
                                                                         child:     Text(
                                                                             "${parseFragment(choiceAsMap["text"]).text}",
                                                                             overflow: TextOverflow.ellipsis,
                                                                             style:    beTextTheme.bodyPrimary.merge(
                                                                                 TextStyle(
-                                                                                    color:      choiceAsMap["isSelected"] ? BeColorSwatch.white : BeColorSwatch.black,
+                                                                                    color:      choiceAsMap["isSelected"] ? BeColorSwatch.white.color : BeColorSwatch.black.color,
                                                                                     fontWeight: choiceAsMap["isSelected"] ? FontWeight.bold     : FontWeight.normal
                                                                                 )
                                                                             ),
@@ -927,7 +927,7 @@ class GFormFieldState extends ConsumerState<GFormField> {
                                                 TextFormField(
                                                     controller: widget.textEditingControllers["first"],
                                                     decoration: InputDecoration(
-                                                        enabledBorder: isValid ? null : gfieldRoundedBorder.copyWith(borderSide: gfieldRoundedBorder.borderSide.copyWith(color: BeColorSwatch.red)),
+                                                        enabledBorder: isValid ? null : gfieldRoundedBorder.copyWith(borderSide: gfieldRoundedBorder.borderSide.copyWith(color: BeColorSwatch.red.color)),
                                                         hintText:      "John",
                                                         hintStyle:     gfieldHintStyle
                                                     ),
@@ -961,7 +961,7 @@ class GFormFieldState extends ConsumerState<GFormField> {
                                                 TextFormField(
                                                     controller:   widget.textEditingControllers["last"],
                                                     decoration:   InputDecoration(
-                                                        enabledBorder: isValid ? null : gfieldRoundedBorder.copyWith(borderSide: gfieldRoundedBorder.borderSide.copyWith(color: BeColorSwatch.red)),
+                                                        enabledBorder: isValid ? null : gfieldRoundedBorder.copyWith(borderSide: gfieldRoundedBorder.borderSide.copyWith(color: BeColorSwatch.red.color)),
                                                         hintText:      "Smith",
                                                         hintStyle:     gfieldHintStyle
                                                     ),
@@ -1024,7 +1024,7 @@ class GFormFieldState extends ConsumerState<GFormField> {
                                 TextFormField(
                                     controller: widget.textEditingControllers["password"],
                                     decoration: InputDecoration(
-                                        enabledBorder: isValid ? null : gfieldRoundedBorder.copyWith(borderSide: gfieldRoundedBorder.borderSide.copyWith(color: BeColorSwatch.red)),
+                                        enabledBorder: isValid ? null : gfieldRoundedBorder.copyWith(borderSide: gfieldRoundedBorder.borderSide.copyWith(color: BeColorSwatch.red.color)),
                                         hintText:      "password",
                                         hintStyle:     gfieldHintStyle,
                                         suffixIcon:    IconButton(
@@ -1067,7 +1067,7 @@ class GFormFieldState extends ConsumerState<GFormField> {
                                 TextFormField(
                                     controller: widget.textEditingControllers["password_confirmation"],
                                     decoration: InputDecoration(
-                                        enabledBorder: isValid ? null : gfieldRoundedBorder.copyWith(borderSide: gfieldRoundedBorder.borderSide.copyWith(color: BeColorSwatch.red)),
+                                        enabledBorder: isValid ? null : gfieldRoundedBorder.copyWith(borderSide: gfieldRoundedBorder.borderSide.copyWith(color: BeColorSwatch.red.color)),
                                         hintText:      "password",
                                         hintStyle:     gfieldHintStyle
                                     ),
@@ -1127,7 +1127,7 @@ class GFormFieldState extends ConsumerState<GFormField> {
                                 TextFormField(
                                     controller: widget.textEditingControllers[widget.gfield.label],
                                     decoration: InputDecoration(
-                                        enabledBorder: isValid ? null : gfieldRoundedBorder.copyWith(borderSide: gfieldRoundedBorder.borderSide.copyWith(color: BeColorSwatch.red)),
+                                        enabledBorder: isValid ? null : gfieldRoundedBorder.copyWith(borderSide: gfieldRoundedBorder.borderSide.copyWith(color: BeColorSwatch.red.color)),
                                         hintText:      "(555) 555-5555",
                                         hintStyle:     gfieldHintStyle),
                                     keyboardType: TextInputType.phone,
@@ -1185,7 +1185,7 @@ class GFormFieldState extends ConsumerState<GFormField> {
                                     decoration: isValid ? null : gfieldBoxDecoration.merge(
                                         BoxDecoration(
                                             border: Border.all(
-                                                color: BeColorSwatch.red,
+                                                color: BeColorSwatch.red.color,
                                                 width: gfieldBoxDecoration.border!.top.width
                                             ),
                                         )
@@ -1279,7 +1279,7 @@ class GFormFieldState extends ConsumerState<GFormField> {
                             DropdownButtonFormField<dynamic>(
                                     decoration: isValid ? gfieldInputDecoration : gfieldInputDecoration.copyWith(
                                         enabledBorder: gfieldInputDecoration.enabledBorder!.copyWith(
-                                            borderSide: gfieldInputDecoration.enabledBorder!.borderSide.copyWith(color: BeColorSwatch.red)
+                                            borderSide: gfieldInputDecoration.enabledBorder!.borderSide.copyWith(color: BeColorSwatch.red.color)
                                         )
                                     ),
                                     icon:       gfieldDropDownIcon,
@@ -1358,7 +1358,7 @@ class GFormFieldState extends ConsumerState<GFormField> {
                                 TextFormField(
                                     controller: widget.textEditingControllers[widget.gfield.label],
                                     decoration: InputDecoration(
-                                        enabledBorder: isValid ? null : gfieldRoundedBorder.copyWith(borderSide: gfieldRoundedBorder.borderSide.copyWith(color: BeColorSwatch.red)),
+                                        enabledBorder: isValid ? null : gfieldRoundedBorder.copyWith(borderSide: gfieldRoundedBorder.borderSide.copyWith(color: BeColorSwatch.red.color)),
                                         hintText:      widget.gfield.placeholder,
                                         hintStyle:     gfieldHintStyle),
                                     keyboardType: TextInputType.text,
@@ -1417,7 +1417,7 @@ class GFormFieldState extends ConsumerState<GFormField> {
                                         // Reset field button
                                         InkWell(
                                             onTap: () { signatureGlobalKey.currentState!.clear(); },
-                                            child: Text("Clear".toUpperCase(), style: beTextTheme.captionPrimary.merge(TextStyle(color: BeColorSwatch.blue))),
+                                            child: Text("Clear".toUpperCase(), style: beTextTheme.captionPrimary.merge(TextStyle(color: BeColorSwatch.blue.color))),
                                         )
                                     ].nonNulls.toList()
                                 ),

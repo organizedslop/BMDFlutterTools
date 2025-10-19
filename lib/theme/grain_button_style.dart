@@ -115,7 +115,7 @@ ButtonStyle grainButtonStyle({
       );
 
   final TextStyle? effectiveTextStyle =
-      textStyle; //beTextTheme.bodyPrimary.merge(const TextStyle(color: BeColorSwatch.white));
+      textStyle; //beTextTheme.bodyPrimary.merge(const TextStyle(color: BeColorSwatch.white.color));
 
   return ButtonStyle(
     animationDuration: buttonOverlayFadeDuration,
@@ -129,11 +129,11 @@ ButtonStyle grainButtonStyle({
     ),
     overlayColor: WidgetStateProperty.resolveWith((states) {
       if (states.contains(WidgetState.pressed)) {
-        return BeColorSwatch.white.withOpacity(0.16);
+        return BeColorSwatch.white.color.withOpacity(0.16);
       }
       if (states.contains(WidgetState.hovered) ||
           states.contains(WidgetState.focused)) {
-        return BeColorSwatch.white.withOpacity(0.08);
+        return BeColorSwatch.white.color.withOpacity(0.08);
       }
       return Colors.transparent;
     }),

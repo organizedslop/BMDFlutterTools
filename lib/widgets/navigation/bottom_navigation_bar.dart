@@ -174,12 +174,12 @@ class _QuickNavigationBarState extends ConsumerState<QuickNavigationBar> with Ro
                                     child: SFIcon(isSelected ? menuItemsMap[label]!["selected"]! : menuItemsMap[label]!["unselected"]!,
                                         fontSize:   beTextTheme.headingPrimary.fontSize,
                                         fontWeight: FontWeight.w500,
-                                        color:      isSelected ? BeColorSwatch.blue : Colors.grey[600]
+                                        color:      isSelected ? BeColorSwatch.blue.color : Colors.grey[600]
                                     )
                                 )
                             ),
                             if (textScaleFactor <= 1.667)
-                                NoScale(child: Text(label.toUpperCase(), style: beTextTheme.captionPrimary.merge(TextStyle(color: isSelected ? BeColorSwatch.blue : Colors.grey[600])))),
+                                NoScale(child: Text(label.toUpperCase(), style: beTextTheme.captionPrimary.merge(TextStyle(color: isSelected ? BeColorSwatch.blue.color : Colors.grey[600])))),
                         ]
                     )
                 ),

@@ -202,7 +202,7 @@ Widget _buildNotificationDialog(NotificationData n) {
                 ]
             ),
             if (ref.read(isDebuggingProvider))
-                Text(n.id, overflow: TextOverflow.ellipsis, style: beTextTheme.captionPrimary.copyWith(color: BeColorSwatch.magenta)),
+                Text(n.id, overflow: TextOverflow.ellipsis, style: beTextTheme.captionPrimary.copyWith(color: BeColorSwatch.magenta.color)),
         ]
     ),
     content: SingleChildScrollView(
@@ -277,7 +277,7 @@ Widget _buildNotificationDialog(NotificationData n) {
 
                         return Container(
                             foregroundDecoration: BoxDecoration(
-                                color: (isUnread ? BeColorSwatch.blue.withAlpha(20) : null)
+                                color: (isUnread ? BeColorSwatch.blue.color.withAlpha(20) : null)
                             ),
                             padding:   EdgeInsets.only(top: 4, right: 8, bottom: 18, left: 8),
                             child:
@@ -319,7 +319,7 @@ Widget _buildNotificationDialog(NotificationData n) {
                                         ),
 
                                         if (ref.read(isDebuggingProvider))
-                                            Text(n.id, style: beTextTheme.captionPrimary.copyWith(color: BeColorSwatch.magenta)),
+                                            Text(n.id, style: beTextTheme.captionPrimary.copyWith(color: BeColorSwatch.magenta.color)),
 
                                         if (title.isNotEmpty)
                                             Text(

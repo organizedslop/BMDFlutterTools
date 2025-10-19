@@ -27,7 +27,7 @@ class ExpandableContainer extends StatelessWidget {
                             ),
                             EnclosedText(
                                 "Tap to expand",
-                                backgroundColor: BeColorSwatch.white,
+                                backgroundColor: BeColorSwatch.white.color,
                                 style:           beTextTheme.bodySecondary,
                             )
                         ]

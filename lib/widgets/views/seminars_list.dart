@@ -427,8 +427,8 @@ Future<String?> _resolveAnyPresenterBoothNumber(SeminarSessionData session) asyn
                     decoration: BoxDecoration(
                         gradient: LinearGradient(
                             colors: [
-                                BeColorSwatch.darkBlue,
-                                BeColorSwatch.blue,
+                                BeColorSwatch.darkBlue.color,
+                                BeColorSwatch.blue.color,
                             ],
                         ),
                     ),
@@ -444,15 +444,15 @@ Future<String?> _resolveAnyPresenterBoothNumber(SeminarSessionData session) asyn
                     children: [
                         SFIcon(
                             SFIcons.sf_music_microphone,
-                            color:    BeColorSwatch.white,
+                            color:    BeColorSwatch.white.color,
                             fontSize: 24
                         ),
                         Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             spacing:  3,
                             children: [
-                                Text("Interested in presenting?", style: TextTheme.of(context).headlineSmall!.copyWith(color: BeColorSwatch.white, height: 0.925)),
-                                Text("Tap to learn more",         style: Theme.of(context).textTheme.labelSmall!.copyWith(color: BeColorSwatch.white, height: 1))
+                                Text("Interested in presenting?", style: TextTheme.of(context).headlineSmall!.copyWith(color: BeColorSwatch.white.color, height: 0.925)),
+                                Text("Tap to learn more",         style: Theme.of(context).textTheme.labelSmall!.copyWith(color: BeColorSwatch.white.color, height: 1))
                             ]
                         )
                     ]
@@ -490,8 +490,8 @@ Future<String?> _resolveAnyPresenterBoothNumber(SeminarSessionData session) asyn
                             child: Column(
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
-                                    const CircularProgressIndicator(color: BeColorSwatch.navy, padding: EdgeInsets.only(bottom: 8)),
-                                    Text("Loading seminar sessions...", style: Theme.of(context).textTheme.bodyMedium!.copyWith(color: BeColorSwatch.darkGray)),
+                                    const CircularProgressIndicator(padding: EdgeInsets.only(bottom: 8)),
+                                    Text("Loading seminar sessions...", style: Theme.of(context).textTheme.bodyMedium!.copyWith(color: BeColorSwatch.darkGray.color)),
                                     const SizedBox(height: 16),
                                 ],
                             ),
@@ -564,13 +564,13 @@ Future<String?> _resolveAnyPresenterBoothNumber(SeminarSessionData session) asyn
                                                                     padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 2),
                                                                     child: Text.rich(
                                                                       TextSpan(
-                                                                        style: TextStyle(color: showFullSchedule ? BeColorSwatch.blue : BeColorSwatch.darkGray,),
+                                                                        style: TextStyle(color: showFullSchedule ? BeColorSwatch.blue.color : BeColorSwatch.darkGray.color,),
                                                                         children: [
                                                                           const TextSpan(text: "All seminars "),
                                                                           if (textScaleFactor < 1.5)
                                                                             TextSpan(
                                                                                 text: "(${allSeminars.length})",
-                                                                                style: TextStyle(color: showFullSchedule ? BeColorSwatch.blue : BeColorSwatch.darkGray),
+                                                                                style: TextStyle(color: showFullSchedule ? BeColorSwatch.blue.color : BeColorSwatch.darkGray.color),
                                                                             ),
                                                                         ],
                                                                       ),
@@ -583,14 +583,14 @@ Future<String?> _resolveAnyPresenterBoothNumber(SeminarSessionData session) asyn
                                                                     padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 2),
                                                                     child: Text.rich(
                                                                       TextSpan(
-                                                                        style: TextStyle(color: showFullSchedule ? BeColorSwatch.darkGray : BeColorSwatch.blue,
+                                                                        style: TextStyle(color: showFullSchedule ? BeColorSwatch.darkGray.color : BeColorSwatch.blue.color,
                                                                             ),
                                                                         children: [
                                                                           const TextSpan(text: "My seminars "),
                                                                           if (textScaleFactor < 1.5)
                                                                             TextSpan(
                                                                                 text: "(${mySeminars.length})",
-                                                                                style: TextStyle(color: showFullSchedule ? BeColorSwatch.darkGray : BeColorSwatch.blue),
+                                                                                style: TextStyle(color: showFullSchedule ? BeColorSwatch.darkGray.color : BeColorSwatch.blue.color),
                                                                             ),
                                                                         ],
                                                                       ),
@@ -806,8 +806,8 @@ Future<String?> _resolveAnyPresenterBoothNumber(SeminarSessionData session) asyn
                                                         begin: Alignment.center,
                                                         end: Alignment.topCenter,
                                                         colors: [
-                                                            BeColorSwatch.white,
-                                                            BeColorSwatch.white.withAlpha(0),
+                                                            BeColorSwatch.white.color,
+                                                            BeColorSwatch.white.color.withAlpha(0),
                                                         ],
                                                     ),
                                                 ),

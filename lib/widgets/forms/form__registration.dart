@@ -447,13 +447,13 @@ class _RegistrationFormState extends ConsumerState<RegistrationForm> {
                 child: Text(
                   'Need help registering? Call Build Expo USA for assistance.',
                   style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                      color: BeColorSwatch.navy, fontWeight: FontWeight.w700),
+                      color: BeColorSwatch.navy.color, fontWeight: FontWeight.w700),
                 ),
               ),
               IconButton(
                 visualDensity: VisualDensity.compact,
                 icon: const Icon(Icons.close),
-                color: BeColorSwatch.darkGray,
+                color: BeColorSwatch.darkGray.color,
                 tooltip: 'Dismiss',
                 onPressed: () {
                   setState(() {
@@ -469,13 +469,13 @@ class _RegistrationFormState extends ConsumerState<RegistrationForm> {
             onPressed: _openRegistrationHelpCall,
             icon: SFIcon(
               SFIcons.sf_phone,
-              color: BeColorSwatch.blue,
+              color: BeColorSwatch.blue.color,
               fontSize: 18,
             ),
             label: const Text('Call (512) 249-5303'),
             style: TextButton.styleFrom(
               padding: EdgeInsets.zero,
-              foregroundColor: BeColorSwatch.blue,
+              foregroundColor: BeColorSwatch.blue.color,
               textStyle: Theme.of(context)
                   .textTheme
                   .labelLarge
@@ -1405,7 +1405,7 @@ class _RegistrationFormState extends ConsumerState<RegistrationForm> {
             : 'Failed to create user account. Please try again.';
         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
           content: Text(displayMessage),
-          backgroundColor: BeColorSwatch.red,
+          backgroundColor: BeColorSwatch.red.color,
         ));
         if (_containsDuplicateEmailMessage(messages)) {
           setState(() {
@@ -1418,7 +1418,7 @@ class _RegistrationFormState extends ConsumerState<RegistrationForm> {
         _dismissLoadingModalIfAny();
         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
           content: Text('Error creating user account: $error'),
-          backgroundColor: BeColorSwatch.red,
+          backgroundColor: BeColorSwatch.red.color,
         ));
       }
     } finally {
@@ -1461,7 +1461,7 @@ class _RegistrationFormState extends ConsumerState<RegistrationForm> {
 
     Row buildBottomControls() {
       final previousButtonStyle = ButtonStyle(
-          backgroundColor: WidgetStateProperty.all(BeColorSwatch.gray));
+          backgroundColor: WidgetStateProperty.all(BeColorSwatch.gray.color));
 
       Row buildNavigationRow({
         Widget? previous,
@@ -1535,7 +1535,7 @@ class _RegistrationFormState extends ConsumerState<RegistrationForm> {
     return Scaffold(
         appBar: PrimaryNavigationBar(
           backgroundColor: Colors.transparent,
-          iconColor: BeColorSwatch.navy,
+          iconColor: BeColorSwatch.navy.color,
           showCancelAction: widget.isFinalizing,
           showOptions: false,
           title: "",
@@ -1567,20 +1567,20 @@ class _RegistrationFormState extends ConsumerState<RegistrationForm> {
                                                     text: widget.title,
                                                     style: TextStyle(
                                                         color: BeColorSwatch
-                                                            .navy)),
+                                                            .navy.color)),
                                               ]
                                             : [
                                                 TextSpan(
                                                     text: "Build ",
                                                     style: TextStyle(
                                                         color:
-                                                            BeColorSwatch.red)),
+                                                            BeColorSwatch.red.color)),
                                                 TextSpan(
                                                     text:
                                                         "Your \nBusiness Profile.",
                                                     style: TextStyle(
                                                         color: BeColorSwatch
-                                                            .navy)),
+                                                            .navy.color)),
                                               ]))),
 
                             /* -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -
@@ -1782,7 +1782,7 @@ class _RegistrationFormState extends ConsumerState<RegistrationForm> {
                                                             .labelLarge
                                                             ?.copyWith(
                                                                 color: BeColorSwatch
-                                                                    .blue),
+                                                                    .blue.color),
                                                       ),
                                                     ),
                                                   ),
@@ -1843,7 +1843,7 @@ class _RegistrationFormState extends ConsumerState<RegistrationForm> {
                                                             .copyWith(
                                                                 color:
                                                                     BeColorSwatch
-                                                                        .blue,
+                                                                        .blue.color,
                                                                 width:
                                                                     gfieldRoundedBorderWidth +
                                                                         0.5)),
@@ -1853,12 +1853,12 @@ class _RegistrationFormState extends ConsumerState<RegistrationForm> {
                                                             .copyWith(
                                                                 color:
                                                                     BeColorSwatch
-                                                                        .red,
+                                                                        .red.color,
                                                                 width:
                                                                     gfieldRoundedBorderWidth)),
                                                     filled: true,
                                                     fillColor:
-                                                        BeColorSwatch.offWhite,
+                                                        BeColorSwatch.offWhite.color,
                                                     contentPadding:
                                                         gfieldHorizontalPadding,
                                                   ),
@@ -1980,7 +1980,7 @@ class _RegistrationFormState extends ConsumerState<RegistrationForm> {
                                                                         child: RichText(
                                                                             text: TextSpan(children: [
                                                                               TextSpan(text: "I want to receive SMS notifications from Build Expo USA. "),
-                                                                              TextSpan(text: "You can adjust this later in your account settings.", style: TextStyle(fontStyle: FontStyle.italic, color: BeColorSwatch.darkGray.withAlpha(200))),
+                                                                              TextSpan(text: "You can adjust this later in your account settings.", style: TextStyle(fontStyle: FontStyle.italic, color: BeColorSwatch.darkGray.color.withAlpha(200))),
                                                                             ], style: Theme.of(context).textTheme.bodyMedium!),
                                                                             softWrap: true)),
                                                                   ]),
@@ -2020,7 +2020,7 @@ class _RegistrationFormState extends ConsumerState<RegistrationForm> {
                                                           .bodySmall!
                                                           .copyWith(
                                                               color: BeColorSwatch
-                                                                  .darkGray))),
+                                                                  .darkGray.color))),
 
                                               verticalSpacerSmall,
 
@@ -2050,7 +2050,7 @@ class _RegistrationFormState extends ConsumerState<RegistrationForm> {
                                                                     .sf_eye,
                                                             fontSize: 16,
                                                             color: BeColorSwatch
-                                                                .darkGray
+                                                                .darkGray.color
                                                                 .withAlpha(175),
                                                           ),
                                                           onPressed: () {
@@ -2147,7 +2147,7 @@ class _RegistrationFormState extends ConsumerState<RegistrationForm> {
                                                           .bodySmall!
                                                           .copyWith(
                                                               color: BeColorSwatch
-                                                                  .darkGray))),
+                                                                  .darkGray.color))),
 
                                               verticalSpacerMedium,
 
@@ -2178,7 +2178,7 @@ class _RegistrationFormState extends ConsumerState<RegistrationForm> {
                                                                   child: CheckboxListTile(
                                                                       key: const Key("register_user_form__contact_consent_checkbox"),
                                                                       checkboxScaleFactor: 1.4,
-                                                                      side: (_fieldData["contact_consent"]?["key"]?.currentState?.validate() ?? true) ? null : null, //gfieldRoundedBorder.borderSide.copyWith(color: BeColorSwatch.red),
+                                                                      side: (_fieldData["contact_consent"]?["key"]?.currentState?.validate() ?? true) ? null : null, //gfieldRoundedBorder.borderSide.copyWith(color: BeColorSwatch.red.color),
                                                                       onChanged: (value) {
                                                                         setState(
                                                                             () {
@@ -2598,7 +2598,7 @@ class _RegistrationFormState extends ConsumerState<RegistrationForm> {
                                                                       .copyWith(
                                                                 fillColor:
                                                                     BeColorSwatch
-                                                                        .white,
+                                                                        .white.color,
                                                                 hintText:
                                                                     "Select a country",
                                                                 hintStyle:
@@ -2610,7 +2610,7 @@ class _RegistrationFormState extends ConsumerState<RegistrationForm> {
                                                               style: TextStyle(
                                                                 color:
                                                                     BeColorSwatch
-                                                                        .black,
+                                                                        .black.color,
                                                                 fontSize: 16,
                                                                 fontWeight:
                                                                     FontWeight
@@ -2744,7 +2744,7 @@ class _RegistrationFormState extends ConsumerState<RegistrationForm> {
                                                         .bodySmall!
                                                         .copyWith(
                                                             color: BeColorSwatch
-                                                                .darkGray)),
+                                                                .darkGray.color)),
                                               ),
                                               const SizedBox(height: 28),
 
@@ -2803,7 +2803,7 @@ class _RegistrationFormState extends ConsumerState<RegistrationForm> {
                                                         .bodyLarge!
                                                         .copyWith(
                                                             color: BeColorSwatch
-                                                                .darkGray),
+                                                                .darkGray.color),
                                                     children: const [
                                                       TextSpan(
                                                         text:
@@ -2885,7 +2885,7 @@ class _RegistrationFormState extends ConsumerState<RegistrationForm> {
                                                         .bodySmall!
                                                         .copyWith(
                                                             color: BeColorSwatch
-                                                                .darkGray)),
+                                                                .darkGray.color)),
                                               ),
                                               verticalSpacerMedium,
 
@@ -2984,7 +2984,7 @@ class _RegistrationFormState extends ConsumerState<RegistrationForm> {
                                                             .copyWith(
                                                                 color:
                                                                     BeColorSwatch
-                                                                        .blue,
+                                                                        .blue.color,
                                                                 width:
                                                                     gfieldRoundedBorderWidth +
                                                                         0.5)),
@@ -2996,12 +2996,12 @@ class _RegistrationFormState extends ConsumerState<RegistrationForm> {
                                                             .copyWith(
                                                                 color:
                                                                     BeColorSwatch
-                                                                        .red,
+                                                                        .red.color,
                                                                 width:
                                                                     gfieldRoundedBorderWidth)),
                                                     filled: true,
                                                     fillColor:
-                                                        BeColorSwatch.offWhite,
+                                                        BeColorSwatch.offWhite.color,
                                                     contentPadding:
                                                         gfieldHorizontalPadding,
                                                   ),
@@ -3101,7 +3101,7 @@ class _RegistrationFormState extends ConsumerState<RegistrationForm> {
                                                         .bodySmall!
                                                         .copyWith(
                                                             color: BeColorSwatch
-                                                                .darkGray)),
+                                                                .darkGray.color)),
                                               ),
                                               verticalSpacerMedium,
 
@@ -3189,8 +3189,8 @@ class _RegistrationFormState extends ConsumerState<RegistrationForm> {
                                                       end: Alignment
                                                           .bottomCenter,
                                                       colors: [
-                                                    BeColorSwatch.lighterGray,
-                                                    BeColorSwatch.lighterGray.withAlpha(0),
+                                                    BeColorSwatch.lighterGray.color,
+                                                    BeColorSwatch.lighterGray.color.withAlpha(0),
                                                   ],
                                                       stops: [
                                                     0.45,
@@ -3220,14 +3220,14 @@ class _RegistrationFormState extends ConsumerState<RegistrationForm> {
                                                                 border: Border.all(
                                                                     color:
                                                                         BeColorSwatch
-                                                                            .red,
+                                                                            .red.color,
                                                                     width: 2),
                                                                 borderRadius:
                                                                     BorderRadius
                                                                         .circular(
                                                                             16),
                                                                 color: BeColorSwatch
-                                                                    .lightGray,
+                                                                    .lightGray.color,
                                                               ),
                                                               child: SizedBox(
                                                                   height:
@@ -3251,7 +3251,7 @@ class _RegistrationFormState extends ConsumerState<RegistrationForm> {
                                                                             Radius.circular(16)),
                                                                     color:
                                                                         BeColorSwatch
-                                                                            .red,
+                                                                            .red.color,
                                                                   ),
                                                                   child: SizedBox(
                                                                       height:
@@ -3275,7 +3275,7 @@ class _RegistrationFormState extends ConsumerState<RegistrationForm> {
                                                                     .bodyPrimary
                                                                     .merge(TextStyle(
                                                                         color: BeColorSwatch
-                                                                            .darkGray,
+                                                                            .darkGray.color,
                                                                         fontWeight:
                                                                             FontWeight
                                                                                 .bold)),
@@ -3284,7 +3284,7 @@ class _RegistrationFormState extends ConsumerState<RegistrationForm> {
                                                                     text:
                                                                         "Step ${pageIndex + 1} of ${totalPageCount}",
                                                                   ),
-                                                                  // (ref.read(gformValidationMessageProvider)[widget.formId]?.keys.isNotEmpty ?? false) ? TextSpan(text: " | ${ref.read(gformValidationMessageProvider)[widget.formId]?.keys.length ?? 0} Errors", style: TextStyle(color: BeColorSwatch.red)) : null
+                                                                  // (ref.read(gformValidationMessageProvider)[widget.formId]?.keys.isNotEmpty ?? false) ? TextSpan(text: " | ${ref.read(gformValidationMessageProvider)[widget.formId]?.keys.length ?? 0} Errors", style: TextStyle(color: BeColorSwatch.red.color)) : null
                                                                 ]
                                                                     .nonNulls
                                                                     .toList()))));

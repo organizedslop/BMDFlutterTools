@@ -249,7 +249,7 @@ class _AppState extends ConsumerState<App> {
                 inputDecorationTheme: appInputDecorationTheme,
                 elevatedButtonTheme: appElevatedButtonTheme,
                 radioTheme: appRadioTheme,
-                scaffoldBackgroundColor: BeColorSwatch.lighterGray,
+                scaffoldBackgroundColor: BeColorSwatch.lighterGray.color,
                 splashColor: Colors.transparent,
                 pageTransitionsTheme: PageTransitionsTheme(
                     builders: {
@@ -274,7 +274,7 @@ class _AppState extends ConsumerState<App> {
             darkTheme: ThemeData(
                 colorScheme: appColorSchemeDark,
                 dividerTheme: const DividerThemeData(color: Colors.transparent), // Disable the divider below the navigation menu drawer header
-                scaffoldBackgroundColor: BeColorSwatch.black,
+                scaffoldBackgroundColor: BeColorSwatch.black.color,
                 switchTheme: appSwitchTheme,
                 textButtonTheme: appTextButtonTheme,
                 textTheme: appTextTheme,

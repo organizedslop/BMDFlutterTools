@@ -189,7 +189,7 @@ class _UserSettingsState extends ConsumerState<UserSettings> {
               ElevatedButton(
                   key: const Key("user_home__delete_account_button"),
                   style: elevatedButtonStyleAlt.copyWith(
-                    backgroundColor: WidgetStateProperty.all(BeColorSwatch.red),
+                    backgroundColor: WidgetStateProperty.all(BeColorSwatch.red.color),
                   ),
                   child: const Padding(
                     padding: EdgeInsets.symmetric(vertical: 8),
@@ -232,7 +232,7 @@ class _UserSettingsState extends ConsumerState<UserSettings> {
                                             width: 44,
                                             height: 4,
                                             decoration: BoxDecoration(
-                                              color: BeColorSwatch.lightGray,
+                                              color: BeColorSwatch.lightGray.color,
                                               borderRadius:
                                                   BorderRadius.circular(99),
                                             ),
@@ -246,8 +246,8 @@ class _UserSettingsState extends ConsumerState<UserSettings> {
                                         const SizedBox(height: 18),
                                         Text(
                                           "WARNING: This will submit a request to PERMANENTLY delete your account. Deleted accounts cannot be recovered. If you wish to continue, enter your account credentials.",
-                                          style: const TextStyle(
-                                              color: BeColorSwatch.red,
+                                          style: TextStyle(
+                                              color: BeColorSwatch.red.color,
                                               fontWeight: FontWeight.bold),
                                         ),
                                         const SizedBox(height: 18),
@@ -291,7 +291,7 @@ class _UserSettingsState extends ConsumerState<UserSettings> {
                                                       : SFIcons.sf_eye_slash,
                                                   fontSize: 16,
                                                       color: BeColorSwatch
-                                                          .darkGray
+                                                          .darkGray.color
                                                           .withAlpha(175),
                                                 ),
                                                 style: ButtonStyle(
@@ -329,7 +329,7 @@ class _UserSettingsState extends ConsumerState<UserSettings> {
                                                   style: beTextTheme.bodyPrimary
                                                       .copyWith(
                                                           color: BeColorSwatch
-                                                              .blue,
+                                                              .blue.color,
                                                           fontWeight:
                                                               FontWeight.bold)),
                                             ),
@@ -337,7 +337,7 @@ class _UserSettingsState extends ConsumerState<UserSettings> {
                                             FilledButton(
                                               style: FilledButton.styleFrom(
                                                 backgroundColor:
-                                                    BeColorSwatch.red,
+                                                    BeColorSwatch.red.color,
                                               ),
                                               onPressed: () {
                                                 Navigator.of(sheetContext)
@@ -377,7 +377,7 @@ class _UserSettingsState extends ConsumerState<UserSettings> {
                                                   style: beTextTheme.bodyPrimary
                                                       .copyWith(
                                                           color: BeColorSwatch
-                                                              .white,
+                                                              .white.color,
                                                           fontWeight:
                                                               FontWeight.bold)),
                                             ),
@@ -400,7 +400,7 @@ class _UserSettingsState extends ConsumerState<UserSettings> {
                 child: Text(
                   "This will submit a request to permanently delete your account. Deleted accounts cannot be recovered.",
                   style: beTextTheme.bodyPrimary.copyWith(
-                    color: BeColorSwatch.black,
+                    color: BeColorSwatch.black.color,
                   ),
                   textAlign: TextAlign.center,
                 ),

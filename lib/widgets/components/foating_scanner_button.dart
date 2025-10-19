@@ -33,12 +33,12 @@ import "package:go_router/go_router.dart";
             child: Container(
                 foregroundDecoration: fullRadiusBeveledDecoration,
                 child: FloatingActionButton(
-                    backgroundColor: BeColorSwatch.red,
-                    foregroundColor: BeColorSwatch.white,
+                    backgroundColor: BeColorSwatch.red.color,
+                    foregroundColor: BeColorSwatch.white.color,
                     key:             const Key("scanner_floating_action_button"),
                     onPressed:       () { context.pushNamed("scanner"); },
                     shape:           const CircleBorder(),
-                    splashColor:     BeColorSwatch.white.withAlpha(60),
+                    splashColor:     BeColorSwatch.white.color.withAlpha(60),
                     child:           const NoScale(child: SFIcon(SFIcons.sf_qrcode))
                 )
             )

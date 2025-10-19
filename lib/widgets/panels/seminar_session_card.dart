@@ -9,7 +9,6 @@ import 'package:bmd_flutter_tools/data/model/data__badge.dart';
 import 'package:bmd_flutter_tools/data/model/data__seminar.dart';
 import 'package:bmd_flutter_tools/data/model/data__seminar_session.dart';
 import 'package:bmd_flutter_tools/data/model/enum__location_encoding.dart';
-import 'package:bmd_flutter_tools/main.dart';
 import 'package:bmd_flutter_tools/utilities/theme_utilities.dart';
 import 'package:bmd_flutter_tools/controllers/global_state.dart';
 import "package:flutter/material.dart";
@@ -44,7 +43,7 @@ class SeminarSessionCard extends ConsumerWidget {
     final boothNum = presenterBoothNumber?.trim();
 
     return Container(
-      decoration: BoxDecoration(color: tint ? BeColorSwatch.offWhite : BeColorSwatch.white),
+      decoration: BoxDecoration(color: tint ? BeColorSwatch.offWhite.color : BeColorSwatch.white.color),
       child: InkWell(
           onTap: () {
             context.pushNamed(
@@ -168,7 +167,7 @@ class SeminarSessionCard extends ConsumerWidget {
                                     // Non-featured sessions keep the original (time-only) format.
                                     return "${DateFormat("h:mm a").format(start)} - ${DateFormat("h:mm a").format(end)}";
                                   }(),
-                                  style: Theme.of(context).textTheme.labelSmall!.copyWith(color: BeColorSwatch.darkGray),
+                                  style: Theme.of(context).textTheme.labelSmall!.copyWith(color: BeColorSwatch.darkGray.color),
                                 ),
 
                                 if (seminarSession.roomNumber != null && seminarSession.roomNumber!.trim().isNotEmpty)
@@ -177,7 +176,7 @@ class SeminarSessionCard extends ConsumerWidget {
                                       final rn = seminarSession.roomNumber!.trim();
                                       return " | " + (rn.toLowerCase() == "exhibit hall" ? rn : "Room $rn");
                                     })(),
-                                    style: Theme.of(context).textTheme.labelSmall!.copyWith(color: BeColorSwatch.darkGray),
+                                    style: Theme.of(context).textTheme.labelSmall!.copyWith(color: BeColorSwatch.darkGray.color),
                                   ),
                                 ]
                             ),
@@ -291,8 +290,8 @@ class SeminarSessionCard extends ConsumerWidget {
                         children: [
                           if (badge != null) ElevatedButton(
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: BeColorSwatch.red,
-                              disabledBackgroundColor: BeColorSwatch.gray,
+                              backgroundColor: BeColorSwatch.red.color,
+                              disabledBackgroundColor: BeColorSwatch.gray.color,
                               padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
                               minimumSize: const Size(1, 36),
                               tapTargetSize: MaterialTapTargetSize.shrinkWrap,
@@ -327,20 +326,20 @@ class SeminarSessionCard extends ConsumerWidget {
                                     if (context.mounted) {
                                       ScaffoldMessenger.of(context).hideCurrentSnackBar();
                                       ScaffoldMessenger.of(context).showSnackBar(
-                                        const SnackBar(
-                                          backgroundColor: BeColorSwatch.green,
+                                        SnackBar(
+                                          backgroundColor: BeColorSwatch.green.color,
                                           content: Text(
                                             "You are registered for this seminar!",
-                                            style: TextStyle(color: BeColorSwatch.white),
+                                            style: TextStyle(color: BeColorSwatch.white.color),
                                           ),
                                         ),
                                       );
                                     }
                                   },
-                            child: const Text(
+                            child: Text(
                               "Register for this seminar",
                               style: TextStyle(
-                                color: BeColorSwatch.white,
+                                color: BeColorSwatch.white.color,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
@@ -355,7 +354,7 @@ class SeminarSessionCard extends ConsumerWidget {
                                 style: Theme.of(context)
                                     .textTheme
                                     .bodySmall!
-                                    .copyWith(color: BeColorSwatch.red),
+                                    .copyWith(color: BeColorSwatch.red.color),
                               ),
                             ),
                           ],
@@ -371,14 +370,14 @@ class SeminarSessionCard extends ConsumerWidget {
         children: [
           SFIcon(
             SFIcons.sf_checkmark_circle_fill,
-            color: BeColorSwatch.green,
+            color: BeColorSwatch.green.color,
             fontSize: 16,
           ),
           const SizedBox(width: 4),
           Text(
             "You are registered",
             style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                  color: BeColorSwatch.green,
+                  color: BeColorSwatch.green.color,
                   fontWeight: FontWeight.bold,
                 ),
           ),
@@ -387,7 +386,7 @@ class SeminarSessionCard extends ConsumerWidget {
       const SizedBox(height: 4), // spacing between text and button
       Container(
         decoration: BoxDecoration(
-          border: Border.all(color: BeColorSwatch.red, width: 1.5),
+          border: Border.all(color: BeColorSwatch.red.color, width: 1.5),
           borderRadius: BorderRadius.circular(8),
         ),
         child: InkWell(
@@ -401,7 +400,7 @@ class SeminarSessionCard extends ConsumerWidget {
             padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 12),
             child: Text(
               "Cancel registration",
-              style: Theme.of(context).textTheme.bodyLarge!.copyWith(color: BeColorSwatch.red, fontWeight: FontWeight.bold),
+              style: Theme.of(context).textTheme.bodyLarge!.copyWith(color: BeColorSwatch.red.color, fontWeight: FontWeight.bold),
             ),
           ),
         ),
@@ -413,7 +412,7 @@ class SeminarSessionCard extends ConsumerWidget {
                     // "More info" button (always)
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: BeColorSwatch.blue,
+                        backgroundColor: BeColorSwatch.blue.color,
                         padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                         minimumSize: const Size(1, 36), // avoid infinite width in Row
                         tapTargetSize: MaterialTapTargetSize.shrinkWrap,
@@ -438,8 +437,8 @@ class SeminarSessionCard extends ConsumerWidget {
                         padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 4),
                         child: Text(
                           "More info",
-                          style: const TextStyle(
-                            color: BeColorSwatch.white,
+                          style: TextStyle(
+                            color: BeColorSwatch.white.color,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
@@ -459,7 +458,7 @@ class SeminarSessionCard extends ConsumerWidget {
                   left: 5,
                   child: SFIcon(
                         SFIcons.sf_star_fill,
-                        color: BeColorSwatch.orange,
+                        color: BeColorSwatch.orange.color,
                         fontSize: 22,
                     ),
                 ),
@@ -471,9 +470,9 @@ class SeminarSessionCard extends ConsumerWidget {
                     constraints: const BoxConstraints(
                         maxWidth: 260, // or whatever upper bound you want
                     ),
-                    decoration: const BoxDecoration(
+                    decoration: BoxDecoration(
                         borderRadius: BorderRadius.only(bottomLeft: Radius.circular(12)),
-                        color: BeColorSwatch.darkBlue,
+                        color: BeColorSwatch.darkBlue.color,
                     ),
                     height: 22,
                     padding: const EdgeInsets.only(top: 2, right: 10, bottom: 0, left: 12),
@@ -486,8 +485,8 @@ class SeminarSessionCard extends ConsumerWidget {
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                         softWrap: false,
-                        style: const TextStyle(
-                        color: BeColorSwatch.white,
+                        style: TextStyle(
+                        color: BeColorSwatch.white.color,
                         fontSize: 12,
                         fontWeight: FontWeight.bold,
                         ),

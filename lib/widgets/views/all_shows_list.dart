@@ -259,7 +259,7 @@ class _AllShowsListState extends ConsumerState<AllShowsList> {
 
                 Padding(
                     padding: const EdgeInsets.only(bottom: 16, left: 10, right: 10),
-                    child:   const Text("Tap a show to see more information and register to attend or exhibit!", style: TextStyle(color: BeColorSwatch.darkGray)),
+                    child:   Text("Tap a show to see more information and register to attend or exhibit!", style: TextStyle(color: BeColorSwatch.darkGray.color)),
                 ),
 
                 /*
@@ -281,8 +281,8 @@ class _AllShowsListState extends ConsumerState<AllShowsList> {
                             child: Column(
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
-                                    const CircularProgressIndicator(color: BeColorSwatch.navy, padding: EdgeInsets.only(bottom: 8)),
-                                    Text("Loading shows...", style: Theme.of(context).textTheme.bodyMedium!.copyWith(color: BeColorSwatch.darkGray)),
+                                    CircularProgressIndicator(color: BeColorSwatch.navy.color, padding: EdgeInsets.only(bottom: 8)),
+                                    Text("Loading shows...", style: Theme.of(context).textTheme.bodyMedium!.copyWith(color: BeColorSwatch.darkGray.color)),
                                     SizedBox(height: 16),
                                 ]
                             )
@@ -321,13 +321,13 @@ class _AllShowsListState extends ConsumerState<AllShowsList> {
                                         padding: EdgeInsets.only(bottom: 8),
                                         child: Text(
                                             "Past shows",
-                                            style: Theme.of(context).textTheme.headlineLarge!.copyWith(color: BeColorSwatch.black),
+                                            style: Theme.of(context).textTheme.headlineLarge!.copyWith(color: BeColorSwatch.black.color),
                                         )
                                     ),
                                     Spacer(),
                                     Text(
                                         "View",
-                                        style: Theme.of(context).textTheme.labelSmall!.copyWith(color: BeColorSwatch.darkGray),
+                                        style: Theme.of(context).textTheme.labelSmall!.copyWith(color: BeColorSwatch.darkGray.color),
                                     ),
                                     Switch.adaptive(
                                         value: _includePastShows,

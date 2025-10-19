@@ -24,6 +24,7 @@ import "package:bmd_flutter_tools/widgets/modals/debug_menu.dart";
 import "package:bmd_flutter_tools/widgets/modals/loading.dart";
 import "package:bmd_flutter_tools/widgets/modals/message.dart";
 import "package:bmd_flutter_tools/widgets/modals/two_factor_authentication_code_input.dart";
+import "package:bmd_flutter_tools/widgets/utilities/color_swatch_grid.dart";
 import "package:flutter/foundation.dart";
 import "package:flutter/material.dart";
 import "package:flutter_riverpod/flutter_riverpod.dart";
@@ -572,10 +573,12 @@ class _SignInFormState extends ConsumerState<SignInForm> {
                                     /* -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -
                                         *  Logo
                                         */
-                                    Image.asset(
-                                        "./assets/images/build-expo-usa-logo-vertical.png",
-                                        width: 250,
-                                        fit: BoxFit.fill),
+                                    // Image.asset(
+                                    //     "./assets/images/build-expo-usa-logo-vertical.png",
+                                    //     width: 250,
+                                    //     fit: BoxFit.fill),
+
+                                    BeColorSwatchGrid(),
 
                                     // Spacers
                                     const SizedBox(height: 28),
@@ -619,7 +622,7 @@ class _SignInFormState extends ConsumerState<SignInForm> {
                                                           loginUsers();
                                                         },
                                                         style: grainButtonStyle(
-                                                            colors:      [ BeColorSwatch.blue, BeColorSwatch.blue ],
+                                                            colors:      [ BeColorSwatch.blue.color, BeColorSwatch.blue.color ],
                                                             borderRadius:  BorderRadius.circular(mediumRadius),
                                                         ),
                                                         child: Text((textScaleFactor > 1.2) ? "Attendee" : "Attendee demo")),
@@ -649,7 +652,7 @@ class _SignInFormState extends ConsumerState<SignInForm> {
                                                           loginUsers();
                                                         },
                                                         style: grainButtonStyle(
-                                                            colors:      [ BeColorSwatch.blue, BeColorSwatch.blue ],
+                                                            colors:      [ BeColorSwatch.blue.color, BeColorSwatch.blue.color ],
                                                             borderRadius:  BorderRadius.circular(mediumRadius),
                                                         ),
                                                         child: Text((textScaleFactor > 1.2) ? "Exhibitor" : "Exhibitor demo")),

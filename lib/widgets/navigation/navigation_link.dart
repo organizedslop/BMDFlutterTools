@@ -66,7 +66,7 @@ class NavigationLink extends StatelessWidget {
         if (isActive) {
           content = Container(
             decoration: BoxDecoration(
-              color: BeColorSwatch.lightGray.withAlpha(185),
+              color: BeColorSwatch.lightGray.color.withAlpha(185),
               borderRadius: BorderRadius.circular(6),
             ),
             padding: const EdgeInsets.only(top: 4, right: 8, bottom: 4, left: 8),

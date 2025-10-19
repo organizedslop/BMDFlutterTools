@@ -62,15 +62,15 @@ class _AccountCreatedConfirmationViewState
                 ScaleTransition(
                   scale: _scaleAnimation,
                   child: Container(
-                    decoration: const BoxDecoration(
+                    decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      color: BeColorSwatch.green,
+                      color: BeColorSwatch.green.color,
                     ),
                     padding: const EdgeInsets.all(32),
-                    child: const SFIcon(
+                    child:   SFIcon(
                       SFIcons.sf_checkmark,
                       fontSize: 72,
-                      color:    BeColorSwatch.white,
+                      color:    BeColorSwatch.white.color,
                     ),
                   ),
                 ),
@@ -81,7 +81,7 @@ class _AccountCreatedConfirmationViewState
                     "Your account has been created!",
                     textAlign: TextAlign.center,
                     style: textTheme.headlineMedium?.copyWith(
-                      color: BeColorSwatch.navy,
+                      color: BeColorSwatch.navy.color,
                       fontWeight: FontWeight.w700,
                     ),
                   ),
@@ -93,7 +93,7 @@ class _AccountCreatedConfirmationViewState
                     "You're all set. Continue to finish your profile.",
                     textAlign: TextAlign.center,
                     style: textTheme.bodyLarge?.copyWith(
-                      color: BeColorSwatch.darkGray,
+                      color: BeColorSwatch.darkGray.color,
                     ),
                   ),
                 ),

@@ -156,7 +156,7 @@ class NavigationMenu extends ConsumerWidget {
                                             child:   NoScale(
                                                 child: Text(
                                                     "© 2009-${DateTime.now().year}\n International Conference Management, Inc.",
-                                                    style: beTextTheme.bodyTertiary.merge(TextStyle(color: BeColorSwatch.darkGray.withAlpha(250), fontWeight: FontWeight.w600)),
+                                                    style: beTextTheme.bodyTertiary.merge(TextStyle(color: BeColorSwatch.darkGray.color.withAlpha(250), fontWeight: FontWeight.w600)),
                                                     textAlign: TextAlign.center
                                                 )
                                             )

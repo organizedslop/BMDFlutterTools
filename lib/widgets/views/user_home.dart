@@ -605,9 +605,9 @@ class _UserHomeListState extends ConsumerState<UserHome> with WidgetsBindingObse
                                     begin: Alignment.topCenter,
                                     end: Alignment.bottomCenter,
                                     colors: [
-                                    BeColorSwatch.lighterGray.withAlpha(0),
-                                    BeColorSwatch.lighterGray.withAlpha(200),
-                                    BeColorSwatch.lighterGray.withAlpha(225),
+                                    BeColorSwatch.lighterGray.color.withAlpha(0),
+                                    BeColorSwatch.lighterGray.color.withAlpha(200),
+                                    BeColorSwatch.lighterGray.color.withAlpha(225),
                                     ],
                                     stops: const [0, 0.24, 0.33],
                                 ),

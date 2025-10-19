@@ -295,10 +295,10 @@ class _ShowHomeState extends ConsumerState<ShowHome> with WidgetsBindingObserver
                       begin: Alignment.bottomLeft,
                       end: Alignment.topCenter,
                       colors: [
-                BeColorSwatch.navy.withAlpha(200),
-                BeColorSwatch.navy.withAlpha(120),
-                BeColorSwatch.navy.withAlpha(60),
-                BeColorSwatch.navy.withAlpha(0),
+                BeColorSwatch.navy.color.withAlpha(200),
+                BeColorSwatch.navy.color.withAlpha(120),
+                BeColorSwatch.navy.color.withAlpha(60),
+                BeColorSwatch.navy.color.withAlpha(0),
               ]))),
           Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 18),
@@ -932,9 +932,9 @@ class _ShowHomeState extends ConsumerState<ShowHome> with WidgetsBindingObserver
                                                             backgroundColor: WidgetStateProperty
                                                                 .all(canRegister
                                                                     ? BeColorSwatch
-                                                                        .red
+                                                                        .red.color
                                                                     : BeColorSwatch
-                                                                        .gray)),
+                                                                        .gray.color)),
                                                         child: Padding(
                                                             padding: EdgeInsets
                                                                 .symmetric(

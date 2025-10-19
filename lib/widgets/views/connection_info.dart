@@ -1091,7 +1091,7 @@ class _ConnectionInfoState extends ConsumerState<ConnectionInfo> {
                                                     },
                                                     icon: SFIcon(
                                                         SFIcons.sf_pencil_and_list_clipboard,
-                                                        color:    BeColorSwatch.blue,
+                                                        color:    BeColorSwatch.blue.color,
                                                         fontSize: 20
                                                     ),
                                                 label: Text("Notes", style: TextStyle(fontWeight: FontWeight.bold))
@@ -1099,7 +1099,7 @@ class _ConnectionInfoState extends ConsumerState<ConnectionInfo> {
                                             ]
                                         ),
 
-                                        Divider(color: BeColorSwatch.gray, height: 24),
+                                        Divider(color: BeColorSwatch.gray.color, height: 24),
 
 
                                         /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -1109,7 +1109,7 @@ class _ConnectionInfoState extends ConsumerState<ConnectionInfo> {
                                          */
                                         if (ref.read(isDebuggingProvider))
                                         ListTile(
-                                            title:    Text("Connection ID", style: TextStyle(color: BeColorSwatch.magenta, fontSize: 14, fontWeight: FontWeight.bold)),
+                                            title:    Text("Connection ID", style: TextStyle(color: BeColorSwatch.magenta.color, fontSize: 14, fontWeight: FontWeight.bold)),
                                             subtitle: SelectableText(
                                                 connection?.id.toString() ?? "No connection ID",
                                                 maxLines: 1,
@@ -1122,7 +1122,7 @@ class _ConnectionInfoState extends ConsumerState<ConnectionInfo> {
                                          */
                                         if (ref.read(isDebuggingProvider))
                                         ListTile(
-                                            title:    Text("Connection User ID", style: TextStyle(color: BeColorSwatch.magenta, fontSize: 14, fontWeight: FontWeight.bold)),
+                                            title:    Text("Connection User ID", style: TextStyle(color: BeColorSwatch.magenta.color, fontSize: 14, fontWeight: FontWeight.bold)),
                                             subtitle: SelectableText(
                                                 connection?.userId?.toString() ?? "No user ID",
                                                 maxLines: 1,
@@ -1159,11 +1159,11 @@ class _ConnectionInfoState extends ConsumerState<ConnectionInfo> {
                                                         SnackBar(content: Text("Copied email address to clipboard.", textAlign: TextAlign.center))
                                                         );
                                                     },
-                                                    child: const Padding(
+                                                    child: Padding(
                                                         padding: EdgeInsets.only(left: 8.0),
                                                         child: SFIcon(
                                                         SFIcons.sf_rectangle_portrait_on_rectangle_portrait,
-                                                        color: BeColorSwatch.blue,
+                                                        color: BeColorSwatch.blue.color,
                                                         fontSize: 20,
                                                         ),
                                                     ),
@@ -1271,7 +1271,7 @@ class _ConnectionInfoState extends ConsumerState<ConnectionInfo> {
                                                         SFIcons.sf_map,
                                                         fontSize: 20
                                                     ),
-                                                    label:     Text("Get directions", style: TextStyle(color: BeColorSwatch.blue, fontWeight: FontWeight.bold)),
+                                                    label:     Text("Get directions", style: TextStyle(color: BeColorSwatch.blue.color, fontWeight: FontWeight.bold)),
                                                     onPressed: () async {
                                                         final query   = Uri.encodeComponent(profileData["address"]);
                                                         String url;
@@ -1304,7 +1304,7 @@ class _ConnectionInfoState extends ConsumerState<ConnectionInfo> {
                                                         SFIcons.sf_rectangle_portrait_on_rectangle_portrait,
                                                         fontSize: 20
                                                     ),
-                                                    label:     Text((textScaleFactor > 1.35) ? "Copy" : "Copy address", style: TextStyle(color: BeColorSwatch.blue, fontWeight: FontWeight.bold)),
+                                                    label:     Text((textScaleFactor > 1.35) ? "Copy" : "Copy address", style: TextStyle(color: BeColorSwatch.blue.color, fontWeight: FontWeight.bold)),
                                                     onPressed: () async {
                                                         await Clipboard.setData(ClipboardData(text: profileData["address"]));
                                                         scaffoldMessengerKey.currentState?.showSnackBar(

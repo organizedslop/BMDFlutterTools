@@ -120,14 +120,14 @@ class _InviteTeamMemberFormState extends ConsumerState<InviteTeamMemberForm> {
                 );
             } else {
                 ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text("Failed to send invite."), backgroundColor: BeColorSwatch.red),
+                    SnackBar(content: Text("Failed to send invite."), backgroundColor: BeColorSwatch.red.color),
                 );
             }
         } catch (e) {
             logPrint("❌ Invite submit failed: $e");
             if (!mounted) return;
             ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(content: Text("Failed to send invite."), backgroundColor: BeColorSwatch.red),
+                SnackBar(content: Text("Failed to send invite."), backgroundColor: BeColorSwatch.red.color),
             );
         }
     }
@@ -170,7 +170,7 @@ class _InviteTeamMemberFormState extends ConsumerState<InviteTeamMemberForm> {
                                                 }
                                             );
                                         },
-                                        child: Text("If you would like to invite a guest to attend instead, tap here.", style: Theme.of(context).textTheme.bodyMedium!.copyWith(color: BeColorSwatch.blue, fontWeight: FontWeight.bold))
+                                        child: Text("If you would like to invite a guest to attend instead, tap here.", style: Theme.of(context).textTheme.bodyMedium!.copyWith(color: BeColorSwatch.blue.color, fontWeight: FontWeight.bold))
                                     ),
                                 ]
                             )
@@ -232,7 +232,7 @@ class _InviteTeamMemberFormState extends ConsumerState<InviteTeamMemberForm> {
                         ]),
 
                         const SizedBox(height: 28),
-                        Divider(color: BeColorSwatch.gray),
+                        Divider(color: BeColorSwatch.gray.color),
                         const SizedBox(height: 16),
 
                         formFieldLabel(labelText: "Address", isRequired: true),
@@ -264,12 +264,12 @@ class _InviteTeamMemberFormState extends ConsumerState<InviteTeamMemberForm> {
                                         DropdownButtonFormField<String>(
                                             key:  const Key("invite_team_member_form__state_field"),
                                             decoration: gfieldInputDecoration.copyWith(
-                                                fillColor: BeColorSwatch.white,
+                                                fillColor: BeColorSwatch.white.color,
                                                 hintText:  "Select an option",
                                                 hintStyle: gfieldHintStyle,
                                             ),
                                             style: TextStyle(
-                                                color:      BeColorSwatch.black,
+                                                color:      BeColorSwatch.black.color,
                                                 fontSize:   16,
                                                 fontWeight: FontWeight.normal,
                                             ),
@@ -317,12 +317,12 @@ class _InviteTeamMemberFormState extends ConsumerState<InviteTeamMemberForm> {
                         TextFormField(
                             key: const Key("invite_team_member_form__country_field"),
                             decoration: gfieldInputDecoration.copyWith(
-                                fillColor: BeColorSwatch.white,
+                                fillColor: BeColorSwatch.white.color,
                                 hintText:  "Select an option",
                                 hintStyle: gfieldHintStyle,
                             ),
                             style: TextStyle(
-                                color:      BeColorSwatch.black,
+                                color:      BeColorSwatch.black.color,
                                 fontSize:   16,
                                 fontWeight: FontWeight.normal,
                             ),
@@ -361,7 +361,7 @@ class _InviteTeamMemberFormState extends ConsumerState<InviteTeamMemberForm> {
                                     onPressed: () {
                                         Navigator.of(context).pop();
                                     },
-                                    child: Text("Cancel", style: Theme.of(context).textTheme.headlineMedium!.copyWith(color: BeColorSwatch.blue, fontWeight: FontWeight.bold)),
+                                    child: Text("Cancel", style: Theme.of(context).textTheme.headlineMedium!.copyWith(color: BeColorSwatch.blue.color, fontWeight: FontWeight.bold)),
                                     ),
                                     const SizedBox(width: 8),
                                     ElevatedButton(
@@ -384,7 +384,7 @@ class _InviteTeamMemberFormState extends ConsumerState<InviteTeamMemberForm> {
                                         };
                                         saveForm(context: context, formData: data);
                                     },
-                                    child: Text("Submit", style: Theme.of(context).textTheme.headlineMedium!.copyWith(color: BeColorSwatch.white, fontWeight: FontWeight.bold)),
+                                    child: Text("Submit", style: Theme.of(context).textTheme.headlineMedium!.copyWith(color: BeColorSwatch.white.color, fontWeight: FontWeight.bold)),
                                 ),
                             ],
                         ),

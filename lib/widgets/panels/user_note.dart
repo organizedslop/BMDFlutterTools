@@ -119,14 +119,14 @@ class _UserNoteState extends ConsumerState<UserNotePanel> {
                                         children: [
                                             SFIcon(
                                               SFIcons.sf_icloud_slash,
-                                              color: BeColorSwatch.orange,
+                                              color: BeColorSwatch.orange.color,
                                               fontSize: 16,
                                               fontWeight: FontWeight.bold,
                                             ),
                                             Text(
                                               'Pending sync',
                                               style: beTextTheme.captionPrimary.copyWith(
-                                                color: BeColorSwatch.orange,
+                                                color: BeColorSwatch.orange.color,
                                                 fontWeight: FontWeight.bold,
                                                 height: 0,
                                               ),
@@ -158,7 +158,7 @@ class _UserNoteState extends ConsumerState<UserNotePanel> {
                                         child: (isDeleting || isEditing || isSaving) ? Row(
                                             children: [
                                                 // Display a loading indicator if deleting or saving
-                                                (isDeleting || isSaving) ? Padding(padding: EdgeInsets.only(right: 8), child: SizedBox(height: 16, width: 16, child: Center(child: CircularProgressIndicator(color: BeColorSwatch.gray, strokeWidth: 3.333)))) :
+                                                (isDeleting || isSaving) ? Padding(padding: EdgeInsets.only(right: 8), child: SizedBox(height: 16, width: 16, child: Center(child: CircularProgressIndicator(color: BeColorSwatch.gray.color, strokeWidth: 3.333)))) :
                                                                            const SizedBox.shrink(),
 
                                                 // Show the appropriate message given the current action
@@ -210,7 +210,7 @@ class _UserNoteState extends ConsumerState<UserNotePanel> {
                             isEditing ? TextFormField(
                                 autofocus:    true,
                                 controller:   textEditingController,
-                                decoration:   gfieldInputDecoration.copyWith(hintText: "Type your note here.", hintStyle: TextStyle(color: BeColorSwatch.gray)),
+                                decoration:   gfieldInputDecoration.copyWith(hintText: "Type your note here.", hintStyle: TextStyle(color: BeColorSwatch.gray.color)),
                                 maxLines:     4,
 
                             ) : SelectableText(widget.userNote.noteBody, style: beTextTheme.bodyPrimary),

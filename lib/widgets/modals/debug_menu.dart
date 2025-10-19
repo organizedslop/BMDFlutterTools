@@ -578,7 +578,7 @@ class DebugMenuToggle extends StatelessWidget {
                 },
                 icon:      Container(
                     decoration: BoxDecoration(
-                        color:        BeColorSwatch.magenta,
+                        color:        BeColorSwatch.magenta.color,
                         borderRadius: BorderRadius.circular(fullRadius),
                     ),
                     width:  16,

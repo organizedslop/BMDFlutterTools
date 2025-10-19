@@ -477,10 +477,10 @@ class _LeadsListState extends ConsumerState<LeadsList> with RouteAware {
       }
 
       final Color iconColor = _syncInProgress
-          ? BeColorSwatch.navy
+          ? BeColorSwatch.navy.color
           : allSynced
-              ? BeColorSwatch.green
-              : BeColorSwatch.navy;
+              ? BeColorSwatch.green.color
+              : BeColorSwatch.navy.color;
 
       return ClipRect(
         child:
@@ -792,8 +792,8 @@ class _LeadsListState extends ConsumerState<LeadsList> with RouteAware {
             },
             child: Container(
               decoration: BoxDecoration(
-                border: Border(bottom: BorderSide(color: BeColorSwatch.lightGray)),
-                color: BeColorSwatch.navy,
+                border: Border(bottom: BorderSide(color: BeColorSwatch.lightGray.color)),
+                color: BeColorSwatch.navy.color,
               ),
               padding: const EdgeInsets.only(top: 10, right: 16, bottom: 10, left: 4),
               child: Row(
@@ -801,18 +801,18 @@ class _LeadsListState extends ConsumerState<LeadsList> with RouteAware {
                 children: [
                   Text(
                     dateAsString,
-                    style: Theme.of(context).textTheme.headlineMedium!.copyWith(color: BeColorSwatch.white),
+                    style: Theme.of(context).textTheme.headlineMedium!.copyWith(color: BeColorSwatch.white.color),
                   ),
                   const SizedBox(width: 8),
                   Text(
                     "(${connectionsByDate[date]?.length ?? 0})",
-                    style: Theme.of(context).textTheme.labelMedium!.copyWith(color: BeColorSwatch.blue),
+                    style: Theme.of(context).textTheme.labelMedium!.copyWith(color: BeColorSwatch.blue.color),
                   ),
                   const Spacer(),
                   if (textScaleFactor < 1.35)
                     Text(
                       "Toggle",
-                      style: Theme.of(context).textTheme.labelSmall!.copyWith(color: BeColorSwatch.blue),
+                      style: Theme.of(context).textTheme.labelSmall!.copyWith(color: BeColorSwatch.blue.color),
                     ),
                 ],
               ),

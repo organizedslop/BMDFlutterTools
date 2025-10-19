@@ -414,7 +414,7 @@ Future<void> _launchEmail(String? email) async {
       context: context,
       builder: (ctx) {
         final theme = Theme.of(ctx);
-        final Color enabledColor  = BeColorSwatch.blue;
+        final Color enabledColor  = BeColorSwatch.blue.color;
         final Color disabledColor = theme.disabledColor;
 
         Color _colorFor(bool enabled) => enabled ? enabledColor : disabledColor;
@@ -564,7 +564,7 @@ Future<void> _launchEmail(String? email) async {
                                 fit: BoxFit.scaleDown,
                                 child: Text(
                                   "Company name",
-                                  style: TextStyle(color: _groupByCategory ? BeColorSwatch.darkGray : BeColorSwatch.blue),
+                                  style: TextStyle(color: _groupByCategory ? BeColorSwatch.darkGray.color : BeColorSwatch.blue.color),
                                 ),
                               ),
                             ),
@@ -574,7 +574,7 @@ Future<void> _launchEmail(String? email) async {
                                 fit: BoxFit.scaleDown,
                                 child: Text(
                                   "Category",
-                                  style: TextStyle(color: _groupByCategory ? BeColorSwatch.blue : BeColorSwatch.darkGray),
+                                  style: TextStyle(color: _groupByCategory ? BeColorSwatch.blue.color : BeColorSwatch.darkGray.color),
                                 ),
                               ),
                             ),
@@ -614,9 +614,9 @@ Future<void> _launchEmail(String? email) async {
                       });
                     },
                     child: Container(
-                      decoration: const BoxDecoration(
+                      decoration: BoxDecoration(
                         border: Border(bottom: BorderSide()),
-                        color: BeColorSwatch.navy
+                        color: BeColorSwatch.navy.color
                         ),
                       padding: const EdgeInsets.only(top: 10, right: 16, bottom: 10, left: 4),
                       child: Text(

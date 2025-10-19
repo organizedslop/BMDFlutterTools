@@ -55,7 +55,7 @@ class ConnectionCard extends ConsumerWidget {
         final colorScheme = beColorScheme;
 
         return Container(
-            decoration: BoxDecoration(color: BeColorSwatch.offWhite),
+            decoration: BoxDecoration(color: BeColorSwatch.offWhite.color),
             child: Stack(
                 children: [
                     Padding(
@@ -124,7 +124,7 @@ class ConnectionCard extends ConsumerWidget {
                                                         : "Unknown date",
                                                     style: isRecent
                                                         ? textTheme.captionPrimary.merge(
-                                                            const TextStyle(color: BeColorSwatch.blue))
+                                                             TextStyle(color: BeColorSwatch.blue.color))
                                                         : textTheme.captionPrimary,
                                                 );
                                             }),
@@ -174,7 +174,7 @@ class ConnectionCard extends ConsumerWidget {
                                                             padding: const EdgeInsets.only(right: 2),
                                                             child:   SFIcon(
                                                                 index < ratingValue ? SFIcons.sf_star_fill : SFIcons.sf_star,
-                                                                color:    BeColorSwatch.gray,
+                                                                color:    BeColorSwatch.gray.color,
                                                                 fontSize: 16,
                                                             ),
                                                         );
@@ -216,8 +216,8 @@ class ConnectionCard extends ConsumerWidget {
 
                                     const SizedBox(height: 12),
 
-                                    if (showDivider) const Divider(
-                                        color:  BeColorSwatch.gray,
+                                    if (showDivider) Divider(
+                                        color:  BeColorSwatch.gray.color,
                                         height: 0,
                                     )
                                 ]
@@ -233,8 +233,8 @@ class ConnectionCard extends ConsumerWidget {
                                 mainAxisSize: MainAxisSize.min,
                                 spacing:  6,
                                 children: [
-                                    SFIcon(SFIcons.sf_icloud_slash, fontSize: 15, fontWeight: FontWeight.bold, color: BeColorSwatch.orange),
-                                    Text("Waiting for network...", style: Theme.of(context).textTheme.labelSmall!.copyWith(color: BeColorSwatch.orange, height: 0))
+                                    SFIcon(SFIcons.sf_icloud_slash, fontSize: 15, fontWeight: FontWeight.bold, color: BeColorSwatch.orange.color),
+                                    Text("Waiting for network...", style: Theme.of(context).textTheme.labelSmall!.copyWith(color: BeColorSwatch.orange.color, height: 0))
                                 ]
                             )
                         )
@@ -247,8 +247,8 @@ class ConnectionCard extends ConsumerWidget {
                                 mainAxisSize: MainAxisSize.min,
                                 spacing:  5,
                                 children: [
-                                    SFIcon(SFIcons.sf_clock, fontSize: 14, fontWeight: FontWeight.bold, color: BeColorSwatch.purple),
-                                    Text("Legacy badge", style: Theme.of(context).textTheme.labelSmall!.copyWith(color: BeColorSwatch.purple, height: 0))
+                                    SFIcon(SFIcons.sf_clock, fontSize: 14, fontWeight: FontWeight.bold, color: BeColorSwatch.purple.color),
+                                    Text("Legacy badge", style: Theme.of(context).textTheme.labelSmall!.copyWith(color: BeColorSwatch.purple.color, height: 0))
                                 ]
                             )
                         )
