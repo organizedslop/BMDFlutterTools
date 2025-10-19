@@ -137,24 +137,55 @@ class BeColorSwatch {
 
     const BeColorSwatch();
 
-    static const Color black       = Color(0xff000000);
-    static const Color lighterBlue = Color(0xffd9e7ff);
-    static const Color lightBlue   = Color(0xff99c0ff);
-    static const Color blue        = Color(0xff3478f6);
-    static const Color darkBlue    = Color(0xff1c3579);
-    static const Color darkGray    = Color(0xff58595b);
-    static const Color gray        = Color(0xffa1a3a6);
-    static const Color green       = Color(0xff20c94a);
-    static const Color lightGray   = Color(0xffb1b3b6);
-    static const Color lighterGray = Color(0xffeeecf0);
-    static const Color magenta     = Color(0xffff00ff);
-    static const Color navy        = Color(0xff000334);
-    static const Color red         = Color(0xffda2228);
-    static const Color offWhite    = Color(0xfffafafc);
-    static const Color orange      = Color(0xffff9a42);
-    static const Color purple      = Color(0xff796bd6);
-    static const Color white       = Color(0xffffffff);
-    static const Color yellow      = Color(0xffffcc00);
+    static const Color black          = Color(0xff000000);
+
+    static const Color lighterGray    = Color(0xffeeecf0);
+    static const Color lightGray      = Color(0xffb1b3b6);
+    static const Color gray           = Color(0xffa1a3a6);
+    static const Color darkGray       = Color(0xff58595b);
+
+    static const Color offWhite       = Color(0xfffafafc);
+    static const Color white          = Color(0xffffffff);
+
+    static const Color lighterRed     = Color(0xffffb6b8);
+    static const Color lightRed       = Color(0xffff6a70);
+    static const Color red            = Color(0xffda2228);
+    static const Color darkRed        = Color(0xff940014);
+
+    static const Color lighterOrange  = Color(0xffffe0bd);
+    static const Color lightOrange    = Color(0xffffb96f);
+    static const Color orange         = Color(0xffff9a42);
+    static const Color darkOrange     = Color(0xffcc6f15);
+
+    static const Color lighterYellow  = Color(0xfffff3b3);
+    static const Color lightYellow    = Color(0xffffdd55);
+    static const Color yellow         = Color(0xffffcc00);
+    static const Color darkYellow     = Color(0xffc7a000);
+
+    static const Color lighterGreen   = Color(0xffa4f1b4);
+    static const Color lightGreen     = Color(0xff5fe279);
+    static const Color green          = Color(0xff20c94a);
+    static const Color darkGreen      = Color(0xff178236);
+
+    static const Color lighterBlue    = Color(0xffd9e7ff);
+    static const Color lightBlue      = Color(0xff99c0ff);
+    static const Color blue           = Color(0xff3478f6);
+    static const Color darkBlue       = Color(0xff1c3579);
+
+    static const Color lighterNavy    = Color(0xff3a4b7d);
+    static const Color lightNavy      = Color(0xff1b2559);
+    static const Color navy           = Color(0xff000334);
+    static const Color darkNavy       = Color(0xff00011f);
+
+    static const Color lighterPurple  = Color(0xffd2ccfb);
+    static const Color lightPurple    = Color(0xffa297eb);
+    static const Color purple         = Color(0xff796bd6);
+    static const Color darkPurple     = Color(0xff4f3fa0);
+
+    static const Color lighterMagenta = Color(0xffffc2ff);
+    static const Color lightMagenta   = Color(0xffff66ff);
+    static const Color magenta        = Color(0xffff00ff);
+    static const Color darkMagenta    = Color(0xffb300b3);
 }
 
 
