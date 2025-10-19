@@ -8,7 +8,7 @@
 import "package:bmd_flutter_tools/main.dart";
 import "package:bmd_flutter_tools/theme/app_styles.dart";
 import "package:bmd_flutter_tools/utilities/utilities__theme.dart";
-import "package:bmd_flutter_tools/widgets/utilities/tool__no_scale_wrapper.dart";
+import "package:bmd_flutter_tools/widgets/utilities/no_scale_wrapper.dart";
 import "package:flutter/material.dart";
 import "package:flutter_sficon/flutter_sficon.dart";
 import "package:go_router/go_router.dart";

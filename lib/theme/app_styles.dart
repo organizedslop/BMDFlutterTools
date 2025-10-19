@@ -5,7 +5,7 @@
  */
 
 import "package:bmd_flutter_tools/utilities/utilities__theme.dart";
-import "package:bmd_flutter_tools/widgets/shapes/shape__gradient_border.dart";
+import "package:bmd_flutter_tools/widgets/shapes/gradient_shape_border.dart";
 import "package:flutter/material.dart";
 import "package:flutter_sficon/flutter_sficon.dart";
 

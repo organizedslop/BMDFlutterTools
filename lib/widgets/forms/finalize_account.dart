@@ -7,7 +7,7 @@
 
 import "package:bmd_flutter_tools/controllers/app_database.dart";
 import "package:bmd_flutter_tools/controllers/global_state.dart";
-import "package:bmd_flutter_tools/widgets/navigation/navigation_bar__primary.dart";
+import "package:bmd_flutter_tools/widgets/navigation/primary_navigation_bar.dart";
 import "package:flutter/material.dart";
 import "package:flutter_riverpod/flutter_riverpod.dart";
 import "package:go_router/go_router.dart";

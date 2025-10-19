@@ -11,7 +11,7 @@ import "package:bmd_flutter_tools/controllers/global_state.dart";
 import "package:bmd_flutter_tools/main.dart";
 import "package:bmd_flutter_tools/utilities/utilities__print.dart";
 import "package:bmd_flutter_tools/utilities/utilities__theme.dart";
-import "package:bmd_flutter_tools/widgets/modals/modal__invite_guests.dart";
+import "package:bmd_flutter_tools/widgets/modals/invite_guests.dart";
 import "package:flutter/material.dart";
 import "package:flutter_riverpod/flutter_riverpod.dart";
 import "package:country_picker/country_picker.dart";

@@ -18,7 +18,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_sficon/flutter_sficon.dart';
 import 'package:go_router/go_router.dart';
 import 'package:intl/intl.dart';
-import 'package:bmd_flutter_tools/widgets/components/component__booth_tag.dart';
+import 'package:bmd_flutter_tools/widgets/components/booth_tag.dart';
 
 class SeminarSessionCard extends ConsumerWidget {
   final SeminarSessionData seminarSession;

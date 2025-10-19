@@ -7,10 +7,10 @@
 
 import "package:bmd_flutter_tools/controllers/environment.dart";
 import "package:bmd_flutter_tools/controllers/global_state.dart";
-import "package:bmd_flutter_tools/widgets/components/component__foating_scanner_button.dart";
-import "package:bmd_flutter_tools/widgets/components/component__remote_html.dart";
-import "package:bmd_flutter_tools/widgets/navigation/navigation_bar__bottom.dart";
-import "package:bmd_flutter_tools/widgets/navigation/navigation_bar__primary.dart";
+import "package:bmd_flutter_tools/widgets/components/foating_scanner_button.dart";
+import "package:bmd_flutter_tools/widgets/components/remote_html.dart";
+import "package:bmd_flutter_tools/widgets/navigation/bottom_navigation_bar.dart";
+import "package:bmd_flutter_tools/widgets/navigation/primary_navigation_bar.dart";
 import "package:flutter/material.dart";
 import "package:flutter/widgets.dart";
 import "package:flutter_riverpod/flutter_riverpod.dart";
